@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import './user/layout/Header'
+import Header from './user/layout/Header';
 
 
 class App extends Component {
