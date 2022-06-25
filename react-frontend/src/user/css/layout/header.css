@@ -1,3 +1,389 @@
-.site-header{
-    background-color: rgba(0,51,102,.99);
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+:root{
+    --mainColor: rgba(0,51,102,.99);
+    --mainColorLight: rgba(24, 87, 149, 0.99);
+    --secondaryColor: #C20017;
+    --tertiaryColor: #003366;
+    --textColor: white;
+}
+
+* a{
+    text-decoration: none;
+    color: var(--textColor)
+}
+* li{
+    list-style: none;
+}
+.main-nav{
+    display: block;
+}
+/* MAIN-NAV  */
+.primary-nav{
+    background-color: var(--mainColor);
+    display: flex;
+    height: 100px;
+    color: var(--textColor);
+}
+
+/* main-nav branding  */
+.branding{
+    width: 150px;
+    margin-left: 20px;
+    display: block;
+    align-self: center;
+}
+.branding h3{
+    color: var(--textColor);
+    font-style: italic;
+    font: 'Lato', sans-serif;
+}
+.branding span{
+    font-size: 13px;
+}
+/* main nav main  */
+.main-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.main-menu a:hover{
+    padding: 5px;
+    background-color: var(--mainColorLight);
+    border-radius: 3px;
+}
+.main-menu a{
+    
+}
+/* main-nav meta  */
+.main-nav .meta{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.main-nav .meta .search-toggle{
+    margin-right: 8px;
+    padding: 5px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--textColor);
+}
+
+.main-nav .meta .login{
+    margin-right: 8px;
+    padding: 5px;
+    font-size: 13px;
+    background-color: var(--mainColorLight);
+    border-radius: 3px;
+    font-weight: bold;
+
+}
+
+.main-nav .meta .watch{
+    padding: 8px;
+    font-size: 13px;
+    background-color: var(--secondaryColor);
+    border-radius: 3px;
+    font-weight: bold;
+}
+.main-nav .nav-btn{
+    padding: 5px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--textColor);
+    visibility: hidden;
+    opacity: 0;
+    font-size: 1rem;
+}
+
+/* SECONDARY-NAV  */
+.secondary-nav{
+    display: flex;
+    align-self: center;
+    margin: auto 155px;
+}
+.secondary-nav .subnav-title{
+    color: var(--secondaryColor);
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 13px;
+    margin: auto 20px;
+}
+
+.hot-topics-nav, .markets-nav{
+    display: flex;
+    align-items: center;
+}
+
+.hot-topics-nav{
+    margin-right: 150px;
+}
+.rotate-items a{
+    color: var(--tertiaryColor);
+    font-size: 10px;
+    margin: auto 20px;
+    font-weight: bold;
+}
+
+.rotate-items a:hover{
+    text-decoration: underline;
+}
+
+/* EXPANDABLE-NAV  */
+.expandable-nav{
+    display: block;
+    background-color: var(--mainColor);
+    visibility: hidden;
+    opacity: 0;
+}
+/* expandable-nav search  */
+.search fieldset{
+    display: flex;
+}
+.resp_site_submit{
+    background-color: var(--secondaryColor);
+    border: none;
+    padding: 10px;
+    color: var(--textColor);
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+.resp_site_search{
+    padding: 15px;
+    border-radius: 5px;
+    width: 100%;
+    margin-left: 15px;
+}
+/* expandable-nav section-nav  */
+.section-nav>.inner{
+    display: flex;
+    float: left;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.section-nav .inner .nav-item span{
+    font-size: 20px;
+    font-weight: bold;
+}
+.section-nav .inner .nav-item{
+    width: 300px;
+    margin-bottom: 20px;
+}
+.section-nav .inner .nav-item a{
+    display: flex;
+    flex-direction: row;
+}
+.section-nav .inner .nav-item a{
+    font-size: 15px;
+    line-height: 25px;
+}
+/* expandable-nav header-lower */
+.header-lower{
+    display: flex;
+    flex-direction: row-reverse;
+    align-self: center;
+    width: 100%;
+}
+.header-lower-branding{
+    width: 0px;
+    margin: auto 15px;
+    display: block;
+    align-self: center;
+}
+.header-lower-branding h3{
+    color: var(--textColor);
+    font-style: italic;
+    font: 'Lato', sans-serif;
+}
+.header-lower-branding span{
+    font-size: 13px;
+    color: var(--textColor)
+}
+.legal{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 600px;
+    margin-right: 40px;
+
+}
+.legal .links a{
+    font-size: 10px;
+    margin-right: 15px;
+}
+.copyright{
+    font-size: 13px;
+    color:#a7c6e5;   
+}
+.social-icons{
+    text-align: center;
+    width: 250px;
+    margin-right: 15px;
+}
+.social-icons>button{
+    padding: 5px;
+    cursor: pointer;
+    background-color: #001d3a;
+    border: none;
+    border-radius: 15px;
+    color: var(--textColor);
+    font-size: 1rem;
+    margin-right: 0.7rem;
+}
+@media screen and (max-width: 1500px){
+    header .secondary-nav .hot-topics-4{
+        display: none;
+    }
+    @media screen and (max-width: 1400px){
+        .secondary-nav .hot-topics-3, .secondary-nav .stock-3{
+            display: none;
+        }
+        .main-nav .menu-nation, .main-nav .menu-radio{
+            display: none;
+        }
+        @media screen and (max-width: 1300px){
+            header .secondary-nav .hot-topics-2{
+                display: none;
+            }  
+            .main-nav .menu-tv, .main-nav .menu-weather{
+                display: none;
+            }
+            @media screen and (max-width: 1200px){
+                header .main-nav .menu-lifestyle{
+                    display: none;
+                }
+                @media screen and (max-width: 1100px){
+                    header .main-nav .menu-sports{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1024px){
+        header .main-menu .menu-entertainment{
+            display: none;
+        }
+        header .secondary-nav{
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            background-color: var(--mainColor);
+            transition: 0.05s;
+            transform: translateY(-100vh);
+            margin: auto 50px;
+        }
+        header .secondary-nav .stock-2{
+            display: none;
+        }
+        .search fieldset{
+            width: 50%;
+        }
+        header .expandable-nav{
+            visibility: visible;
+            opacity: 1;
+        }
+        header .section-nav{
+            position: relative;
+            margin: 15px;
+        }
+    
+        header .responsive_nav{
+            transform: none;
+        }
+        @media screen and (max-width: 950px){
+            header .main-menu{
+                visibility: visible;
+            }
+            header .main-menu .menu-business{
+                display: none;
+            }
+            .search fieldset{
+                width: 75%;
+            }
+            header> .nav-btn{
+                visibility: visible;
+                opacity: 1;
+                background-color: var(--textColor)
+            }
+            header .section-nav{
+                width: 100%;
+            }
+            
+            header .header-lower {
+                width: 100%;
+            }
+            header .header-lower-branding{
+                width: 200px;
+            }
+            
+        }
+        @media screen and (max-width: 850px){
+            header .main-menu a{
+                display: none;
+            }
+            header>.nav-btn{
+                visibility: visible;
+                opacity: 1;
+            }
+            header .header-lower {
+                width: 100%;
+            }
+            header .header-lower .social-icons{
+                width: 80%;
+            }
+            header .header-lower .legal{
+                width: 100%;
+            }
+            header .header-lower .header-lower-branding{
+                width: 180px;
+            }
+            header .section-nav{
+                width: 100%;
+            }
+            header .section-nav .inner .nav-item{
+                width: 250px;
+            }
+            @media screen and (max-width: 700px){
+                header .section-nav{
+                    width: 80%;
+                }
+                header .section-nav .inner .nav-item{
+                    width: 200px;
+                }
+                .search fieldset{
+                    width: 100%;
+                }
+                @media screen and (max-width: 500px){
+                    header .section-nav .inner .nav-item{
+                        width: 150px;
+                    }
+                    .search fieldset{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+            
+    }
 }
