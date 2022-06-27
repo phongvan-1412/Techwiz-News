@@ -20,8 +20,10 @@ class NameSetting extends Model
     static $SelectActiveBlog = "exec sp_select_active_blog";
     static $SelectBlogById = "exec sp_select_blog_by_id";
     // blog_comment
-    static $InsertblogComment = "exec sp_insert_blog_comment";
-    static $ProcCheckExistsblogComment = "exec sp_update_blog_comment";
+    static $InsertBlogComment = "exec sp_insert_blog_comment";
+    static $UpdateBlogComment = "exec sp_update_blog_comment";
+    static $ProcCheckExistsblogComment = "exec sp_check_exists_blog_comment";
+    static $ProcCheckExistsblogCommentById = "exec sp_check_blog_comment_by_id";
     static $SelectBlogCommentByTitle = "exec sp_select_blog_comment_by_blog_title";
     // blog_request
     static $FunctionCheckExistsBlogRequest = "dbo.check_exists_blog_request";
