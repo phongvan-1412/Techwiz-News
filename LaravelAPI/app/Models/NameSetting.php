@@ -48,6 +48,7 @@ class NameSetting extends Model
     static $UpdateCustomer = "exec sp_update_customer_account_by_email";
     static $CheckExistsCustomer = "exec sp_check_exists_customer_by_email";
     static $ChangePasswordCustomer= "exec sp_change_password_by_email";
+    static $CheckUpdatePasswordCustomer= "exec sp_check_update_customer_password";
     static $GetCustomerInfo = "exec sp_get_customer_info";
     static $CheckCustomerInfo = "exec sp_get_customer_info_by_email_name_contact";
     static $SelecCustomer = "exec sp_select_customer_account";
@@ -59,6 +60,8 @@ class NameSetting extends Model
     static $InsertEmployee = "exec sp_insert_emp_account";
     static $CheckExistsEmployee = "exec check_exists_customer";
     static $ChangePasswordEmployee = "exec sp_change_emp_pwd_by_email";
+    static $CheckUpdatePasswordEmployee = "exec sp_check_update_employee_password";
+
     static $SelectAllEmployee = "exec sp_select_employee";
     static $SelectEmployeeByManager = "exec sp_select_employee_account_by_manager_name";
     // emp_position
