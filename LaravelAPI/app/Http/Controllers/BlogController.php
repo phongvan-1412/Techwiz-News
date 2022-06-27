@@ -33,9 +33,75 @@ class BlogController extends Controller
         return "Insert blog Fail !!!";
     }
     
+    public function ChangeBlogStatus(Request $request)
+    {
+        $status = $request->blog_status;
+        $blog_id = $request->blog_id;
+        $blog_status = 0;
+        if($status == "on") $blog_status = 1;
+
+        DB::select(Name::$ChangeStatusBlog."$blog_id,$blog_status");
+
+        $check =  DB::select(Name::$ProcCheckBlogById."'$blog_title'");
+
+        if($check > 0) return "Update blog Success !!!";
+        return "Update blog Fail !!!";
+    }
+    
+
     public function SelectActiveBlog()
     {
-        $blogs = DB::select("exec sp_select_active_blog");
+        $blogs = DB::select(Name::$SelectActiveBlog);
         return $blogs;
+    }
+
+    public function SelectBlogById(Request $request)
+    {
+        $blog_id = $request->blog_id;
+        
+        $blogs = DB::select(Name::$SelectBlogById.$blog_id);
+        return $blogs;
+    }
+
+    public function XmlBlogFile()
+    {
+        $blogs = DB::select(Name::$SelectActiveBlog);
+
+        $collection = self::AddCollection($blogs);
+
+        $xml = new ExportXml("<?xml version='1.0' encoding='utf-8'?><Blogs>");
+        $xml->StartXml();
+        
+        foreach($collection as $collect)
+        {
+            $tmp_collect = new Blog();
+            $tmp_collect = $collect;
+            $xml->StartChildNode("Blog");
+            $xml->AddNode("blog_id",$collect->blog_id);
+            $xml->AddNode("emp_name",$collect->emp_name);
+            $xml->AddNode("blog_title",$collect->blog_title);
+            $xml->AddNode("blog_content",$collect->blog_content);
+            $xml->AddNode("blog_day_open",$collect->blog_day_open);
+            $xml->AddNode("blog_status",$collect->blog_status);
+
+            $xml->EndChildNode("Blog");
+        }
+
+        $xml->ExportXml("xml/blog.xml");
+        return $collection;
+    }
+
+    public function AddCollection($arr)
+    {
+        $collection = collect();
+
+        foreach($arr as $category)
+        {
+            $newCategory = new Blog();
+            $newCategory = $category;
+            $collection->add($newCategory);
+        }
+
+        return $collection;
     }
 }
