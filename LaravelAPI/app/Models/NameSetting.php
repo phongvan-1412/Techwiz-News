@@ -15,6 +15,7 @@ class NameSetting extends Model
 
     static $InsertBlog = "exec sp_insert_blog";
     static $ProcCheckExistsBlog = "exec sp_check_exists_blog";
+    static $ProcCheckBlogById = "exec sp_check_blog_by_id";
     static $ChangeStatusBlog = "exec sp_change_status_blog";
     static $SelectActiveBlog = "exec sp_select_active_blog";
     static $SelectBlogById = "exec sp_select_blog_by_id";
