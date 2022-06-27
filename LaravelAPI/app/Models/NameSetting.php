@@ -34,11 +34,13 @@ class NameSetting extends Model
     // category
     static $FunctionCheckExistsCategory = "dbo.check_exists_category";
 
-    static $ProcCheckExistsCategory = "exec sp_check_exists_category";
     static $InsertCategory = "exec sp_insert_category";
-    static $SelectCategoryRoot = "exec sp_select_category_root";
-    static $SelectAllCategory = "exec sp_select_all_category";
     static $UpdateCategory = "exec sp_update_category";
+    static $ProcCheckExistsCategory = "exec sp_check_exists_category";
+    static $ProcCheckCategoryUpdate = "exec sp_check_category_update";
+    static $SelectCategoryRoot = "exec sp_select_category_root";
+    static $SelectCategoryByRoot = "exec sp_select_category_by_root_name";
+    static $SelectAllCategory = "exec sp_select_all_category";
     // customer_account
     static $FunctionCheckExistscustomer = "dbo.check_exists_customer";
 
