@@ -5,7 +5,10 @@ import { FaBars, FaTimes, FaSearch, FaFacebook, FaTwitter, FaInstagramSquare} fr
 import { MdEmail } from 'react-icons/md'
 import { useRef } from 'react';
 
-import '../css/layout/header.css'
+import '../css/layout/style-mobile.css';
+import '../css/layout/style-tablet.css';
+import '../css/layout/style-laptop.css';
+
 
 const Header = props => {
     const navRef = useRef();
