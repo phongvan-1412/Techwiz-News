@@ -61,8 +61,10 @@ class NameSetting extends Model
     static $CheckExistsEmployee = "exec check_exists_customer";
     static $ChangePasswordEmployee = "exec sp_change_emp_pwd_by_email";
     static $CheckUpdatePasswordEmployee = "exec sp_check_update_employee_password";
+    static $SelectEmployee = "exec sp_select_employee";
+    static $SelectAllEmployee = "exec sp_select_all_employee";
 
-    static $SelectAllEmployee = "exec sp_select_employee";
+    static $Selectmanager = "exec sp_select_manager";
     static $SelectEmployeeByManager = "exec sp_select_employee_account_by_manager_name";
     // emp_position
     static $InsertEmpPosition = "exec sp_insert_emp_position";
