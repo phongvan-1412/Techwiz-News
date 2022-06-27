@@ -258,12 +258,12 @@
 .footer-nav-inner{
     display: flex;
     float: left;
-    margin-bottom: 50px;
+    margin: auto 15px 50px 15px;
     width: 100%;
 }
 .footer-nav-item{
     width: 600px;
-    margin-bottom: auto 15px 20px 15px;
+    margin: auto 15px 20px 15px;
 }
 .footer-nav-item span{
     font-size: 20px;
@@ -335,15 +335,29 @@
     header .section-nav{
         width: 100%;
     }
-    header .section-nav .inner .nav-item{
-        width: 200px;
+    header .section-nav .inner1, header .section-nav .inner2, header .section-nav .footer-nav-inner3{
+        width: 220px;
     }
     header .search fieldset{
         width: 100%;
     }
     /* ----- FOOTER ---- */
-
+    footer .footer-nav-inner1, footer .footer-nav-inner2, footer .footer-nav-inner3 {
+        width: 220px;
+    }
     @media screen and (max-width: 650px){
+        /* ----- HEADER ---- */
+        header .section-nav .inner1, header .section-nav .inner2, header .section-nav .footer-nav-inner3{
+            width: 150px;
+        }
+        /* ----- FOOTER ---- */
+        footer .footer-nav-inner1, footer .footer-nav-inner2, footer .footer-nav-inner3{
+            width: 150px;
+        }
+        footer .footer-lower-social-icons button{
+            margin-right: 0.2rem;
+        }
+
         @media screen and (max-width: 500px){
             /* -----HEADER---- */
             header .section-nav .inner .nav-item{
@@ -352,6 +366,7 @@
             header .search fieldset{
                 width: 100%;
             }  
+            /* ----- FOOTER ---- */
         }
     }
 }
