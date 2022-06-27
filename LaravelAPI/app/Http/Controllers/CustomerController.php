@@ -57,9 +57,9 @@ class CustomerController extends Controller
 
         DB::select(Name::$ChangePasswordCustomer."'$customer_email','$customer_new_passqord','$customer_old_passqord'");
 
-        $check = DB::select(Name::$CheckExistsCustomer."'$customer_email'");
-        if($check > 0) return "Update Account Success !!!";
-        return "Update New Account Fail !!!";
+        $check = DB::select(Name::$CheckUpdatePasswordCustomer."'$customer_email','$customer_new_passqord'");
+        if($check > 0) return "Change Password  Account Success !!!";
+        return "Change Password  New Account Fail !!!";
     }
     
     public function CheckCustomerInfo(Request $request)
