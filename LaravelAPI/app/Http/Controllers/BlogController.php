@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\NameSetting as Name;
 use App\Models\Blog;
+use App\Models\BlogRequest;
+
 
 class BlogController extends Controller
 {
@@ -16,15 +18,13 @@ class BlogController extends Controller
         $blog_content = $request->blog_content;
         $blog_day_open = $request->blog_day_open;
 
-        //DB::select("exec sp_insert_blog '$emp_email','$blog_title','$blog_content','$blog_day_open'");
         DB::select(Name::$InsertBlog."'$emp_email','$blog_title','$blog_content','$blog_day_open'");
 
-        self::InsertBlogRequest();
+        self::InsertBlogRequest($blog_title,$emp_email);
     }
 
     public function InsertBlogRequest($blog_title,$emp_email)
     {
-        //DB::select("exec sp_insert_blog_request '$blog_title','$emp_email'");
         DB::select(Name::$InsertblogComment."'$blog_title','$emp_email'");
 
         $check =  DB::select(Name::$ProcCheckExistsBlog."'$blog_title'");
@@ -48,7 +48,6 @@ class BlogController extends Controller
         return "Update blog Fail !!!";
     }
     
-
     public function SelectActiveBlog()
     {
         $blogs = DB::select(Name::$SelectActiveBlog);
@@ -63,6 +62,54 @@ class BlogController extends Controller
         return $blogs;
     }
 
+    public function UpdateBlogRequest(Request $request)
+    {+
+        $blog_title = $request->blog_title;
+        $admin_email = $request->admin_email;
+        $blog_request_accept_status = $request->$blog_request_accept_status;
+        $blog_request_cause -> $request->$blog_request_cause;
+
+        DB::select(Name::$InsertblogComment."'$admin_email','$blog_title','$blog_content','$blog_day_open'");
+
+        $check =  DB::select(Name::$ProcCheckExistsblogComment."'$blog_title'");
+
+        if($check > 0) return "Update blog Success !!!";
+        return "Update blog Fail !!!";
+    }
+    
+    public function InsertBlogComment(Request $request)
+    {
+        $blog_title = $request->blog_title;
+        $custommer_email = $request->customer_email;
+        $blog_comment_content = $request->blog_comment_content;
+        $blog_comment_day_post = $request->blog_comment_day_post;
+        
+        DB::select(Name::$InsertBlogComment."'$blog_title','$custommer_email','$blog_comment_content','$blog_comment_day_post'");
+
+        $check = DB::select(Name::$ProcCheckExistsblogComment."'$blog_title','$custommer_email','$blog_comment_day_post'");
+
+        if($check > 0) return "Update blog comment Success !!!";
+        return "Update blog comment Fail !!!";
+    }
+    
+    public function UpdateBlogComment(Request $request)
+    {
+       $blog_comment_id = $request->blog_comment_id;
+       $blog_comment_status = $request->blog_comment_status;
+       
+       DB::slect(Name::$UpdateBlogComment."'$blog_comment_id','$blog_comment_status'");
+       $check = DB::select(Name::$ProcCheckExistsblogCommentById."'$blog_comment_id'");
+
+        if($check > 0) return "Update blog comment status Success !!!";
+        return "Update blog comment status Fail !!!";
+    }
+
+    public function SelectBlogComment($blog_title)
+    {
+        $blog_comments = DB::slect(Name::$SelectBlogCommentByTitle."'$blog_title'");
+        return $blog_comments;
+    }
+    
     public function XmlBlogFile()
     {
         $blogs = DB::select(Name::$SelectActiveBlog);
