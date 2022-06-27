@@ -44,11 +44,12 @@ class NameSetting extends Model
     // customer_account
     static $FunctionCheckExistscustomer = "dbo.check_exists_customer";
 
-    static $Insertcustomer = "exec sp_insert_customer_account";
-    static $Updatecustomer = "exec sp_update_customer_account_by_email";
-    static $CheckExistscustomer = "exec sp_check_exists_customer_by_email";
-    static $ChangePasswordcustomer= "exec sp_change_password_by_email";
-    static $GetCustomerInfo = "exec sp_get_customer_info_by_email_name_contact";
+    static $InsertCustomer = "exec sp_insert_customer_account";
+    static $UpdateCustomer = "exec sp_update_customer_account_by_email";
+    static $CheckExistsCustomer = "exec sp_check_exists_customer_by_email";
+    static $ChangePasswordCustomer= "exec sp_change_password_by_email";
+    static $GetCustomerInfo = "exec sp_get_customer_info";
+    static $CheckCustomerInfo = "exec sp_get_customer_info_by_email_name_contact";
     static $SelecCustomer = "exec sp_select_customer_account";
     // gender_type
     static $SelectAllGenderType = "exec sp_select_all_gender_type";
