@@ -8,10 +8,12 @@ class SpotLights extends Component {
       <Consumer>
         {(value) => {
           const { spotlights } = value;
-          spotlights.length = 2;
+          const q = [];
+          const ourSpotlights = q.concat(spotlights);
+          ourSpotlights.length = 2;
           return (
             <div className="row col-9">
-              {spotlights.map((spotlight) => (
+              {ourSpotlights.map((spotlight) => (
                 <SpotLight
                   key={spotlight.blog_id}
                   spotlight={spotlight}

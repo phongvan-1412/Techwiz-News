@@ -11,8 +11,7 @@ class SpotLight extends Component {
       <div className="card card-body mb3 col-md-6">
         <h1><Link  to="/bodySpotLight" style={{
               cursor: "pointer",
-              color: "black",}} >12312</Link ></h1>
-        <h2>{blog_content}</h2>
+              color: "black",}} >{blog_title}</Link ></h1>
       </div>
       //   <Consumer>
       //     {(value) => {
