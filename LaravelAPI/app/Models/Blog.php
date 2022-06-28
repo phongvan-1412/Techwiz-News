@@ -10,7 +10,7 @@ class Blog extends Model
     use HasFactory;
 
     public $blog_id;
-    public $emp_name;
+    public $emp_id;
     public $blog_title;
     public $blog_content;
     public $blog_img_name;

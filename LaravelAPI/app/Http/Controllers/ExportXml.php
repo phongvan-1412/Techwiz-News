@@ -52,7 +52,13 @@ class ExportXml extends Controller
     {
         $this->endNode = self::EndNode($this->baseXml);
         $this->xml .= $this->endNode;
-        file_put_contents($fileName,$this->xml);
+        try{
+            file_put_contents($fileName,$this->xml);
+        }
+        catch(Throwable $e) {
+            
+            fclose($fileName);
+          }
     }
 
     private function EndNode($newName)
