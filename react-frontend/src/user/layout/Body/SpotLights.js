@@ -13,6 +13,7 @@ class SpotLights extends Component {
           ourSpotlights.length = 2;
           return (
             <div className="row col-9">
+              <h1>spotlight</h1>
               {ourSpotlights.map((spotlight) => (
                 <SpotLight
                   key={spotlight.blog_id}
