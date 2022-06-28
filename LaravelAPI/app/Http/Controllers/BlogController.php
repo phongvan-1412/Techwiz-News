@@ -151,4 +151,10 @@ class BlogController extends Controller
 
         return $collection;
     }
+
+    public function getAllPost(){
+        $blogs = db::select(Name::$SelectActiveBlog);
+
+        return view('/admin.allpost', ['blogs' => $blogs]);
+    }
 }

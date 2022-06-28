@@ -50,7 +50,7 @@
         <div id="category" class="collapse" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Custom Utilities:</h6>
-                <a class="collapse-item admin_menu" data-link="#">All Post</a>
+                <a class="collapse-item admin_menu" href="/allpost" data-link="/allpost">All Post</a>
                 <a class="collapse-item admin_menu" data-link="#">Add New</a>
                 <a class="collapse-item admin_menu" data-link="#">Trash</a>
                 <a class="collapse-item admin_menu" data-link="#">Drafts</a>
