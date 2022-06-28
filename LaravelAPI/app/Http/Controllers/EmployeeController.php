@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-employee_contact
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\NameSetting as Name;
@@ -9,6 +9,9 @@ use App\Models\Employee;
 
 class EmployeeController extends Controller
 {
+    public function getAdminhome() {
+        return view('admin.dashboard');
+    }
     public function InsertEmployee(Request $request)
     {
         $employee_name = $request->employee_name;
@@ -94,7 +97,7 @@ class EmployeeController extends Controller
 
     public function SelectAllEmployee()
     {
-        $employees = DB::(Name::$SelectAllEmployee);
+        $employees = DB::select(Name::$SelectAllEmployee);
         return $employees;
     }
     
