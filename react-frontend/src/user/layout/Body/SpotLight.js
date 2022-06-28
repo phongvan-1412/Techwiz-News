@@ -13,6 +13,11 @@ class SpotLight extends Component {
               cursor: "pointer",
               color: "black",}} >{blog_title}</Link ></h1>
       </div>
+      //   <Consumer>
+      //     {(value) => {
+
+      //     }}
+      //   </Consumer>
     );
   }
 }

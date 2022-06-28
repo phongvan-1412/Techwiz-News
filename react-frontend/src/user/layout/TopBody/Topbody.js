@@ -14,7 +14,7 @@ class TopBody extends Component {
           return (
             <div className="row col-9">
               <div>
-                <h1>Top Body Image</h1>
+                <h1>Image</h1>
               </div>
               {ourSpotlights.map((spotlight) => (
                 <div className="card card-body mb3 col-md-6">

@@ -25,7 +25,6 @@ class NameSetting extends Model
     static $ProcCheckExistsblogComment = "exec sp_check_exists_blog_comment";
     static $ProcCheckExistsblogCommentById = "exec sp_check_blog_comment_by_id";
     static $SelectBlogCommentByTitle = "exec sp_select_blog_comment_by_blog_title";
-    static $SelectAllBlog = "exec sp_select_all_blog";
     // blog_request
     static $FunctionCheckExistsBlogRequest = "dbo.check_exists_blog_request";
 
