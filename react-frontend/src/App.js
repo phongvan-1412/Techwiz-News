@@ -9,8 +9,7 @@ import {
 } from "react-router-dom";
 import Header from "./user/layout/Header";
 import Footer from "./user/layout/Footer";
-import SpotLights from "./user/layout/Body/SpotLights";
-import TopBody from "./user/layout/TopBody/Topbody";
+import MainContent from "./user/layout/MainContent/MainContent";
 
 import { Provider } from "./user/layout/Body/BodySpotLight";
 
@@ -22,13 +21,12 @@ class App extends Component {
         <Router>
           <div className="App">
             <Header branding="Contact Manager"></Header>
-            <TopBody />
             <div className="container">
               <Routes>
               
                 
               </Routes>
-              <SpotLights />
+             <MainContent></MainContent>
             </div>
             <Footer />
           </div>
