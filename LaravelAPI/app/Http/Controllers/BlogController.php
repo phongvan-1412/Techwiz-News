@@ -153,8 +153,20 @@ class BlogController extends Controller
     }
 
     public function getAllPost(){
-        $blogs = db::select(Name::$SelectActiveBlog);
+        $blogs = db::select(Name::$SelectActiveBlog."'1'");
 
         return view('/admin.allpost', ['blogs' => $blogs]);
     }
+
+    
+    public function getTrash(){
+        $blogs = db::select(Name::$SelectActiveBlog."'2'");
+
+        return view('/admin.trash', ['blogs' => $blogs]);
+    }
+    public function getDrafts(){
+        $blogs = db::select(Name::$SelectActiveBlog."'3'");
+
+        return view('/admin.drafts', ['blogs' => $blogs]);
+    }    
 }
