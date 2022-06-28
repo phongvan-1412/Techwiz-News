@@ -12,6 +12,6 @@ class BlogRequest extends Model
     public $blog_title;
     public $admin_id;
     public $emp_id;
-    public $blog_request_id;
-    public $blog_request_id;
+    public $blog_request_accept_status;
+    public $blog_request_cause;
 }
