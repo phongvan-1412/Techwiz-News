@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import SpotLight from "./SpotLight";
-import { Consumer } from "./context";
+import { Consumer } from "../context";
 
 class SpotLights extends Component {
   render() {
@@ -17,7 +17,7 @@ class SpotLights extends Component {
               {ourSpotlights.map((spotlight) => (
                 <SpotLight
                   key={spotlight.blog_id}
-                  spotlight={spotlight}
+                  content={spotlight}
                 ></SpotLight>
               ))}
               

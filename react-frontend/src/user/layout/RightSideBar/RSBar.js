@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 class RSBar extends Component {
   render() {
-    const { blog_id, blog_title, blog_link } = this.props.rsbar;
+    const { blog_id, blog_title, blog_link } = this.props.content;
 
     return (
         <div className="row" style={{borderBottom:'solid 1px rgba(0,0,0,0.25)'}}>
@@ -18,7 +18,7 @@ class RSBar extends Component {
   }
 }
 RSBar.propTypes = {
-    rsbar: PropTypes.object.isRequired,
+  content: PropTypes.object.isRequired,
 }
 
 export default RSBar;

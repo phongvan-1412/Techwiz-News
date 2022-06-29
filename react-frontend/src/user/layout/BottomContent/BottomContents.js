@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import BottomContent from "./BottomContent";
-import { Consumer } from "../Body/context";
+import { Consumer } from "../context";
 
 class BottomContents extends Component {
   render() {
@@ -8,13 +8,16 @@ class BottomContents extends Component {
       <Consumer>
         {(value) => {
           const { spotlights } = value;
+          const q = [];
+          const ourSpotlights = q.concat(spotlights);
+          ourSpotlights.length = 2;
           return (
             <div className="row col-9">
-              <h1>BottomContents</h1>
-              {spotlights.map((spotlight) => (
+              <h1>bottom contents</h1>
+              {ourSpotlights.map((spotlight) => (
                 <BottomContent
                   key={spotlight.blog_id}
-                  spotlight={spotlight}
+                  content={spotlight}
                 ></BottomContent>
               ))}
               

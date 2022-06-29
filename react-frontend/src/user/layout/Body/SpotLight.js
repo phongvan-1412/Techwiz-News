@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 class SpotLight extends Component {
   render() {
-    const { blog_title, blog_content } = this.props.spotlight;
+    const { blog_title, blog_content } = this.props.content;
 
     return (
       <div className="card card-body mb3 col-md-6">
@@ -17,7 +17,7 @@ class SpotLight extends Component {
   }
 }
 SpotLight.propTypes = {
-    spotlight: PropTypes.object.isRequired,
+  content: PropTypes.object.isRequired,
 }
 
 export default SpotLight;

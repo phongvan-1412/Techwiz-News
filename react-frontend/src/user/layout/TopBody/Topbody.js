@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Consumer } from "../Body/context";
+import { Consumer } from "../context";
 import { Link } from "react-router-dom";
 
 class TopBody extends Component {

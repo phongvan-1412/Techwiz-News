@@ -4,9 +4,9 @@ const Context = React.createContext();
 
 export class Provider extends Component {
   state = {
-    lsbars: [
+    spotlights: [
       {
-        blog_id: "1",
+        blog_id: 1,
         emp_name: "Phuong",
         blog_title: "FAULKNER FOCUS",
         blog_content: "Raymond Arroyo: Hunter Biden is the 'Michael Myers of the Biden admin'",
@@ -15,7 +15,7 @@ export class Provider extends Component {
         blog_link: "abs"
       },
       {
-        blog_id: "2",
+        blog_id: 2,
         emp_name: "Phuong1",
         blog_title: "AMERICA'S NEWSROOM",
         blog_content: "Chad Wolf: We have no deterrence in our immigration system",
@@ -24,7 +24,7 @@ export class Provider extends Component {
         blog_link: "abs"
       },
       {
-        blog_id: "3",
+        blog_id: 3,
         emp_name: "Phuong2",
         blog_title: "FOX & FRIENDS",
         blog_content: "Rachel Campos-Duffy and Sean Duffy celebrate nephew winning Stanley Cup",
@@ -33,7 +33,7 @@ export class Provider extends Component {
         blog_link: "abs"
       },
       {
-        blog_id: "4",
+        blog_id: 4,
         emp_name: "Phuong3",
         blog_title: "FOX & FRIENDS FIRST",
         blog_content: "Putin can fund his war machine 'indefinitely' until Biden opens up US oil spigots: Rep. Waltz",

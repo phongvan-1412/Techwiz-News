@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Consumer } from "./Body/BodySpotLight";
+import { Consumer } from "../context";
 
 class BodyContents extends Component {
   render() {

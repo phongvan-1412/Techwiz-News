@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 class LSBar extends Component {
   render() {
-    const { blog_id, blog_link, blog_title, blog_content } = this.props.lsbar;
+    const { blog_id, blog_link, blog_title, blog_content } = this.props.content;
 
     return (
         <div className="row" style={{borderBottom:'solid 1px rgba(0,0,0,0.25)'}}>
@@ -19,7 +19,7 @@ class LSBar extends Component {
   }
 }
 LSBar.propTypes = {
-    lsbar: PropTypes.object.isRequired,
+  content: PropTypes.object.isRequired,
 }
 
 export default LSBar;
