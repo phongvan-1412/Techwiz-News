@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 class LSBar extends Component {
   render() {
-    const { blog_title, blog_content, category_name } = this.props.content;
+    const { blog_title, blog_content, category_name,blog_img_name } = this.props.content;
     const title = blog_title.replace(" ", "-");
     return (
       <div
@@ -15,24 +15,42 @@ class LSBar extends Component {
           className="col-md-4"
           style={{ fontSize: "13px", fontWeight: "bold" }}
         >
-          <Link
-            to={`/${category_name}/${title}`}
-            replace
-            className="nav-link"
+          <img
+            src={require(`../TopBody/${blog_img_name}.jpg`)}
             style={{
-              cursor: "pointer",
-              color: "black",
+              width: "100%",
+              height: "100%",
+              objectFit: "center",
+              objectPosition: "center",
             }}
-          >
-            {blog_title}
-          </Link>
+          />
         </h4>
         <ul className="col-md-8">
           <li className="" style={{ fontSize: "13px", fontWeight: "bold" }}>
-            {blog_title}
+            <Link
+              to={`/${category_name}/${title}`}
+              replace
+              className="nav-link"
+              style={{
+                cursor: "pointer",
+                color: "black",
+              }}
+            >
+              {blog_title}
+            </Link>
           </li>
           <li className="" style={{ fontSize: "13px" }}>
-            {blog_content}
+            <Link
+              to={`/${category_name}/${title}`}
+              replace
+              className="nav-link"
+              style={{
+                cursor: "pointer",
+                color: "black",
+              }}
+            >
+              {blog_content}
+            </Link>
           </li>
         </ul>
       </div>
