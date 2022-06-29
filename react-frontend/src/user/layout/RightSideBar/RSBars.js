@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import RSBar from "./RSBar";
-import { Consumer } from "../Body/context";
+import { Consumer } from "../LeftSideBar/context";
 
 class RSBars extends Component {
   render() {
@@ -13,10 +13,10 @@ class RSBars extends Component {
                             <h6 className="">
                                 <span className="">Exclusive Clips</span> 
                             </h6>
-                        {rsbars.map(content=>(
+                        {rsbars.map(lsbar=>(
                             <RSBar 
-                            key = {content.id}
-                            content = {content} 
+                            key = {lsbar.id}
+                            lsbar = {lsbar} 
                             />
                         ))}
                         </div>

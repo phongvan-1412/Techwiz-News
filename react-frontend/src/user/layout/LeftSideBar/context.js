@@ -4,7 +4,7 @@ const Context = React.createContext();
 
 export class Provider extends Component {
   state = {
-    contents: [
+    lsbars: [
       {
         blog_id: "1",
         emp_name: "Phuong",
