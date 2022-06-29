@@ -10,7 +10,7 @@ class BottomContent extends Component {
     return (
       <div className="row">
         <div className="col-md-6">
-          <Link to='/' replace className="nav-link"><img src={require('../TopBody/image-1.jpg')} style={{width:"100%",height:'auto',objectPosition:'center',objectFit:'center'}}/></Link >
+          <Link to={`/${category_name}/${title}`} replace className="nav-link"><img src={require('../TopBody/image-1.jpg')} style={{width:"100%",height:'auto',objectPosition:'center',objectFit:'center'}}/></Link >
         </div>
         <div className="col-md-6">
           <div className="row">
