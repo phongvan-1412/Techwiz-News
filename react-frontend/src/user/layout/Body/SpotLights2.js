@@ -14,7 +14,7 @@ class SpotLights1 extends Component {
           ourSpotlights.reverse();
           ourSpotlights.length = 2;
           return (
-            <div className="col-md-12">
+            <div className="col-md-12" style={{borderBottom:'1px solid rgba(0,0,0,0.25)',marginBottom:'10px'}}>
               <div className="row">
                 {ourSpotlights.map((spotlight) => (
                   <SpotLight

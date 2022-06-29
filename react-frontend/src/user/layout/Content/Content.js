@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { Consumer } from "./context";
+import { Consumer } from "../context";
+// import HeaderContent from './HeaderContent';
+// import MainBodyContent from "../MainBodyContent";
 
 class Content extends Component {
   render() {

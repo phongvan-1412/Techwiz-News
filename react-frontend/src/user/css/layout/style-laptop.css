@@ -27,6 +27,9 @@ body{
     list-style: none;
 }
 /* ----------HEADER---------- */
+header{
+    
+}
 /* ----------ADVERTISMENT---------- */
 .advertisement{
     width: 100%;
@@ -47,19 +50,20 @@ body{
 
 /* main-nav branding  */
 .branding{
-    width: 150px;
-    margin-left: 20px;
+    width: 200px;
+    margin-left: 15px;
     display: block;
     align-self: center;
 }
 .branding h3{
     color: var(--textColor);
     font-style: italic;
-    font: 'Lato', sans-serif;
+    font: 'League Gothic', sans-serif;;
 }
 .branding span{
     font-size: 13px;
 }
+
 /* main nav main  */
 .main-menu {
     display: flex;
@@ -72,6 +76,7 @@ body{
 .main-menu a:hover{
     padding: 5px;
     background-color: var(--mainColorLight);
+    color: var(--textColor);
     border-radius: 3px;
 }
 .main-menu a{
@@ -129,7 +134,7 @@ body{
     display: flex;
     align-self: center;
     margin: auto 155px;
-    background-color: white;
+    background-color: var(--backGround);
 }
 .secondary-nav .subnav-title{
     color: var(--secondaryColor);

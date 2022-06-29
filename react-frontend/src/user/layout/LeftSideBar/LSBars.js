@@ -13,8 +13,8 @@ class LSBars extends Component {
           ourSpotlights.length = 10;
           return (
             <div>
-              <h6 className="col-lg-12">
-                <span className="">Exclusive Clips</span>
+              <h6>
+                <span style={{fontSize:'15px',fontWeight:'bold',margin: '15px 0'}}>Exclusive Clips</span>
               </h6>
               {ourSpotlights.map((spotlight) => (
                 <LSBar

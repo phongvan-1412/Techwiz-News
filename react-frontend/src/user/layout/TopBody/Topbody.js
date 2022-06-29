@@ -21,7 +21,7 @@ class TopBody extends Component {
                   <div className="col-md-12">
                     <Link to="/">
                       <img
-                        src={require(`../TopBody/${spotlight.blog_img_name}.jpg`)}
+                        src={require('./222222222222.jpg')} //`../TopBody/${spotlight.blog_img_name}.jpg`
                         style={{
                           width: "100%",
                           height: "100%",

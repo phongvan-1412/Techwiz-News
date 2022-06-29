@@ -15,7 +15,7 @@ class SpotLight extends Component {
               src={require(`../TopBody/${blog_img_name}.jpg`)}
               style={{
                 width: "100%",
-                height: "100%",
+                height: "auto",
                 objectFit: "center",
                 objectPosition: "center",
               }}
@@ -29,8 +29,7 @@ class SpotLight extends Component {
               replace
               className="nav-link"
               style={{
-                cursor: "pointer",
-                color: "black",
+                color: "#036",fontWeight:'bold'
               }}
             >
               {blog_title}
@@ -43,8 +42,7 @@ class SpotLight extends Component {
             replace
             className="nav-link"
             style={{
-              cursor: "pointer",
-              color: "black",
+              color: "#036",
             }}
           >
             {blog_content}

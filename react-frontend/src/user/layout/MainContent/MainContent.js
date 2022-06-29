@@ -34,12 +34,18 @@ class MainContent extends Component {
         </div>
       </div>
 
-
-      <div className="row" style={{border:'1px solid rgba(0,0,0,0.25)',marginBottom:'20px',padding:'20px'}}>  
-        <span style={{padding: '5px',fontWeight:'bold'}}>Features and Faces</span>
-        <div className="container">
-          <PanelContents />
-        </div>
+      <div className="row">
+        <div className="col-md-12" style={{border:'1px solid rgba(0,0,0,0.25)',marginBottom:'50px',padding:'20px'}}> 
+          <div className="row">
+            <div className="col-md-12" style={{padding:'0px', marginBottom:'15px'}}>
+              <span style={{fontWeight:'bold'}}>Features and Faces</span>
+            </div>
+          
+            <div className="container">
+              <PanelContents />
+            </div>
+          </div>
+        </div> 
       </div>
 
       <div className="col-md-12" style={{marginBottom:'50px'}}>

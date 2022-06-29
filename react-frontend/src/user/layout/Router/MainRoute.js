@@ -7,7 +7,7 @@ import {
   Link,
   NavLink,
 } from "react-router-dom";
-import Content from "../Content";
+import Content from "../Content/Content";
 import MainContent from "../MainContent/MainContent";
 
 class MainRoute extends Component {

@@ -15,6 +15,7 @@ class BottomContents extends Component {
           ourSpotlights.length = 12;
           return (
             <div>
+              
               {ourSpotlights.map((spotlight) => (
                 <BottomContent
                   key={spotlight.blog_id}
