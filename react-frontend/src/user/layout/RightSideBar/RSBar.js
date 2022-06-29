@@ -18,7 +18,6 @@ class RSBar extends Component {
             </Link>
           </li>
           <li>
-            <a href={blog_link} style={{ fontSize: "13px", color: "blue" }}>
               <Link
                 to={`/${category_name}/${title}`}
                 replace
@@ -30,7 +29,6 @@ class RSBar extends Component {
               >
                 {blog_title}
               </Link>
-            </a>
           </li>
         </ul>
       </div>
