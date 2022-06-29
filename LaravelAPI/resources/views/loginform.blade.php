@@ -50,20 +50,20 @@
                     </ol>
                     <div class="carousel-inner" role="listbox">
                         <div class="carousel-item active">
-                            <img class="d-block img-fluid" src="https://static.pexels.com/photos/33972/pexels-photo.jpg"
+                            <img class="d-block img-fluid" 
+                                src="{{asset('upload/coffee1.jpg')}}"
                                 alt="First slide">
                         </div>
                         <div class="carousel-item">
                             <img class="d-block img-fluid"
-                                src="https://images.pexels.com/photos/7097/people-coffee-tea-meeting.jpg"
+                                src="{{asset('upload/coffee2.jpg')}}"
                                 alt="First slide">
                         </div>
                         <div class="carousel-item">
                             <img class="d-block img-fluid"
-                                src="https://images.pexels.com/photos/518543/pexels-photo-518543.jpeg?cs=srgb&dl=pexels-brotin-biswas-518543.jpg&fm=jpg"
+                                src="{{asset('upload/coffee.jpg')}}"
                                 alt="First slide">
                         </div>
-
                     </div>
 
                 </div>
