@@ -12,17 +12,16 @@ class TopBody extends Component {
           const ourSpotlights = q.concat(spotlights);
           ourSpotlights.length = 2;
           return (
-            <div className="row" style={{textAlign:'center'}}>
+            <div className="row" style={{textAlign:'center', alignSelf:'center'}}>
 
               {ourSpotlights.map((spotlight) => (
-                <div className="card-header mb-3 col-md-12" style={{backgroundColor: 'whitesmoke'}}>
-                  <div className="col-md-12 topbody-content" >
-                    <div className="row">
-                      <span className="col-md-6" style={{alignSeft:'center'}}>{spotlight.blog_content}</span>
-                      <span className="col-md-6">{spotlight.blog_content}</span>
-                    </div>
+                <div className="card-header col-md-12 topbody-content" style={{backgroundColor: 'whitesmoke', textAlign:'center'}}>
+                  <div className="container">
+                  <div className="row" style={{textAlign:'center', alignSelf:'center'}}>
+                      <span className="col-md-6" style={{padding: '0px 20px', alignSeft:'center'}}>{spotlight.blog_content}</span>
+                      <span className="col-md-6" style={{padding: '0px 20px'}}>{spotlight.blog_content}</span>
                   </div>
-                  
+                  </div>
                 </div>
               ))}
             </div>

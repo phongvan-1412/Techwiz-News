@@ -8,8 +8,8 @@ class PanelContent extends Component {
     const { blog_img_name } = this.props.content;
     
     return (
-      <div className="card card-body mb3">
-            <img src={require(`../TopBody/${blog_img_name}.jpg`)} style={{width:'100px',height:'auto',objectFit:'center',objectPosition:'center'}} />
+      <div className="mb-3">
+            <img src={require(`../TopBody/${blog_img_name}.jpg`)} style={{width:'100%',height:'100%',objectFit:'center',objectPosition:'center'}} />
       </div>
     );
   }

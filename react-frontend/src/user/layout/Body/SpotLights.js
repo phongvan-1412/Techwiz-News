@@ -13,14 +13,12 @@ class SpotLights extends Component {
           ourSpotlights.length = 2;
           return (
             <div className="col-md-12">
-              <div className="row">
                 {ourSpotlights.map((spotlight) => (
                   <SpotLight
                     key={spotlight.blog_id}
                     content={spotlight}
                   ></SpotLight>
                 ))}
-              </div>
             </div>
           );
         }}

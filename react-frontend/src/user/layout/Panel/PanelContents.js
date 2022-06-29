@@ -35,21 +35,25 @@ class PanelContents extends Component {
           ourSpotlights.length = 10;
           let c = 1;
           return (
-            <div className="row">
-              <button className="button col-1" onClick={this.previous}>
-                Previous
-              </button>
-              <div className="row col-10">
-                <Slider ref={(c) => (this.slider = c)} {...settings}>
-                  {ourSpotlights.map((spotlight) => (
-                    <PanelContent key={spotlight.blog_id} content={spotlight}></PanelContent>
-                  ))}
-                </Slider>
-              </div>
-              <button className="button col-1" onClick={this.next} >
-                Next
-              </button>
-            </div>
+
+                <div className="row">
+                  <button className="button col-1" onClick={this.previous}>
+                    Previous
+                  </button>
+
+                  <div className="col-10">
+                    <Slider ref={(c) => (this.slider = c)} {...settings}>
+                      {ourSpotlights.map((spotlight) => (
+                        <PanelContent key={spotlight.blog_id} content={spotlight}></PanelContent>
+                      ))}
+                    </Slider>
+                  </div>
+
+                  <button className="button col-1" onClick={this.next} >
+                    Next
+                  </button>
+                </div>
+                  
           );
         }}
       </Consumer>

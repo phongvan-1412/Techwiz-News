@@ -7,18 +7,20 @@ import TopBodyContent from "../TopBody/TopbodyContent";
 import LSBars from "../LeftSideBar/LSBars";
 import RSBars from "../RightSideBar/RSBars";
 import PanelContents from "../Panel/PanelContents";
+
+
 class MainContent extends Component {
   render() {
     return (
-      <div>
+    <div>
         
-      <div className="row">
+      <div className="row" style={{border:'1px solid rgba(0,0,0,0.25)', marginBottom:'20px'}}>
 
-        <div className=" col-lg-2 col-md-2" style={{}}>
+        <div className=" col-lg-2 col-md-2 col-xs-0" style={{}}>
           <LSBars />
         </div>
 
-        <div className="col-lg-8 col-md-6">
+        <div className="col-lg-8 col-md-6" style={{border:'1px solid rgba(0,0,0,0.25)',borderBottom:'none'}}>
             <TopBody />
             <TopBodyContent />
             <SpotLights />
@@ -31,14 +33,15 @@ class MainContent extends Component {
       </div>
 
 
-      <div className="row">
-        <div className=" col-md-12">
+      <div className="row" style={{border:'1px solid rgba(0,0,0,0.25)',marginBottom:'20px',padding:'20px'}}>  
+        <span style={{padding: '5px',fontWeight:'bold'}}>Features and Faces</span>
+        <div className="container">
           <PanelContents />
         </div>
-        
-        <div className=" col-md-12">
-          <BottomContents />
-        </div>
+      </div>
+
+      <div className="col-md-12" style={{marginBottom:'50px'}}>
+        <BottomContents />
       </div>
     </div>
     );

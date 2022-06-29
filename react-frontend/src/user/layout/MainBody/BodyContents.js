@@ -8,16 +8,17 @@ class BodyContents extends Component {
       <Consumer>
         {(value) => {
           const { spotlights } = value;
+          const q = [];
+          const ourSpotlights = q.concat(spotlights);
+          ourSpotlights.length = 30;
           return (
-            <div className="row col-9">
-              <h1>body content</h1>
+            <div className="">
               {spotlights.map((spotlight) => (
                 <Body
                   key={spotlight.blog_id}
                   content={spotlight}
                 ></Body>
               ))}
-              
             </div>
           );
         }}
