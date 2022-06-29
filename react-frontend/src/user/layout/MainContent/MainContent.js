@@ -3,6 +3,7 @@ import BottomContents from "../BottomContent/BottomContents";
 import SpotLights from "../Body/SpotLights";
 import BodyContents from "../MainBody/BodyContents";
 import TopBody from "../TopBody/Topbody";
+import TopBodyContent from "../TopBody/TopbodyContent";
 import LSBars from "../LeftSideBar/LSBars";
 import RSBars from "../RightSideBar/RSBars";
 import PanelContents from "../Panel/PanelContents";
@@ -19,6 +20,7 @@ class MainContent extends Component {
 
         <div className="col-lg-8 col-md-6">
             <TopBody />
+            <TopBodyContent />
             <SpotLights />
             <BodyContents />
         </div>

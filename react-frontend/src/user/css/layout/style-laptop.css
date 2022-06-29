@@ -18,7 +18,8 @@ body{
 }
 * a{
     text-decoration: none;
-    color: var(--textColor)
+    color: var(--textColor);
+    cursor: pointer;
 }
 * li{
     list-style: none;
