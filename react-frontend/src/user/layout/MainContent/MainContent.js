@@ -9,25 +9,36 @@ import PanelContents from "../Panel/PanelContents";
 class MainContent extends Component {
   render() {
     return (
+      <div>
+        
       <div className="row">
-        <div className="row col-2">
+
+        <div className=" col-lg-2 col-md-2" style={{}}>
           <LSBars />
         </div>
-        <div className="row col-8">
-          <TopBody />
-          <SpotLights />
-          <BodyContents />
+
+        <div className="col-lg-8 col-md-6">
+            <TopBody />
+            <SpotLights />
+            <BodyContents />
         </div>
-        <div className="row col-2">
-          <RSBars />
+
+        <div className="col-lg-2 col-md-2">
+          <RSBars/>
         </div>
-        <div className="row col-12">
+      </div>
+
+
+      <div className="row">
+        <div className=" col-md-12">
           <PanelContents />
         </div>
-        <div className="row col-12">
+        
+        <div className=" col-md-12">
           <BottomContents />
         </div>
       </div>
+    </div>
     );
   }
 }

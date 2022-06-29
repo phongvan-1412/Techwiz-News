@@ -12,7 +12,7 @@ class SpotLights extends Component {
           const ourSpotlights = q.concat(spotlights);
           ourSpotlights.length = 2;
           return (
-            <div className="row col-9">
+            <div className="col-9">
               <h1>spotlight</h1>
               {ourSpotlights.map((spotlight) => (
                 <SpotLight

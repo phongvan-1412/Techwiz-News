@@ -8,10 +8,12 @@ class RSBar extends Component {
     const { blog_id, blog_title, blog_link } = this.props.content;
 
     return (
-        <div className="row" style={{borderBottom:'solid 1px rgba(0,0,0,0.25)'}}>
-            <ul className="col-md-8" >
-                <li className="" style={{fontSize:'13px', fontWeight:'bold'}}>{blog_title}</li>
-                <li className="" style={{fontSize:'13px'}}>{blog_link}</li>
+        <div style={{borderBottom:'solid 1px rgba(0,0,0,0.25)'}}>
+            <ul>
+                <li>
+                  <Link to={blog_title} style={{fontSize:'13px', fontWeight:'bold',color:'blue'}}>{blog_title}</Link></li>
+                <li >
+                  <a href={blog_link} style={{fontSize:'13px',color:'blue'}}>{blog_link}</a></li>
             </ul>
         </div>   
     );

@@ -8,7 +8,7 @@ class SpotLight extends Component {
     const { blog_title, blog_content } = this.props.content;
 
     return (
-      <div className="card card-body mb3 col-md-6">
+      <div className="mb-3 col-md-6">
         <h1><Link  to="/bodySpotLight" style={{
               cursor: "pointer",
               color: "black",}} >{blog_title}</Link ></h1>

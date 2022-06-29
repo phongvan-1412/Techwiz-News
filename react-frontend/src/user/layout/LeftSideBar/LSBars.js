@@ -12,8 +12,8 @@ class LSBars extends Component {
           const ourSpotlights = q.concat(spotlights);
           ourSpotlights.length = 10;
           return (
-            <div className="row col-2">
-              <h6 className="">
+            <div className="row">
+              <h6>
                 <span className="">Exclusive Clips</span>
               </h6>
               {ourSpotlights.map((spotlight) => (

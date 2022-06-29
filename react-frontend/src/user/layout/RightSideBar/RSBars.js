@@ -12,9 +12,9 @@ class RSBars extends Component {
           const ourSpotlights = q.concat(spotlights);
           ourSpotlights.length = 10;
           return (
-            <div className="row col-2">
+            <div className="row">
               <h6 className="">
-                <span className="">Exclusive Clips</span>
+                <span>Exclusive Clips</span>
               </h6>
               {ourSpotlights.map((spotlight) => (
                 <RSBar
