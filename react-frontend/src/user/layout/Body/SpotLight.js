@@ -9,54 +9,24 @@ class SpotLight extends Component {
     const title = blog_title.replace(" ", "-");
     return (
       <div className="col-md-6">
-<<<<<<< HEAD
-        <div>
-          <Link to="/">
-            <img
-              src={require(`../TopBody/${blog_img_name}.jpg`)}
-              style={{
-                width: "100%",
-                height: "auto",
-                objectFit: "center",
-                objectPosition: "center",
-              }}
-            />
-          </Link>
-        </div>
-        <div>
-          <h4>
-            <Link
-              to={`/${category_name}/${title}`}
-              replace
-              className="nav-link"
-              style={{
-                color: "#036",fontWeight:'bold'
-              }}
-            >
-              {blog_title}
-            </Link>
-          </h4>
-        </div>
-        <div>
-=======
         <div><Link to={`/${category_name}/${title}`}>
           <img
             src={require(`../TopBody/${blog_img_name}.jpg`)}
             style={{
               width: "100%",
-              height: "100%",
+              height: "auto",
               objectFit: "center",
               objectPosition: "center",
             }}
           />
         </Link></div>
         <div><h4>
->>>>>>> 44bd4bb9b575f65295f59a3e2f019a08edc101d6
           <Link
             to={`/${category_name}/${title}`}
             replace
             className="nav-link"
             style={{
+              fontWeight:'bold',
               color: "#036",
             }}
           >
@@ -68,8 +38,7 @@ class SpotLight extends Component {
           replace
           className="nav-link"
           style={{
-            cursor: "pointer",
-            color: "black",
+            color: "#036",
           }}
         >
           {blog_content}

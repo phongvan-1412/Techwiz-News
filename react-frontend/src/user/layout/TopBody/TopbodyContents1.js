@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Consumer } from "../context";
-import TopBodyContent from "./Topbody";
+import TopBodyContent from "./TopbodyContent";
 
 class TopBodyContents1 extends Component {
   render() {

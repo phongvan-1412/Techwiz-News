@@ -11,7 +11,7 @@ class BodyContent extends Component {
         <div className="col-md-12">
           <div className="row" style={{borderBottom:'1px solid rgba(0, 0, 0, 0.25)', padding:'15px'}}>
             <div className="col-md-3">
-              <Link to={`/${category_name}/${title}`}><img src={require(`../TopBody/${blog_img_name}.jpg`)}  alt="" style={{ width:'100%', height:'auto',objectFit:'center',objectPosition:'center'}}/></Link>
+              <Link to={`/${category_name}/${blog_title}`}><img src={require(`../TopBody/${blog_img_name}.jpg`)}  alt="" style={{ width:'100%', height:'auto',objectFit:'center',objectPosition:'center'}}/></Link>
             </div>
             <div className="col-md-9">
               <div className="row">

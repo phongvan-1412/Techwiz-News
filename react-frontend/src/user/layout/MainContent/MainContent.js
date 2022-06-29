@@ -3,8 +3,9 @@ import BottomContents from "../BottomContent/BottomContents";
 import SpotLights1 from "../Body/SpotLights1";
 import SpotLights2 from "../Body/SpotLights2";
 import BodyContents from "../MainBody/BodyContents";
-import TopBodyContent1 from "../TopBody/TopbodyContent1";
-import TopBodyContent2 from "../TopBody/TopbodyContent2";
+// import TopBody from "../TopBody/TopbodyContent";
+import TopBodyContent1 from "../TopBody/TopbodyContents1";
+import TopBodyContent2 from "../TopBody/TopbodyContents2";
 import LSBars from "../LeftSideBar/LSBars";
 import RSBars from "../RightSideBar/RSBars";
 import PanelContents from "../Panel/PanelContents";
@@ -21,6 +22,7 @@ class MainContent extends Component {
         </div>
 
         <div className="col-lg-8 col-md-6" style={{border:'1px solid rgba(0,0,0,0.25)',borderBottom:'none'}}>
+            {/* <TopBody /> */}
             <TopBodyContent1 />
             <TopBodyContent2 />
             <SpotLights1 />
