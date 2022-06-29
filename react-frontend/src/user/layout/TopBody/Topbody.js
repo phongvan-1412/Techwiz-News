@@ -12,20 +12,33 @@ class TopBody extends Component {
           const ourSpotlights = q.concat(spotlights);
           ourSpotlights.length = 1;
           return (
-            <div className="row" style={{textAlign:'center'}}>
-              <div className="col-md-12">
-                <Link to="/"><img src={require('./image-1.jpg')} alt="" style={{ width: '100%', height: 'auto',objectFit:'center',objectPosition:'center' }} /></Link>
-              </div>
-
+            <div className="row" style={{ textAlign: "center" }}>
               {ourSpotlights.map((spotlight) => (
-                <div className="card-header mb-3 col-md-12" style={{backgroundColor: 'whitesmoke'}}>
-                  
+                <div
+                  className="card-header mb-3 col-md-12"
+                  style={{ backgroundColor: "whitesmoke" }}
+                >
+                  <div className="col-md-12">
+                    <Link to="/">
+                      <img
+                        src={require(`../TopBody/${spotlight.blog_img_name}.jpg`)}
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "center",
+                          objectPosition: "center",
+                        }}
+                      />
+                    </Link>
+                  </div>
                   <h1>
-                    <Link to="/bodySpotLight" style={{ cursor: "pointer", color: "#003366", hover:'' }}>
+                    <Link
+                      to="/bodySpotLight"
+                      style={{ cursor: "pointer", color: "#003366", hover: "" }}
+                    >
                       {spotlight.blog_title}
                     </Link>
                   </h1>
-
                 </div>
               ))}
             </div>
