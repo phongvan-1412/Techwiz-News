@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 
 class BottomContent extends Component {
   render() {
-    const { blog_title, blog_content } = this.props.content;
-
+    const { blog_title, category_name } = this.props.content;
+    const  title  = blog_title.replace(" ","-");
     return (
-      <div className="card card-body mb3 col-md-6">
-        <h1><Link  to="/bodySpotLight" style={{
+      <div className="nav-item">
+        <h1><Link to={`/${category_name}/${title}`} replace className="nav-link"style={{
               cursor: "pointer",
               color: "black",}} >{blog_title}</Link ></h1>
       </div>
