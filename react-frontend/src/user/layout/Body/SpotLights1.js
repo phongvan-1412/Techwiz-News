@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import SpotLight from "./SpotLight";
 import { Consumer } from "../context";
 
-class SpotLights extends Component {
+class SpotLights1 extends Component {
   render() {
     return (
       <Consumer>
@@ -13,12 +13,14 @@ class SpotLights extends Component {
           ourSpotlights.length = 2;
           return (
             <div className="col-md-12">
+              <div className="row">
                 {ourSpotlights.map((spotlight) => (
                   <SpotLight
                     key={spotlight.blog_id}
                     content={spotlight}
                   ></SpotLight>
                 ))}
+              </div>
             </div>
           );
         }}
@@ -26,4 +28,4 @@ class SpotLights extends Component {
     );
   }
 }
-export default SpotLights;
+export default SpotLights1;

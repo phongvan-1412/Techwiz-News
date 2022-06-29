@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import BottomContents from "../BottomContent/BottomContents";
-import SpotLights from "../Body/SpotLights";
+import SpotLights1 from "../Body/SpotLights1";
+import SpotLights2 from "../Body/SpotLights2";
 import BodyContents from "../MainBody/BodyContents";
 import TopBody from "../TopBody/Topbody";
 import TopBodyContent from "../TopBody/TopbodyContent";
@@ -23,7 +24,8 @@ class MainContent extends Component {
         <div className="col-lg-8 col-md-6" style={{border:'1px solid rgba(0,0,0,0.25)',borderBottom:'none'}}>
             <TopBody />
             <TopBodyContent />
-            <SpotLights />
+            <SpotLights1 />
+            <SpotLights2 />
             <BodyContents />
         </div>
 
