@@ -1,7 +1,7 @@
 .login-block{
-    background: #5e64dc;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #5e64dc, #111563);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #5e64dc, #111563); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #051e4d;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #051e4d, #4569ea);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #051e4d, #4569ea); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     float:left;
     width:100%;
     padding : 50px 0;
@@ -35,7 +35,7 @@
     font-weight: 600;
     text-align: center;
     font-family: "Open Sans", Verdana, Arial, sans-serif;
-    color: #5e64dc
+    color: #4569ea
 }
 .row{
     justify-content:center;

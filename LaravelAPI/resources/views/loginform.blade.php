@@ -42,7 +42,7 @@
                 <div class="copy-text">Created with <i class="fa fa-heart"></i> by BuffDog</div>
             </div>
             <div class="col-md-8 banner-sec">
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -60,10 +60,12 @@
                         </div>
                         <div class="carousel-item">
                             <img class="d-block img-fluid"
-                                src="https://images.pexels.com/photos/872957/pexels-photo-872957.jpeg"
+                                src="https://images.pexels.com/photos/518543/pexels-photo-518543.jpeg?cs=srgb&dl=pexels-brotin-biswas-518543.jpg&fm=jpg"
                                 alt="First slide">
                         </div>
+
                     </div>
+
                 </div>
             </div>
         </div>
