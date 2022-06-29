@@ -23,7 +23,7 @@ class PanelContents extends Component {
       dots: true,
       infinite: true,
       speed: 500,
-      slidesToShow: 1,
+      slidesToShow: 4,
       slidesToScroll: 1,
     };
     return (
@@ -36,17 +36,17 @@ class PanelContents extends Component {
           let c = 1;
           return (
             <div className="row">
-              <button className="button col-sm-1" onClick={this.previous}>
+              <button className="button col-1" onClick={this.previous}>
                 Previous
               </button>
-              <div className="row col-8">
+              <div className="row col-10">
                 <Slider ref={(c) => (this.slider = c)} {...settings}>
                   {ourSpotlights.map((spotlight) => (
-                    <PanelContent key={c++} content={spotlight}></PanelContent>
+                    <PanelContent key={spotlight.blog_id} content={spotlight}></PanelContent>
                   ))}
                 </Slider>
               </div>
-              <button className="button col-sm-1" onClick={this.next}>
+              <button className="button col-1" onClick={this.next} >
                 Next
               </button>
             </div>
