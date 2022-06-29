@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 
 class PanelContent extends Component {
   render() {
-    const { blog_title, blog_content } = this.props.content;
-
+    const { blog_img_name } = this.props.content;
+    
     return (
       <div className="card card-body mb3">
-            <img src={require('../TopBody/image-1.jpg')} alt="" style={{width:'100px',height:'auto',objectFit:'center',objectPosition:'center'}}/>
+            <img src={require(`../TopBody/${blog_img_name}.jpg`)} style={{width:'100px',height:'auto',objectFit:'center',objectPosition:'center'}} />
       </div>
     );
   }
