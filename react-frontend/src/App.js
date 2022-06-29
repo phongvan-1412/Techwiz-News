@@ -3,6 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import {BrowserRouter as Router,} from "react-router-dom";
 import Header from "./user/layout/Header";
 import Footer from "./user/layout/Footer";
+import Advertisement from "./user/layout/Advertisement";
+
 import { Provider } from "../src/user/layout/context";
 import MainRoute from "./user/layout/Router/MainRoute";
 
@@ -12,7 +14,8 @@ class App extends Component {
       <Provider>
         <Router>
           <div className="App">
-            <Header branding="Contact Manager"></Header>
+            <Header />
+            <Advertisement />
             <div className="container">
               <MainRoute />
             </div>

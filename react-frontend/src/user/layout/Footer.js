@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { FaFacebook, FaTwitter, FaInstagramSquare} from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md'
 
+
 import '../css/layout/style-mobile.css';
 import '../css/layout/style-tablet.css';
 import '../css/layout/style-laptop.css';
