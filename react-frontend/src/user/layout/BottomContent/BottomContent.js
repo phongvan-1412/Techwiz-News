@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 
-class SpotLight extends Component {
+class BottomContent extends Component {
   render() {
     const { blog_title, blog_content } = this.props.spotlight;
 
@@ -16,8 +16,8 @@ class SpotLight extends Component {
     );
   }
 }
-SpotLight.propTypes = {
+BottomContent.propTypes = {
     spotlight: PropTypes.object.isRequired,
 }
 
-export default SpotLight;
+export default BottomContent;

@@ -112,7 +112,7 @@ class BlogController extends Controller
     
     public function XmlBlogFile()
     {
-        $blogs = DB::select(Name::$SelectActiveBlog);
+        $blogs = DB::select(Name::$SelectAllBlog);
 
         $collection = self::AddCollection($blogs);
 
@@ -125,17 +125,19 @@ class BlogController extends Controller
             $tmp_collect = $collect;
             $xml->StartChildNode("Blog");
             $xml->AddNode("blog_id",$collect->blog_id);
-            $xml->AddNode("emp_name",$collect->emp_name);
+            $xml->AddNode("emp_id",$collect->emp_id);
             $xml->AddNode("blog_title",$collect->blog_title);
             $xml->AddNode("blog_content",$collect->blog_content);
-            $xml->AddNode("blog_day_open",$collect->blog_day_open);
+            $xml->AddNode("blog_img_name",$collect->blog_img_name);
+            $xml->AddNode("blog_content",$collect->blog_content);
+            $xml->AddNode("category_id",$collect->category_id);
             $xml->AddNode("blog_status",$collect->blog_status);
 
             $xml->EndChildNode("Blog");
         }
 
         $xml->ExportXml("xml/blog.xml");
-        return $collection;
+        return $xml;
     }
 
     public function AddCollection($arr)

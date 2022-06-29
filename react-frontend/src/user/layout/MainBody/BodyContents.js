@@ -1,24 +1,21 @@
 import React, { Component } from "react";
-import SpotLight from "./SpotLight";
-import { Consumer } from "./context";
+import Body from "./BodyContent";
+import { Consumer } from "../Body/context";
 
-class SpotLights extends Component {
+class BodyContents extends Component {
   render() {
     return (
       <Consumer>
         {(value) => {
           const { spotlights } = value;
-          const q = [];
-          const ourSpotlights = q.concat(spotlights);
-          ourSpotlights.length = 2;
           return (
             <div className="row col-9">
-              <h1>spotlight</h1>
-              {ourSpotlights.map((spotlight) => (
-                <SpotLight
+              <h1>BodyContents</h1>
+              {spotlights.map((spotlight) => (
+                <Body
                   key={spotlight.blog_id}
                   spotlight={spotlight}
-                ></SpotLight>
+                ></Body>
               ))}
               
             </div>
@@ -28,4 +25,4 @@ class SpotLights extends Component {
     );
   }
 }
-export default SpotLights;
+export default BodyContents;
