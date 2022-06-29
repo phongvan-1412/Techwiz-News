@@ -10,8 +10,12 @@
     --secondaryColor: #C20017;
     --tertiaryColor: #003366;
     --textColor: white;
+    --backGround: whitesmoke;
 }
 
+body{
+    background-color: var(--backGround);
+}
 * a{
     text-decoration: none;
     color: var(--textColor)

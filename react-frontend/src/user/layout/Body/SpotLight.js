@@ -9,9 +9,7 @@ class SpotLight extends Component {
 
     return (
       <div className="mb-3 col-md-6">
-        <h1><Link  to="/bodySpotLight" style={{
-              cursor: "pointer",
-              color: "black",}} >{blog_title}</Link ></h1>
+        <h1><Link  to="/bodySpotLight" style={{cursor: "pointer", color: "black",}} >{blog_title}</Link ></h1>
       </div>
     );
   }
