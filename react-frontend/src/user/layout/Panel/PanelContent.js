@@ -9,10 +9,7 @@ class PanelContent extends Component {
 
     return (
       <div className="card card-body mb3 col-md-2 row">
-            <h1>slider</h1>
-            <div className="col-12">Card image</div>
-            {/* <div className="col-12">{blog_title}</div> */}
-            <div className="col-12">Card link</div>
+            <img src={require('../TopBody/image-1.jpg')} alt="" style={{width:'100%',height:'auto',objectFit:'center',objectPosition:'center'}}/>
       </div>
     );
   }
