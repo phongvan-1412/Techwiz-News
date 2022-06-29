@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Consumer } from "../context";
+import { Consumer } from "./context";
 
-class BodyContents extends Component {
+class Content extends Component {
   render() {
     return (
       <Consumer>
@@ -9,7 +9,6 @@ class BodyContents extends Component {
           const { spotlights } = value;
           return (
             <div className="App">
-              <Header branding="Contact Manager"></Header>
               <div className="container">
                 <div className="row col-9">
                   <h1>Content title</h1>
@@ -17,7 +16,6 @@ class BodyContents extends Component {
                   <h1>Content </h1>
                 </div>
               </div>
-              <Footer />
             </div>
           );
         }}
@@ -25,4 +23,4 @@ class BodyContents extends Component {
     );
   }
 }
-export default BodyContents;
+export default Content;
