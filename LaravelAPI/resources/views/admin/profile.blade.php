@@ -28,7 +28,6 @@
                             <span class="btn btn-primary" id="changepwd">Change Password</span>
                         </div>
                     </div>
-
                 </div>
 
         </div>
