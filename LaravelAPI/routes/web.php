@@ -5,6 +5,8 @@ use App\Http\Controllers\CustomerController as Customer;
 use App\Http\Controllers\EmployeeController as Employee;
 use App\Http\Controllers\CategoryController as Category;
 use App\Http\Controllers\BlogController as Blog;
+use App\Http\Controllers\SigninoutController as Signinout;
+
 
 Route::get('/xmlblogfile',[Blog::class, 'XmlBlogFile']);
 
@@ -30,4 +32,9 @@ Route::post('/addpost', [Blog::class, 'postAddPost']);
 Route::get('/trash', [Blog::class, 'getTrash']);
 Route::get('/drafts', [Blog::class, 'getDrafts']);
 
-
+// LOGIN
+Route::get('/login', [Signinout::class, 'getLoginForm']);
+Route::post('/login', [Signinout::class, 'Login']);
+// REGISTER
+Route::get('register', [Signinout::class, 'getRegisterForm']);
+Route::post('register', [Signinout::class, 'Register']);
