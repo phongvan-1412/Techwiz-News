@@ -8,6 +8,7 @@ class BottomContent extends Component {
     const { blog_title, category_name, blog_img_name } = this.props.content;
     const  title  = blog_title.replace(" ","-");
     return (
+<<<<<<< HEAD
       <div>
         <div className="row">
             <div className="col-md-6" style={{textAlign:'left',fontWeight:'bold',padding:'0px',fontSize:'25px',textTransform:'uppercase'}}>
@@ -16,6 +17,11 @@ class BottomContent extends Component {
             <div className="col-md-6" style={{textAlign:'right',fontWeight:'bold',padding:'0px'}}>
               <Link to='/'><span style={{color:'#036'}}>View all</span></Link>
             </div>       
+=======
+      <div className="row">
+        <div className="col-md-6">
+          <Link to={`/${category_name}/${title}`} replace className="nav-link"><img src={require('../TopBody/image-1.jpg')} style={{width:"100%",height:'auto',objectPosition:'center',objectFit:'center'}}/></Link >
+>>>>>>> 44bd4bb9b575f65295f59a3e2f019a08edc101d6
         </div>
       
         <div className="row" style={{ border:'1px solid rgba(0,0,0,0.25)',marginBottom:'100px'}}>

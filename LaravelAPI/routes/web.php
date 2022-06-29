@@ -6,6 +6,8 @@ use App\Http\Controllers\EmployeeController as Employee;
 use App\Http\Controllers\CategoryController as Category;
 use App\Http\Controllers\BlogController as Blog;
 use App\Http\Controllers\SigninoutController as Signinout;
+use App\Http\Controllers\ProfileController as Profile;
+
 
 
 Route::get('/xmlblogfile',[Blog::class, 'XmlBlogFile']);
@@ -38,3 +40,7 @@ Route::post('/login', [Signinout::class, 'Login']);
 // REGISTER
 Route::get('register', [Signinout::class, 'getRegisterForm']);
 Route::post('register', [Signinout::class, 'Register']);
+
+// PROFILE
+Route::get('/profile', [Profile::class, 'getProfile']);
+Route::post('/profile', [Profile::class, 'postProfile']);

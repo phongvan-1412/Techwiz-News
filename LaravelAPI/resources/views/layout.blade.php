@@ -14,7 +14,7 @@
         <div id="header">
             @yield('header')
         </div>
-        <div class="row" >
+        <div class="row" id="container-profile" >
             @yield('body')
         </div>
         <div id="footer">
@@ -22,7 +22,7 @@
         </div>
     </div>
 
-<script src="{{asset('js/jquery-3.6.0.min.js')}}"></script>
+<script src="{{asset('js/admin/jquery-3.6.0.min.js')}}"></script>
 <script src="{{asset('js/bootstrap.js')}}"></script>
 @yield('scripts')
 </body>

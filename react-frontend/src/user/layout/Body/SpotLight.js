@@ -9,6 +9,7 @@ class SpotLight extends Component {
     const title = blog_title.replace(" ", "-");
     return (
       <div className="col-md-6">
+<<<<<<< HEAD
         <div>
           <Link to="/">
             <img
@@ -37,6 +38,20 @@ class SpotLight extends Component {
           </h4>
         </div>
         <div>
+=======
+        <div><Link to={`/${category_name}/${title}`}>
+          <img
+            src={require(`../TopBody/${blog_img_name}.jpg`)}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "center",
+              objectPosition: "center",
+            }}
+          />
+        </Link></div>
+        <div><h4>
+>>>>>>> 44bd4bb9b575f65295f59a3e2f019a08edc101d6
           <Link
             to={`/${category_name}/${title}`}
             replace
@@ -45,9 +60,23 @@ class SpotLight extends Component {
               color: "#036",
             }}
           >
-            {blog_content}
+            {blog_title}
           </Link>
-        </div>
+        </h4></div>
+        <div><Link
+          to={`/${category_name}/${title}`}
+          replace
+          className="nav-link"
+          style={{
+            cursor: "pointer",
+            color: "black",
+          }}
+        >
+          {blog_content}
+        </Link></div>
+        
+        
+        
       </div>
     );
   }

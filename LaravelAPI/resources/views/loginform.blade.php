@@ -42,7 +42,7 @@
                 <div class="copy-text">Created with <i class="fa fa-heart"></i> by BuffDog</div>
             </div>
             <div class="col-md-8 banner-sec">
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -50,20 +50,22 @@
                     </ol>
                     <div class="carousel-inner" role="listbox">
                         <div class="carousel-item active">
-                            <img class="d-block img-fluid" src="https://static.pexels.com/photos/33972/pexels-photo.jpg"
+                            <img class="d-block img-fluid" 
+                                src="{{asset('upload/coffee1.jpg')}}"
                                 alt="First slide">
                         </div>
                         <div class="carousel-item">
                             <img class="d-block img-fluid"
-                                src="https://images.pexels.com/photos/7097/people-coffee-tea-meeting.jpg"
+                                src="{{asset('upload/coffee2.jpg')}}"
                                 alt="First slide">
                         </div>
                         <div class="carousel-item">
                             <img class="d-block img-fluid"
-                                src="https://images.pexels.com/photos/872957/pexels-photo-872957.jpeg"
+                                src="{{asset('upload/coffee.jpg')}}"
                                 alt="First slide">
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
