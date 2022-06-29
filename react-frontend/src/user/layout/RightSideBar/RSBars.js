@@ -14,7 +14,7 @@ class RSBars extends Component {
           return (
             <div className="row">
               <h6 className="">
-                <span>Exclusive Clips</span>
+                <span>ROE V. WADE OVERTURNED</span>
               </h6>
               {ourSpotlights.map((spotlight) => (
                 <RSBar

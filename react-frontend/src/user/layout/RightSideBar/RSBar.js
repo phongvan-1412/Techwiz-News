@@ -10,14 +10,6 @@ class RSBar extends Component {
       <div style={{ borderBottom: "solid 1px rgba(0,0,0,0.25)" }}>
         <ul>
           <li>
-            <Link
-              to={blog_title}
-              style={{ fontSize: "13px", fontWeight: "bold", color: "blue" }}
-            >
-              {blog_title}
-            </Link>
-          </li>
-          <li>
               <Link
                 to={`/${category_name}/${title}`}
                 replace
@@ -27,7 +19,7 @@ class RSBar extends Component {
                   color: "black",
                 }}
               >
-                {blog_title}
+                {blog_content}
               </Link>
           </li>
         </ul>
