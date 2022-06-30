@@ -44,13 +44,13 @@ class MainContent extends Component {
 
         <div className="row">
           <div
-            className="col-md-12"
-            style={{
-              border: "1px solid rgba(0,0,0,0.25)",
-              marginBottom: "50px",
-              padding: "20px",
-            }}
-          >
+              className="col-md-12"
+              style={{
+                border: "1px solid rgba(0,0,0,0.25)",
+                marginBottom: "50px",
+                padding: "20px",
+              }}
+            >
             <div className="row">
               <div
                 className="col-md-12"

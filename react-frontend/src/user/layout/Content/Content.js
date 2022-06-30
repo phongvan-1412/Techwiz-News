@@ -5,8 +5,6 @@ import { FaFacebook, FaTwitter, FaInstagramSquare, FaFlipboard, FaComments, FaPr
 import { MdEmail } from 'react-icons/md'
 import { Consumer } from '../context'
 import RSBars from '../RightSideBar/RSBars'
-// import HeaderContent from './HeaderContent';
-// import MainBodyContent from './MainBodyContent';
 
 class Content extends Component {
   render() {

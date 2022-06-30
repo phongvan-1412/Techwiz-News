@@ -7,6 +7,7 @@ import {
   Link,
   NavLink,
 } from "react-router-dom";
+import Category from '../Category/Category'
 import Content from "../Content/Content";
 import MainContent from "../MainContent/MainContent";
 
@@ -26,6 +27,14 @@ class MainRoute extends Component {
                       spotlight.category_name
                     }/${spotlight.blog_title.replace(" ", "-")}`}
                     element={<Content />}
+                  ></Route>
+                ))}
+                {spotlights.map((spotlight) => (
+                  <Route
+                    path={`/${
+                      spotlight.category_name
+                    }`}
+                    element={<Category />}
                   ></Route>
                 ))}
               </Routes>
