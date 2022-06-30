@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import BottomContent from "./BottomContent";
 import { Consumer } from "../context";
-import { Link } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 
 class BottomContents extends Component {
   render() {
@@ -15,7 +14,6 @@ class BottomContents extends Component {
           ourSpotlights.length = 12;
           return (
             <div>
-              
               {ourSpotlights.map((spotlight) => (
                 <BottomContent
                   key={spotlight.blog_id}
@@ -23,7 +21,6 @@ class BottomContents extends Component {
                 ></BottomContent>
               ))}
             </div>
-            
           );
         }}
       </Consumer>

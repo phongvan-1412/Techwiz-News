@@ -6,7 +6,7 @@ import { Consumer } from '../context'
 import SpotLight from "../Body/SpotLight";
 import LSBars from '../LeftSideBar/LSBars'
 import TopBody from "../TopBody/TopBody";
-import SpotLightCategories from "./SpotlightCategories";
+import SpotLightCategories from "./SpotLightCategories";
 import PanelContents from "../Panel/PanelContents";
 import BottomCategories from "../BottomCategory/BottomCategories";
 

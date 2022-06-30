@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 class BottomCategory extends Component {
   render() {
     const { blog_title, category_name, blog_img_name, blog_content, blog_day_open } = this.props.content;
-    const title = blog_title.replace(" ", "-");
+    const tmp_title = blog_title.replace(" ", "");
+    const title = tmp_title.replace(["!@#$%^&*()_><.|,`"], "");
     return (
       <div>
         <div className="row" style={{ border: '1px solid rgba(0,0,0,0.25)', padding: '0px' }}>

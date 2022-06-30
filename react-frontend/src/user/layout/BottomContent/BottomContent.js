@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 class BottomContent extends Component {
   render() {
     const { blog_title, category_name, blog_img_name } = this.props.content;
-    const  title  = blog_title.replace(" ","-");
+    const tmp_title = blog_title.replace(" ", "");
+    const title = tmp_title.replace(["!@#$%^&*()_><.|,`"], "");
     return (
       <div>
         <div className="row">
@@ -26,13 +27,13 @@ class BottomContent extends Component {
           
           <div className="col-md-6">
             <div className="row"style={{padding:'10px'}}>
-              <Link to={`/${category_name}/${title}`} replace className="nav-link"style={{color: "#036", fontWeight:'bold'}} >{category_name}</Link >
+              <Link to={`/${category_name}`} replace className="nav-link"style={{color: "#036", fontWeight:'bold'}} >{category_name}</Link >
               <Link to={`/${category_name}/${title}`} replace className="nav-link"style={{color: "#036", borderBottom:'1px solid rgba(0,0,0,0.25)'}} >{blog_title}</Link >
-              <Link to={`/${category_name}/${title}`} replace className="nav-link"style={{color: "#036", fontWeight:'bold'}} >{category_name}</Link >
+              <Link to={`/${category_name}`} replace className="nav-link"style={{color: "#036", fontWeight:'bold'}} >{category_name}</Link >
               <Link to={`/${category_name}/${title}`} replace className="nav-link"style={{color: "#036", borderBottom:'1px solid rgba(0,0,0,0.25)'}} >{blog_title}</Link >
-              <Link to={`/${category_name}/${title}`} replace className="nav-link"style={{color: "#036", fontWeight:'bold'}} >{category_name}</Link >
+              <Link to={`/${category_name}`} replace className="nav-link"style={{color: "#036", fontWeight:'bold'}} >{category_name}</Link >
               <Link to={`/${category_name}/${title}`} replace className="nav-link"style={{color: "#036", borderBottom:'1px solid rgba(0,0,0,0.25)'}} >{blog_title}</Link >
-              <Link to={`/${category_name}/${title}`} replace className="nav-link"style={{color: "#036", fontWeight:'bold'}} >{category_name}</Link >
+              <Link to={`/${category_name}`} replace className="nav-link"style={{color: "#036", fontWeight:'bold'}} >{category_name}</Link >
               <Link to={`/${category_name}/${title}`} replace className="nav-link"style={{color: "#036",}} >{blog_title}</Link >
             </div>
           </div>

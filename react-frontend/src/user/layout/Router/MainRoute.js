@@ -25,7 +25,7 @@ class MainRoute extends Component {
                   <Route
                     path={`/${
                       spotlight.category_name
-                    }/${spotlight.blog_title.replace(" ", "-")}`}
+                    }/${(spotlight.blog_title.replace(" ", "")).replace(["!@#$%^&*()_><.|,`"], "")}`}
                     element={<Content />}
                   ></Route>
                 ))}

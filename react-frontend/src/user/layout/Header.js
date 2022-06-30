@@ -22,7 +22,7 @@ const Header = props => {
                 <div className="primary-nav"  ref={navRef}>
                     <div className="branding">
                         <h3>
-                            <Link className="logo" to="#">BuffDogNews</Link>
+                            <Link className="logo" to="/">BuffDogNews</Link>
                         </h3>
                         <div className="current-time">
                             <span className="time">7: 30 </span>
