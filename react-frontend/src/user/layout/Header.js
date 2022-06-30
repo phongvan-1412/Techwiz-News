@@ -31,19 +31,19 @@ const Header = props => {
                     </div>
         
                     <div className="main-menu">
-                        <Link to="#" className="menu-news">U.S.</Link>
-                        <Link to="#" className="menu-politics">Politics</Link>
-                        <Link to="#" className="menu-media">Media</Link>
-                        <Link to="#" className="menu-opinion">Opinion</Link>
-                        <Link to="#" className="menu-business" target="_blank">Business</Link>
-                        <Link to="#" className="menu-entertainment">Entertainment</Link>
-                        <Link to="#" className="menu-sports">Sports</Link>
-                        <Link to="#" className="menu-lifestyle">Lifestyle</Link>
-                        <Link to="#" className="menu-weather" target="_blank">Weather</Link>
-                        <Link to="#" className="menu-tv">TV</Link>
-                        <Link to="#" className="menu-nation">Fox Nation</Link>
-                        <Link to="#" className="menu-radio" target="_blank">Listen</Link>
-                        <Link to="#" className="menu-more">More</Link>
+                        <Link to="/" className="menu-news">U.S.</Link>
+                        <Link to="/" className="menu-politics">Politics</Link>
+                        <Link to="/" className="menu-media">Media</Link>
+                        <Link to="/" className="menu-opinion">Opinion</Link>
+                        <Link to="/" className="menu-business" target="_blank">Business</Link>
+                        <Link to="/" className="menu-entertainment">Entertainment</Link>
+                        <Link to="/" className="menu-sports">Sports</Link>
+                        <Link to="/" className="menu-lifestyle">Lifestyle</Link>
+                        <Link to="/" className="menu-weather" target="_blank">Weather</Link>
+                        <Link to="/" className="menu-tv">TV</Link>
+                        <Link to="/" className="menu-nation">Fox Nation</Link>
+                        <Link to="/" className="menu-radio" target="_blank">Listen</Link>
+                        <Link to="/" className="menu-more">More</Link>
                         <button className="nav-btn nav-close-btn" onClick={showNavbar}>
                             <FaTimes />
                         </button>

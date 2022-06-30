@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 class LSBar extends Component {
   render() {
-    const { blog_title, blog_content, category_name,blog_img_name } = this.props.content;
+    const { blog_id,blog_title, blog_content, category_name,blog_img_name } = this.props.content;
     const title = blog_title.replace(" ", "-");
     return (
       <div className="row" style={{ borderBottom: "solid 1px rgba(0,0,0,0.25)" }}>
@@ -14,7 +14,7 @@ class LSBar extends Component {
         <div className="col-md-12" style={{padding:'0px',margin:'0px'}}>
           <ul style={{padding:'0px',margin:'0px'}}>
             <li style={{ fontSize: "13px", fontWeight: "bold" }}>
-              <Link to={`/${category_name}/${title}`} replace className="nav-link" style={{fontWeight:'bold', color:'#C20017'}}>
+              <Link to={`/${category_name}/${title}/${blog_id}`} replace className="nav-link" style={{fontWeight:'bold', color:'#C20017'}}>
                 {blog_title}
               </Link>
             </li>

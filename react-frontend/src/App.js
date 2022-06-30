@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {BrowserRouter as Router,} from "react-router-dom";
+import {BrowserRouter as Router, Routes} from "react-router-dom";
 import Header from "./user/layout/Header";
 import Footer from "./user/layout/Footer";
 import Advertisement from "./user/layout/Advertisement";
