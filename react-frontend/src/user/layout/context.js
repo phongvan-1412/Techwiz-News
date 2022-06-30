@@ -12,7 +12,7 @@ export class Provider extends Component {
         blog_content: "Raymond Arroyo: Hunter Biden is the 'Michael Myers of the Biden admin'",
         blog_day_open: "12/01/1991",
         blog_status: "1",
-        blog_img_name: "222222222222",
+        blog_img_name: "111111111111",
         category_name: "category4"
       },
       {
@@ -22,7 +22,7 @@ export class Provider extends Component {
         blog_content: "Chad Wolf: We have no deterrence in our immigration system",
         blog_day_open: "13/02/1992",
         blog_status: "1",
-        blog_img_name: "111111111111",
+        blog_img_name: "222222222222",
         category_name: "category4"
 
       },
