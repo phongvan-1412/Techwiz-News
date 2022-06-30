@@ -1,28 +1,24 @@
 import React, { Component } from "react";
-import { Consumer } from "../context";
-// import HeaderContent from './HeaderContent';
-// import MainBodyContent from "../MainBodyContent";
+import { Link } from 'react-router-dom';
+import {BrowserRouter as Router,} from "react-router-dom";
+
+import HeaderContent from './HeaderContent';
+import MainBodyContent from './MainBodyContent';
 
 class Content extends Component {
   render() {
     return (
-      <Consumer>
-        {(value) => {
-          const { spotlights } = value;
-          return (
-            <div className="App">
-              <div className="container">
-                <div className="row col-9">
-                  <h1>Content title</h1>
-                  <h1>Content image</h1>
-                  <h1>Content </h1>
-                </div>
-              </div>
-            </div>
-          );
-        }}
-      </Consumer>
-    );
+        <div className="row">
+          <div className="col-md-12">
+            <HeaderContent />
+          </div>
+
+          <div className="col-md-12">
+            {/* <MainBodyContent /> */}
+          </div>
+        </div>
+    )
   }
 }
+
 export default Content;
