@@ -1,8 +1,11 @@
 @import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
 .login-block{
-background: #051e4d;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to bottom, #051e4d, #4569ea);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to bottom, #051e4d, #4569ea); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/* background: #051e4d;  */
+/* background: -webkit-linear-gradient(to bottom, #051e4d, #4569ea);   */
+/* background: linear-gradient(to bottom, #051e4d, #4569ea);  */
+background: url('../../upload/coffee1.jpg') no-repeat;
+background-size: cover;
+opacity: 1;
 float:left;
 width:100%;
 padding : 50px 0;
