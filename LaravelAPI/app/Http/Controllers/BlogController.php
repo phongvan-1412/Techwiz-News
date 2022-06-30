@@ -170,5 +170,8 @@ class BlogController extends Controller
         $blogs = db::select(Name::$SelectActiveBlog."'3'");
 
         return view('/admin.drafts', ['blogs' => $blogs]);
-    }    
+    }     
+    public function getAddPost(){
+        return view('/admin.addpost');
+    } 
 }

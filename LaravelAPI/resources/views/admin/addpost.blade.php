@@ -13,68 +13,8 @@
 @endsection
 
 @section('bodycontent')
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-            <!-- Account details card-->
-            <div class="card mb-4">
-                    {{ csrf_field() }}
-                    <div class="card-header">Edit Category</div>
-                    <div class="card-body">
-                        <!-- Form Group-->
-                        <div class="mb-3">
-                            <label class="small mb-1" for="category-root">Category Root</label>
-                            <select class="form-control" name="category_root" id="category">
-                                @foreach ($categories as $category)
-                                    <option value="{{ $category->category_name }}" placeholder="Choose category">
-                                        {{ $category->category_name }}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <!-- Form Group-->
-                        <div class="mb-3">
-                            <label class="small mb-1" for="category-name">Category Name</label>
-                            <input class="form-control" id="category-name" name="category-name" type="text" value={{ $name }}>
-                        </div>
-                        <!-- Form Group-->
-                        <div class="row gx-3 mb-3">
-                            <label class="col-md-2 small mb-1" for="status-category">Status Category</label>
-                            <div class="col-md-6">
-                                <div class="TriSea-technologies-Switch pull-right">
-                                    <input id="TriSeaDefault" name="TriSea1" type="checkbox">
-                                    <label for="TriSeaDefault" class="label-default"></label>
-                                </div>
-                            </div>
-
-                        {{-- @if ($status == 1)
-                            <label class="col-md-3 small mb-1" for="status-category">Status Category</label>
-                            <div class="form-check form-switch col-md-6">
-                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-                                <label class="form-check-label" for="flexSwitchCheckChecked"></label>
-                            </div>
-                        @else
-                            <label class="col-md-3 small mb-1" for="status-category">Status Category</label>
-                            <div class="form-check form-switch col-md-6">
-                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
-                                <label class="form-check-label" for="flexSwitchCheckChecked"></label>
-                            </div>
-                        @endif --}}
-                        </div>
-
-                        <!-- Save changes button-->
-                        <div class="row gx-3 mb-3">
-                            <div class="col-5"></div>
-                            <span id="save" class="col-2 btn btn-primary" >Update Category</span>
-                            <div class="col-5"></div>
-                        </div>
-                    </div>
-            </div>
-        </div>
-        <div class="col-md-2"></div>
-    </div>
-
-
+    <textarea name=text id="text" cols="30" rows="10"></textarea>
+    <script src="{{ asset('ck5/ckeditor.js') }}"></script>
 @endsection
 
 @section('scripts')
