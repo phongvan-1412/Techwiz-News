@@ -5,12 +5,20 @@ import { Link } from "react-router-dom";
 class RSBar extends Component {
   render() {
     const { blog_title, blog_content, category_name } = this.props.content;
-    const title = blog_title.replace(" ", "-");
+    const tmp_title = blog_title.replace(" ", "");
+    const title = tmp_title.replace(["!@#$%^&*()_><.|,`"], "");
     return (
       <div style={{ borderBottom: "solid 1px rgba(0,0,0,0.25)" }}>
-        <ul style={{padding:'0px',margin:'0px'}}>
+        <ul style={{ padding: "0px", margin: "0px" }}>
           <li>
-              <Link to={`/${category_name}/${title}`} replace className="nav-link"style={{color: "#036",fontWeight:'bold'}}>{blog_content}</Link>
+            <Link
+              to={`/${category_name}/${title}`}
+              replace
+              className="nav-link"
+              style={{ color: "#036", fontWeight: "bold" }}
+            >
+              {blog_content}
+            </Link>
           </li>
         </ul>
       </div>

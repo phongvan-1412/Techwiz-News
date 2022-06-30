@@ -6,7 +6,9 @@ class SpotLight extends Component {
   render() {
     const { blog_title, blog_content, category_name, blog_img_name } =
       this.props.content;
-    const title = blog_title.replace(" ", "-");
+    const tmp_title = blog_title.replace(" ", "");
+    const title = tmp_title.replace(["!@#$%^&*()_><.|,`"], "");
+    
     return (
       <div className="col-md-6">
         <div><Link to={`/${category_name}/${title}`}>
