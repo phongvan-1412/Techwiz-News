@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Consumer } from "../context";
 import TopBodyContent from "./TopBodyContent";
 
-class tmpTopBodyContents1 extends Component {
+class TopBodyContents1 extends Component {
   render() {
     return (
       <Consumer>
@@ -30,4 +30,4 @@ class tmpTopBodyContents1 extends Component {
     );
   }
 }
-export default tmpTopBodyContents1;
+export default TopBodyContents1;

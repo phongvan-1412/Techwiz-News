@@ -12,20 +12,23 @@ class TopBody extends Component {
           const ourSpotlights = q.concat(spotlights);
           ourSpotlights.length = 1;
           return (
-            <div className="col-md-12">
-              <div className="row">
+              <div >
                 {ourSpotlights.map((spotlight) => (
-                  <img
-                    src={require(`../TopBody/${spotlight.blog_img_name}.jpg`)}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "center",
-                      objectPosition: "center",
-                    }}
-                  />
+                  <div>
+                    <img
+                      src={require(`../TopBody/${spotlight.blog_img_name}.jpg`)}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "center",
+                        objectPosition: "center",
+                      }}
+                    />
+                    <div>
+                      <h2>{spotlight.blog_content}</h2>
+                    </div>
+                  </div>
                 ))}
-              </div>
             </div>
           );
         }}
@@ -33,8 +36,5 @@ class TopBody extends Component {
     );
   }
 }
-TopBody.propTypes = {
-  content: PropTypes.object.isRequired,
-};
 
 export default TopBody;
