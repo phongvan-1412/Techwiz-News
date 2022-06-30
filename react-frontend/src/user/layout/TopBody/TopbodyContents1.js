@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Consumer } from "../context";
-import TempTopBodyContent from "./TempTopBodyContent";
+import TopBodyContent from "./TopbodyContent";
 
 class TopBodyContents1 extends Component {
   render() {
@@ -15,10 +15,10 @@ class TopBodyContents1 extends Component {
             <div className="col-md-12">
               <div className="row">
                 {ourSpotlights.map((spotlight) => (
-                  <TempTopBodyContent
+                  <TopBodyContent
                     key={spotlight.blog_id}
                     content={spotlight}
-                  ></TempTopBodyContent>
+                  ></TopBodyContent>
                 ))}
               </div>
             </div>
