@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import {BrowserRouter as Router,} from "react-router-dom";
 
+import RSBars from '../RightSideBar/RSBars'
 import HeaderContent from './HeaderContent';
 import MainBodyContent from './MainBodyContent';
 
@@ -14,7 +15,13 @@ class Content extends Component {
           </div>
 
           <div className="col-md-12">
-            {/* <MainBodyContent /> */}
+            <div className="col-md-9">
+              <MainBodyContent />
+            </div>
+
+            <div className="col-md-3">
+              <RSBars />
+            </div>
           </div>
         </div>
     )

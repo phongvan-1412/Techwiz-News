@@ -1,30 +1,30 @@
 import React, { Component } from "react";
 import { Consumer } from "../../layout/context";
 import { Link } from 'react-router-dom';
-// import HeaderContent from './HeaderContent';
-// import MainBodyContent from "../MainBodyContent";
+import MainBodyComponent from "../MainBodyComponent";
 
 
-class Content extends Component {
+class MainBodyContent extends Component {
     render() {
       return (
         <Consumer>
-          {(value) => {
+            {(value) => {
             const { spotlights } = value;
+            const q = [];
+            const ourSpotlights = q.concat(spotlights);
+            ourSpotlights.length = 1;
             return (
-              <div className="App">
-                <div className="container">
-                  <div className="row col-9">
-                    <h1>Content title</h1>
-                    <h1>Content image</h1>
-                    <h1>Content </h1>
-                  </div>
-                </div>
-              </div>
-            );
-          }}
+                <div>
+                {ourSpotlights.map((spotlight) => (
+                <MainBodyComponent
+                    key={spotlight.blog_id}
+                    content={spotlight}
+                ></MainBodyComponent>
+                ))}
+            </div>
+            )}}
         </Consumer>
       );
     }
   }
-  export default Content;
+  export default MainBodyContent;

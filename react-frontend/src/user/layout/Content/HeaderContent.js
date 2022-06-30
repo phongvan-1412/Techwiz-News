@@ -7,23 +7,23 @@ import HeaderComponent from "./HeaderComponent";
 class HeaderContent extends Component{
     render(){
         return(
-            <Consumer>
-                {(value) => {
-                const { spotlights } = value;
-                const q = [];
-                const ourSpotlights = q.concat(spotlights);
-                ourSpotlights.length = 1;
-                return (
-                    <div>
-                    {ourSpotlights.map((spotlight) => (
-                      <HeaderComponent
-                        key={spotlight.blog_id}
-                        content={spotlight}
-                      ></HeaderComponent>
-                    ))}
-                  </div>
-                )}}
-        </Consumer>
+          <Consumer>
+              {(value) => {
+              const { spotlights } = value;
+              const q = [];
+              const ourSpotlights = q.concat(spotlights);
+              ourSpotlights.length = 1;
+              return (
+                  <div>
+                  {ourSpotlights.map((spotlight) => (
+                    <HeaderComponent
+                      key={spotlight.blog_id}
+                      content={spotlight}
+                    ></HeaderComponent>
+                  ))}
+                </div>
+              )}}
+            </Consumer>
         )
     }
 }
