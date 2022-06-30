@@ -59,7 +59,7 @@ class NameSetting extends Model
     static $FunctionCheckExistsEmployee = "dbo.check_exists_employee";
 
     static $InsertEmployee = "exec sp_insert_emp_account";
-    static $CheckExistsEmployee = "exec check_exists_customer";
+    static $CheckExistsEmployee = "exec sp_check_insert_employee_account";
     static $ChangePasswordEmployee = "exec sp_change_emp_pwd_by_email";
     static $CheckUpdatePasswordEmployee = "exec sp_check_update_employee_password";
     static $SelectEmployee = "exec sp_select_employee";

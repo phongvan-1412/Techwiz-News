@@ -8,8 +8,7 @@
     }
 #img{
     background: url(https://i.pinimg.com/564x/09/cd/37/09cd3751f9e59f3bc82b982059e7b1c8.jpg) no-repeat;
-    background-size: cover;
-    background-position-y: -120px;
+    background-size:calc(1200px - 500px) ;
     padding-right: 0px;
     border-left: 1px solid #ccc;
     border-top: 1px solid #ccc;
