@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import { Consumer } from "../../layout/context";
-import { Link } from 'react-router-dom';
-import MainBodyComponent from "../MainBodyComponent";
-
 
 class MainBodyContent extends Component {
     render() {
@@ -15,12 +12,12 @@ class MainBodyContent extends Component {
             ourSpotlights.length = 1;
             return (
                 <div>
-                {ourSpotlights.map((spotlight) => (
+                {/* {ourSpotlights.map((spotlight) => (
                 <MainBodyComponent
                     key={spotlight.blog_id}
                     content={spotlight}
                 ></MainBodyComponent>
-                ))}
+                ))} */}
             </div>
             )}}
         </Consumer>

@@ -4,8 +4,8 @@ import SpotLights1 from "../Body/SpotLights1";
 import SpotLights2 from "../Body/SpotLights2";
 import BodyContents from "../MainBody/BodyContents";
 import TopBody from "../TopBody/TopBody";
-import TopBodyContents1 from "../TopBody/TopBodyContents1";
 import TopBodyContents2 from "../TopBody/TopBodyContents2";
+import tmpTopBodyContents1 from "../TopBody/tmpTopBodyContent1";
 import LSBars from "../LeftSideBar/LSBars";
 import RSBars from "../RightSideBar/RSBars";
 import PanelContents from "../Panel/PanelContents";
@@ -23,7 +23,7 @@ class MainContent extends Component {
 
         <div className="col-lg-8 col-md-6" style={{border:'1px solid rgba(0,0,0,0.25)',borderBottom:'none'}}>
             <TopBody />
-            <TopBodyContents1 />
+            <tmpTopBodyContents1 />
             <TopBodyContents2 />
             <SpotLights1 />
             <SpotLights2 />

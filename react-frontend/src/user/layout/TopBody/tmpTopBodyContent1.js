@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Consumer } from "../context";
 import TopBodyContent from "./TopBodyContent";
 
-class TopBodyContents1 extends Component {
+class tmpTopBodyContents1 extends Component {
   render() {
     return (
       <Consumer>
@@ -10,6 +10,8 @@ class TopBodyContents1 extends Component {
           const { spotlights } = value;
           const q = [];
           const ourSpotlights = q.concat(spotlights);
+          ourSpotlights.length = 4;
+          ourSpotlights.reverse();
           ourSpotlights.length = 2;
           return (
             <div className="col-md-12">
@@ -28,4 +30,4 @@ class TopBodyContents1 extends Component {
     );
   }
 }
-export default TopBodyContents1;
+export default tmpTopBodyContents1;
