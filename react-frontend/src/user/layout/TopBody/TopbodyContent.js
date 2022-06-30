@@ -1,34 +1,31 @@
 import React, { Component } from "react";
-import { Consumer } from "../context";
 import { Link } from "react-router-dom";
 
-class TopBody extends Component {
+class TopBodyContent extends Component {
   render() {
-    return (
-      <Consumer>
-        {(value) => {
-          const { spotlights } = value;
-          const q = [];
-          const ourSpotlights = q.concat(spotlights);
-          ourSpotlights.length = 2;
-          return (
-            <div className="row">
+    const { blog_img_name, blog_title, category_name } = this.props.content;
 
-              {ourSpotlights.map((spotlight) => (
-                <div className="card-header col-md-12 topbody-content" style={{backgroundColor:'rgb(245,245,245)'}}>
-                  <div className="container">
-                  <div className="row" style={{alignSelf:'center',borderLeft:'1px solid rgba(0,0,0,0.25)'}}>
-                      <Link to='/' className="col-md-6"><span style={{padding: '10px 0px', color:'#036', fontWeight:'bold', fontSize:'13px'}}>{spotlight.blog_content}</span></Link> 
-                      <Link to='/' className="col-md-6"><span style={{padding: '10px 0px', color:'#036', fontWeight:'bold', fontSize:'13px'}}>{spotlight.blog_content}</span></Link> 
-                  </div>
-                  </div>
-                </div>
-              ))}
+    return (
+        <div className="col-md-12">
+          <div className="row" style={{borderBottom:'1px solid rgba(0, 0, 0, 0.25)', padding:'15px'}}>
+            <div className="col-md-3">
+              <Link to={`/${category_name}/${blog_title}`}><img src={require(`../TopBody/${blog_img_name}.jpg`)}  alt="" style={{ width:'100%', height:'auto',objectFit:'center',objectPosition:'center'}}/></Link>
             </div>
-          );
-        }}
-      </Consumer>
+            <div className="col-md-9">
+              <div className="row">
+
+                <div className="col-md-12">
+                  <Link to="/adfa" style={{color:'#036', fontWeight:'bold'}}>{category_name}</Link>
+                </div>
+
+                <div className="col-md-12">
+                  <Link to="/" style={{color:'#036'}}>{blog_title}</Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     );
   }
 }
-export default TopBody;
+export default TopBodyContent;

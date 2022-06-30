@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { Consumer } from "../context";
-import TopBodyContent from "./TopbodyContent";
+import TopBodyContent from "./TopBodyContent";
 
 class TopBodyContents1 extends Component {
   render() {
     return (
       <Consumer>
-         {(value) => {
+        {(value) => {
           const { spotlights } = value;
           const q = [];
           const ourSpotlights = q.concat(spotlights);
