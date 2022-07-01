@@ -11,7 +11,7 @@ use App\Http\Controllers\ProfileController as Profile;
 
 
 Route::get('/xmlblogfile',[Blog::class, 'XmlBlogFile']);
-
+//Route::get('/returnallpost', [Blog::class, 'ReturnAllPost']);
 
 // // PROFILE
 // Route::get('/profile',[ProfileController::class, 'getProfileForm']);

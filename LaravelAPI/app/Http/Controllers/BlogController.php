@@ -125,19 +125,19 @@ class BlogController extends Controller
             $tmp_collect = $collect;
             $xml->StartChildNode("Blog");
             $xml->AddNode("blog_id",$collect->blog_id);
-            $xml->AddNode("emp_id",$collect->emp_id);
+            $xml->AddNode("emp_id",$collect->admin_id);
+            $xml->AddNode("category_id",$collect->category_id);
             $xml->AddNode("blog_title",$collect->blog_title);
             $xml->AddNode("blog_content",$collect->blog_content);
             $xml->AddNode("blog_img_name",$collect->blog_img_name);
+            $xml->AddNode("blog_video_name",$collect->blog_video_name);
             $xml->AddNode("blog_content",$collect->blog_content);
-            $xml->AddNode("category_id",$collect->category_id);
             $xml->AddNode("blog_status",$collect->blog_status);
 
             $xml->EndChildNode("Blog");
         }
 
         $xml->ExportXml("xml/blog.xml");
-        return $xml;
     }
 
     public function AddCollection($arr)
@@ -171,4 +171,15 @@ class BlogController extends Controller
 
         return view('/admin.drafts', ['blogs' => $blogs]);
     }    
+
+    public function ReturnAllPost()
+    {
+        $tmp_blogs = DB::select(Name::$SelectActiveBlog."'1'");
+        $blogs = self::AddCollection($tmp_blogs);
+        //return response()->json($blog, 201);
+        //self::XmlBlogFile();
+        file_put_contents("xml/blog.json",$blogs->toJson());
+        return $blogs->toJson();
+    }
+    
 }
