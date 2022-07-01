@@ -166,11 +166,14 @@ class BlogController extends Controller
 
         return view('/admin.trash', ['blogs' => $blogs]);
     }
+
     public function getDrafts(){
         $blogs = db::select(Name::$SelectActiveBlog."'3'");
 
         return view('/admin.drafts', ['blogs' => $blogs]);
-<<public function ReturnAllPost()
+    }
+
+    public function ReturnAllPost()
     {
         $tmp_blogs = DB::select(Name::$SelectActiveBlog."'1'");
         $blogs = self::AddCollection($tmp_blogs);
@@ -180,7 +183,23 @@ class BlogController extends Controller
         return $blogs->toJson();
     }
     
-  public function getAddPost(){
-        return view('/admin.addpost');
+    public function getAddPost(){
+        $select_category = DB::table('category')->select('category_name')->get();
+        return view('/admin.addpost',['select_category'=>$select_category]);
     } 
+
+    public function uploadImage(Request $request){
+        if($request->hasFile('upload')){
+            $originName = $request->file('upload')->getClientOriginalName();
+            $filename = pathinfo($originName, PATHINFO_FILENAME);
+            $extension = $request->file('upload')->getClientOriginalExtension();
+            $filename = $filename . '_' .time(). '.' . $extension;
+
+            $request->file('upload')->move(public_path('media'), $fileName);
+
+            $url = asset('media/'.$fileName);
+
+            return response()-json(['filename'=>$fileName, 'uploaded'=>1, 'url'=>$url]);
+        }
+    }
 }

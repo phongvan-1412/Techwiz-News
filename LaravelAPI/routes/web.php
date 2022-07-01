@@ -31,6 +31,7 @@ Route::get('/adminhome',[Employee::class,'getAdminhome'])->name('adminhome');
 Route::get('/allpost', [Blog::class, 'getAllPost']);
 Route::get('/addpost', [Blog::class, 'getAddPost']);
 Route::post('/addpost', [Blog::class, 'postAddPost']);
+Route::post('/upload', [Blog::class, 'uploadImage'])->name('ckeditor.upload');
 Route::get('/trash', [Blog::class, 'getTrash']);
 Route::get('/drafts', [Blog::class, 'getDrafts']);
 

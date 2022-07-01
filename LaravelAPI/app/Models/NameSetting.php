@@ -42,7 +42,7 @@ class NameSetting extends Model
     static $SelectCategoryRoot = "exec sp_select_category_root";
     static $SelectCategoryByRoot = "exec sp_select_category_by_root_name";
     static $SelectAllCategory = "exec sp_select_all_category";
-    // customer_account
+    // customer_accountq
     static $FunctionCheckExistscustomer = "dbo.check_exists_customer";
 
     static $InsertCustomer = "exec sp_insert_customer_account";
