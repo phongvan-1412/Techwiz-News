@@ -17,7 +17,7 @@ class RSBar extends Component {
               className="nav-link"
               style={{ color: "#036", fontWeight: "bold" }}
             >
-              {blog_content}
+              {blog_content.substring(0,50)}
             </Link>
           </li>
         </ul>

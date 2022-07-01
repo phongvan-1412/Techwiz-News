@@ -43,7 +43,7 @@ class SpotLight extends Component {
             color: "#036",
           }}
         >
-          {blog_content}
+          {blog_content.substring(0,100)}
         </Link></div>
         
         

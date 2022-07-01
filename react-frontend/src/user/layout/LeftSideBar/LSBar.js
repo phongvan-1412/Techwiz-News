@@ -6,7 +6,7 @@ class LSBar extends Component {
   render() {
     const { blog_id, blog_title, blog_content, category_name, blog_img_name } =
       this.props.content;
-      const tmp_title = blog_title.replace(" ", "");
+      const tmp_title = blog_title.replace(" ", "-");
       const title = tmp_title.replace(["!@#$%^&*()_><.|,`"], "");
     return (
       <div
@@ -43,7 +43,7 @@ class LSBar extends Component {
                 className="nav-link"
                 style={{ fontWeight: "bold", color: "#036" }}
               >
-                {blog_content}
+                {blog_content.substring(0, 15)}
               </Link>
             </li>
           </ul>

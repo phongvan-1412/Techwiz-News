@@ -36,7 +36,7 @@ class Content extends Component {
                         <div className="row">
                           <div className="col-md-6" style={{ alignSelf: 'center' }}>
                             <span style={{}}>
-                              <Link to='/'><span style={{ float: 'left', textAlign: 'left', fontWeight: 'bold', color: '#036', }}>{spotlight.emp_name} | BuffDog News</span></Link>
+                              <Link to='/'><span style={{ float: 'left', textAlign: 'left', fontWeight: 'bold', color: '#036', }}>{spotlight.admin_name} | BuffDog News</span></Link>
                             </span>
                           </div>
 
@@ -60,18 +60,34 @@ class Content extends Component {
 
                       </div>
                     </div>
-
-                    <div className="row main-content">
-                      
-                        <div className="col-md-9">
-                          {spotlight.blog_content}
-                        </div>
-                        <div className="col-md-3">
-                          <RSBars />
-                        </div>
-                      
-                    </div>
                   </div>
+
+                  <div className="row main-content">
+                      <div className="col-md-9">
+                        <div className="row">
+                          <div className="col-md-12" style={{textAlign:'left'}}>
+                            <br /><br />
+                            <span>{(spotlight.blog_content).substring(0, 450)}</span>
+                            <br /><br />
+
+                            <div className="video" style={{textAlign:'center'}}>
+                              <iframe width="560" height="315"  src={spotlight.blog_video_name} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                            </div>
+                            
+                            <br /><br />
+                            <span>{(spotlight.blog_content).substring(451, 1000)}</span>
+                          </div>
+                          
+                          
+                          
+                        </div>
+                      </div>
+                      <div className="col-md-3">
+                        <RSBars />
+                      </div>
+                    
+                  </div>
+                 
                 </div>
               ))}
             </div>

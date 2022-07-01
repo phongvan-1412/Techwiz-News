@@ -6,9 +6,9 @@ class TopBodyContent extends Component {
     const { blog_content, blog_title, category_name } = this.props.content;
 
     return (
-      <div className="col-md-6">
+      <div className="col-md-6 secondary-top">
         <Link to="/" style={{ color: "#036" }}>
-          {blog_content}
+          {blog_title}
         </Link>
       </div>
     );

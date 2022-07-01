@@ -25,7 +25,7 @@ class TopBody extends Component {
                       }}
                     />
                     <div>
-                      <h2>{spotlight.blog_content}</h2>
+                      <h2>{(spotlight.blog_content).substring(0, 100)}</h2>
                     </div>
                   </div>
                 ))}
