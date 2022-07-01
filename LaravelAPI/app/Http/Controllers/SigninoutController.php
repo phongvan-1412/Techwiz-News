@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\NameSetting as Name;
 
 class SigninoutController extends Controller
 {
@@ -30,7 +31,7 @@ class SigninoutController extends Controller
 
         ],[
             'firstname.required'=>'First name is required',
-            'lastname.required'=>'Họ & Tên không được để trống',
+            'lastname.required'=>'Last name is required',
             'email.email'=>'Invalid email',
             'email.required' => 'Email is required',
             'password.required' => 'Password is required',
@@ -40,14 +41,26 @@ class SigninoutController extends Controller
             'phonenumber.max'=>'Invalid Phonenumber'
         ]);
         $data = [
-            'fullname'=> $request->firstname.' '.$request->lastname,
-            'email'=> $request->email,
-            'password'=> md5($request->password),
-            'phonenumber'=> $request->phonenumber,
-            'idtype'=>2
+            'customer_name'=> $request->firstname.' '.$request->lastname,
+            'customer_email'=> $request->email,
+            'customer_pwd'=> md5($request->password),
+            'customer_contact'=> $request->phonenumber,
         ];
-        DB::table('user')->insert($data);
-        return redirect('/login')->with('msg', 'Successfully Registered');
+        $check = DB::select(Name::$CheckExistsCustomer."'$request->email'");
 
+        if($check == 0){ 
+            DB::table('customer_account')->insert($data);
+
+            return redirect('/login')->with('msg', 'Successfully Registered');
+
+        }else{
+            return redirect()->back()->withInput()->with('msg'); 
+
+        }
+
+    }
+
+    public function LogOut(){
+        // code here
     }
 }

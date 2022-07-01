@@ -170,9 +170,7 @@ class BlogController extends Controller
         $blogs = db::select(Name::$SelectActiveBlog."'3'");
 
         return view('/admin.drafts', ['blogs' => $blogs]);
-    }    
-
-    public function ReturnAllPost()
+<<public function ReturnAllPost()
     {
         $tmp_blogs = DB::select(Name::$SelectActiveBlog."'1'");
         $blogs = self::AddCollection($tmp_blogs);
@@ -182,4 +180,7 @@ class BlogController extends Controller
         return $blogs->toJson();
     }
     
+  public function getAddPost(){
+        return view('/admin.addpost');
+    } 
 }
