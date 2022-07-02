@@ -14,6 +14,14 @@
     --backGround: rgb(245,245,245);
     --borderColor: rgba(0,0,0,0.25);
     --advertisementBackground1: #f6f8fa;
+    --flipboardColor: #E12828;
+    --twitterColor: #1DA1F2;
+    --instagramColor: #1DA1F2;
+    --facebookColor: #3b5998;
+    --headerTextColor: #222;
+    --smallTextColor: #666;
+    --copyRightColor: #a7c6e5;
+
 }
 
 body{
@@ -333,7 +341,7 @@ body{
 }
 .footer-lower-legal .copyright{
     font-size: 13px;
-    color:#a7c6e5;   
+    color: var(--copyRightColor);   
 }
 .footer-lower-social-icons{
     text-align: center;
@@ -358,12 +366,12 @@ body{
 }
 /* -----PAGE CONTENT---- */
 .row-sticky-columns{
-    border: 1px solid rgba(0,0,0,0.25);
+    border: 1px solid var(--borderColor);
     margin-bottom: 20px;
 }
 /* -----secondary column---- */
 .secondary-col{
-    border: 1px solid rgba(0,0,0,0.25);
+    border: 1px solid var(--borderColor);
     border-bottom: none;
 }
 .secondary-categoryname{
@@ -392,11 +400,11 @@ body{
     font-weight: bold;
 }
 .secondary-spotlights2{
-    border-bottom: 1px solid rgba(0,0,0,0.25);
+    border-bottom: 1px solid var(--borderColor);
     margin-bottom: 10px;
 }
 .secondary-bodycontent{
-    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid var(--borderColor);
     padding: 15px;
 }
 .secondary-bodycontent-img{
@@ -407,7 +415,7 @@ body{
 }
 /* -----panel---- */
 .row-panel .wrapper{
-    border: 1px solid rgba(0,0,0,0.25); 
+    border: 1px solid var(--borderColor); 
     margin-bottom: 50px; 
     padding: 20px;
 }
@@ -423,15 +431,103 @@ body{
     height:100%;
     object-fit: center;
     object-position: center;
-}/* ---------CONTENT--------- */
+}
+/* ---------CONTENT--------- */
+/* ----header---- */
+.header-article{
+    text-align: center; 
+    float: left;
+    margin-bottom: 30px;
+}
+.article-date>a{
+    color: var(--quaternaryColor);
+    font-weight: bold;
+    margin-right: 10px;
+}
+.article-date>strong{
+    margin-right: 10px;
+}
+.article-title{
+    text-align: center;
+}
+.article-title>h1{
+    font-size: 60px; 
+    font-weight: bold; 
+    line-height: 66px;
+}
+.sub-headline{
+    font-size: 24px; 
+    line-height: 60px;
+}
+.article-lower{
+    border-top: 1px solid var(--borderColor);
+    border-bottom: 1px solid var(--borderColor);
+}
+.article-admin-name{
+    align-self: center;
+}
+.article-admin-name>a>span{
+    float: left; 
+    text-align: left; 
+    font-weight: bold; 
+    color: var(--quaternaryColor);
+}
+.article-meta-social-icon>ul{
+    display: flex; 
+    float: right;
+}
+.article-meta-social-icon>ul>a>li{
+    font-size: 2rem;
+    margin-right: 10px;
+}
+.meta-facebook{
+    color: var(--textColor);
+    background-color: var(--facebookColor);
+    padding: 5px;
+    border-radius: 25px;
+}
+.meta-instagram{
+    color: var(--textColor);
+    background-color: var(--instagramColor);
+    padding: 5px;
+    border-radius: 25px;
+}
+.meta-twitter{
+    color: var(--textColor);
+    background-color: var(--twitterColor);
+    padding: 5px;
+    border-radius: 25px;
+}
+.meta-flipboard{
+    color: var(--textColor); 
+    background-color: var(--flipboardColor);
+    padding: 5px;
+    border-radius: 25px;
+}
+.meta-comment, .meta-print, .meta-email{
+    color: var(--textColor);
+    background-color: var(--tertiaryColor);
+    padding: 5px;
+    border-radius: 25px;
+}
+/* ----main-content---- */
+.main-content-wrapper{
+    border-bottom: 1px solid var(--borderColor);
+}
+.main-content-content{
+    text-align: left;
+}
+.main-content-video{
+    text-align: center;
+}
 .admin-name-tips{
-    color: #666;
+    color: var(--smallTextColor);
     font-size: 16px;
     margin-bottom: 28px;
 }
 .more-suggest-header-text{
     font-size: 18px;
-    color: #222;
+    color: var(--headerTextColor);
     font-weight: bold;
     line-height: 3rem;
 }
@@ -445,9 +541,16 @@ body{
     margin: 0px;
 }
 .more-suggest-branding{
-    color: #666;
+    color: var(--smallTextColor);
     font-size: 12px;
     font-weight: normal;
+}
+.more-suggest-post-img{
+    aspect-ratio: 16/9;
+    width: 100%;
+    height: auto;
+    object-fit: center;
+    object-position: center;
 }
 /* ---------RESPONSIVE--------- */
 @media screen and (max-width: 425px){
