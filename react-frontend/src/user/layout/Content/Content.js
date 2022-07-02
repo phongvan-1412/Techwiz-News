@@ -93,7 +93,10 @@ class Content extends Component {
                     </div>
 
                     <div className="row more-from-buffdog">
-                      <MoreSuggestLinks/>
+                      <div className="col-md-3">
+                          <span class="more-suggest-header-text">More From BuffDog News</span>
+                          <MoreSuggestLinks/>
+                      </div>
                     </div>
                   </div>
                 </div>

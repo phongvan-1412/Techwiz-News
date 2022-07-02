@@ -10,7 +10,7 @@ class MoreSuggestLinks extends Component {
           const { spotlights } = value;
           const q = [];
           const ourSpotlights = q.concat(spotlights);
-          ourSpotlights.length = 1;
+          ourSpotlights.length = 5;
           return (
             <div className="col-md-12 more-suggest">
               <div className="row more-suggest-content">
