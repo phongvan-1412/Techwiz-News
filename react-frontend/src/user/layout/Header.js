@@ -5,9 +5,9 @@ import { FaBars, FaTimes, FaSearch, FaFacebook, FaTwitter, FaInstagramSquare} fr
 import { MdEmail } from 'react-icons/md'
 import { useRef } from 'react';
 
-import '../css/layout/style-mobile.css';
-import '../css/layout/style-tablet.css';
-import '../css/layout/style-laptop.css';
+import '../css/style-mobile.css';
+import '../css/style-tablet.css';
+import '../css/style-laptop.css';
 
 
 const Header = props => {

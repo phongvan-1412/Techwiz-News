@@ -1,12 +1,6 @@
 import React, { Component } from "react";
 import { Consumer } from "./user/layout/context";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Link,
-  NavLink,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link, NavLink } from "react-router-dom";
 import Category from './user/pages/Category/Category'
 import Content from "./user/layout/Content/Content";
 import HomeContent from "./user/pages/Home/HomeContent";

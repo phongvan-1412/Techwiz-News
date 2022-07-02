@@ -5,9 +5,9 @@ import { FaFacebook, FaTwitter, FaInstagramSquare} from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md'
 
 
-import '../css/layout/style-mobile.css';
-import '../css/layout/style-tablet.css';
-import '../css/layout/style-laptop.css';
+import '../css/style-mobile.css';
+import '../css/style-tablet.css';
+import '../css/style-laptop.css';
 
 const Footer = props => {
     return(

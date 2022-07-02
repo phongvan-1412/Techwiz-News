@@ -8,9 +8,9 @@ import Advertisement from "./user/layout/Advertisement";
 import { Provider } from "../src/user/layout/context";
 import MainRoute from "./MainRoute";
 
-import './user/css/layout/style-mobile.css';
-import './user/css/layout/style-tablet.css';
-import './user/css/layout/style-laptop.css';
+import './user/css/style-mobile.css';
+import './user/css/style-tablet.css';
+import './user/css/style-laptop.css';
 
 class App extends Component {
   render() {
