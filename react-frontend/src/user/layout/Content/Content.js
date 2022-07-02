@@ -4,7 +4,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { FaFacebook, FaTwitter, FaInstagramSquare, FaFlipboard, FaComments, FaPrint } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md'
 import { Consumer } from '../context'
+
 import RSBars from '../RightSideBar/RSBars'
+import MoreSuggestLinks from "../MoreSuggest/MoreSuggestLinks";
+
 
 class Content extends Component {
   render() {
@@ -58,32 +61,39 @@ class Content extends Component {
                           <div className="col-md-3" style={{ float: 'right', textAlign: 'right', }}>
                           </div>
                       </div>
-                  </div>
+                    </div>
 
-                  <div className="row main-content">
-                      <div className="col-md-9">
-                        <div className="row">
-                          <div className="col-md-12" style={{textAlign:'left'}}>
-                            <br /><br />
-                            <span>{(spotlight.blog_content).substring(0, 450)}</span>
-                            <br /><br />
+                    <div className="row main-content">
+                        <div className="col-md-9" >
+                          <div className="row" style={{borderBottom: '1px solid rgba(0,0,0,0.25)'}}>
+                            <div className="col-md-12" style={{textAlign:'left'}}>
+                              <br /><br />
+                              <span>{(spotlight.blog_content).substring(0, 450)}</span>
+                              <br /><br />
 
-                            <div className="video" style={{textAlign:'center'}}>
-                              <iframe width="560" height="315"  src={spotlight.blog_video_name} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                            </div>
-                            
-                            <br /><br />
-                            <span>{(spotlight.blog_content).substring(451, 1000)}</span>
+                              <div className="video" style={{textAlign:'center'}}>
+                                <iframe width="560" height="315"  src={spotlight.blog_video_name} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                              </div>
+                              
+                              <br /><br />
+                              <span>{(spotlight.blog_content).substring(451, 1000)}</span>
+                              <br /><br />
+
+                            </div> 
                           </div>
-                          
-                          
-                          
                         </div>
-                      </div>
 
-                      <div className="col-md-3">
-                        <RSBars />
-                      </div>
+                        <div className="col-md-3">
+                          <RSBars />
+                        </div>
+                    </div>
+
+                    <div className="row">
+                      <span className="admin-name-tips">{spotlight.admin_name} is an associate editor for BuffDog News Digital. Story tips can be sent to {spotlight.admin_name}@buffdog.com.</span>
+                    </div>
+
+                    <div className="row more-from-buffdog">
+                      <MoreSuggestLinks/>
                     </div>
                   </div>
                 </div>

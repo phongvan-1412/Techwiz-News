@@ -423,8 +423,32 @@ body{
     height:100%;
     object-fit: center;
     object-position: center;
+}/* ---------CONTENT--------- */
+.admin-name-tips{
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 28px;
 }
-
+.more-suggest-header-text{
+    font-size: 18px;
+    color: #222;
+    font-weight: bold;
+    line-height: 3rem;
+}
+.more-suggest-content{
+    margin-bottom: 1.5rem;
+}
+.more-suggest-title{
+    color: var(--quaternaryColor);
+    font-weight: bold;
+    padding: 0px;
+    margin: 0px;
+}
+.more-suggest-branding{
+    color: #666;
+    font-size: 12px;
+    font-weight: normal;
+}
 /* ---------RESPONSIVE--------- */
 @media screen and (max-width: 425px){
     @media screen and (max-width: 375px){
