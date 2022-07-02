@@ -13,26 +13,26 @@ class BlogApi extends Controller
 {
     public function InsertBlog(Request $request)
     {
-        $emp_email = $request->emp_email;
-        $blog_title = $request->blog_title;
-        $blog_content = $request->blog_content;
-        $blog_day_open = $request->blog_day_open;
+        $blog = new Blog();
+        $blog = $request;
 
-        DB::select(Name::$InsertBlog."'$emp_email','$blog_title','$blog_content','$blog_day_open'");
-
-        self::InsertBlogRequest($blog_title,$emp_email);
+        // $blog = [
+        //     "admin_id" => $request->admin_id,
+        //     "category_id" => $request->category_id,
+        //     "blog_content" => $request->blog_title,
+        //     "blog_content" => $request->blog_content,
+        //     "blog_img_name" => $request->blog_img_name,
+        //     "blog_video_name" => $request->blog_video_name,
+        //     "blog_day_open" => $request->blog_day_open,
+        // ];
+        
+        DB::table('blog')->insert($blog->toArray());
+        $check = DB::table('blog')->where('blog_title', $blog->blog_title)->get();
+        
+        if(count($check) > 0) return "Insert blog Successfully";
+        return "Insert blog Fail";
     }
 
-    public function InsertBlogRequest($blog_title,$emp_email)
-    {
-        DB::select(Name::$InsertblogComment."'$blog_title','$emp_email'");
-
-        $check =  DB::select(Name::$ProcCheckExistsBlog."'$blog_title'");
-
-        if($check > 0) return "Insert blog Success !!!";
-        return "Insert blog Fail !!!";
-    }
-    
     public function ChangeBlogStatus(Request $request)
     {
         $status = $request->blog_status;
@@ -111,49 +111,49 @@ class BlogApi extends Controller
         $collection = self::AddCollection($blogs);
 
         $xml = new ExportXml("<?xml version='1.0' encoding='utf-8'?><Blogs>");
-        $xml->StartXml();
-        
-        foreach($collection as $collect)
-        {
-            $tmp_collect = new Blog();
-            $tmp_collect = $collect;
-            $xml->StartChildNode("Blog");
-            $xml->AddNode("blog_id",$collect->blog_id);
-            $xml->AddNode("emp_id",$collect->admin_id);
-            $xml->AddNode("category_id",$collect->category_id);
-            $xml->AddNode("blog_title",$collect->blog_title);
-            $xml->AddNode("blog_content",$collect->blog_content);
-            $xml->AddNode("blog_img_name",$collect->blog_img_name);
-            $xml->AddNode("blog_video_name",$collect->blog_video_name);
-            $xml->AddNode("blog_content",$collect->blog_content);
-            $xml->AddNode("blog_status",$collect->blog_status);
+    $xml->StartXml();
 
-            $xml->EndChildNode("Blog");
-        }
+    foreach($collection as $collect)
+    {
+    $tmp_collect = new Blog();
+    $tmp_collect = $collect;
+    $xml->StartChildNode("Blog");
+    $xml->AddNode("blog_id",$collect->blog_id);
+    $xml->AddNode("emp_id",$collect->admin_id);
+    $xml->AddNode("category_id",$collect->category_id);
+    $xml->AddNode("blog_title",$collect->blog_title);
+    $xml->AddNode("blog_content",$collect->blog_content);
+    $xml->AddNode("blog_img_name",$collect->blog_img_name);
+    $xml->AddNode("blog_video_name",$collect->blog_video_name);
+    $xml->AddNode("blog_content",$collect->blog_content);
+    $xml->AddNode("blog_status",$collect->blog_status);
 
-        $xml->ExportXml("xml/blog.xml");
+    $xml->EndChildNode("Blog");
+    }
+
+    $xml->ExportXml("xml/blog.xml");
     }
 
     public function AddCollection($arr)
     {
-        $collection = collect();
+    $collection = collect();
 
-        foreach($arr as $category)
-        {
-            $newCategory = new Blog();
-            $newCategory = $category;
-            $collection->add($newCategory);
-        }
+    foreach($arr as $category)
+    {
+    $newCategory = new Blog();
+    $newCategory = $category;
+    $collection->add($newCategory);
+    }
 
-        return $collection;
+    return $collection;
     }
 
     public function ReturnAllPost()
     {
-        $tmp_blogs = DB::select(Name::$SelectActiveBlog."'1'");
-        $blogs = self::AddCollection($tmp_blogs);
-        file_put_contents("xml/blog.json",$blogs->toJson());
-        return $blogs->toJson();
+    $tmp_blogs = DB::select(Name::$SelectActiveBlog."'1'");
+    $blogs = self::AddCollection($tmp_blogs);
+    file_put_contents("xml/blog.json",$blogs->toJson());
+    return $blogs->toJson();
     }
-    
-}
+
+    }
