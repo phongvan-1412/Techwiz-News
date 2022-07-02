@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { Consumer } from "../context";
-import TopBodyContent from "./TopBodyContent";
+import { Consumer } from "../../../../../layout/context";
+import SecondaryContent from "./SecondaryContent";
 
-class TopBodyContents2 extends Component {
+class SecondaryContents2 extends Component {
   render() {
     return (
       <Consumer>
@@ -14,13 +14,13 @@ class TopBodyContents2 extends Component {
           ourSpotlights.reverse();
           ourSpotlights.length = 2;
           return (
-            <div className="col-md-12">
+            <div className="col-md-12 secondary-contents2">
               <div className="row">
                 {ourSpotlights.map((spotlight) => (
-                  <TopBodyContent
+                  <SecondaryContent
                     key={spotlight.blog_id}
                     content={spotlight}
-                  ></TopBodyContent>
+                  ></SecondaryContent>
                 ))}
               </div>
             </div>
@@ -30,4 +30,4 @@ class TopBodyContents2 extends Component {
     );
   }
 }
-export default TopBodyContents2;
+export default SecondaryContents2;

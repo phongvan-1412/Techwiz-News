@@ -13,7 +13,7 @@ class BottomCategory extends Component {
         <div className="row" style={{ border: '1px solid rgba(0,0,0,0.25)', padding: '0px' }}>
 
             <div className="col-md-6" style={{ padding: '0px' }}>
-                <Link to='/' replace className="nav-link" style={{ padding: '0px', height: '100%' }}><img src={require('../TopBody/image-1.jpg')} style={{ width: "100%", height: '100%', objectPosition: 'center', objectFit: 'center' }} /></Link >
+                <Link to='/' replace className="nav-link" style={{ padding: '0px', height: '100%' }}><img src={require(`../../img/pages/Home/${blog_img_name}.jpg`)} style={{ width: "100%", height: '100%', objectPosition: 'center', objectFit: 'center' }} /></Link >
             </div>
 
             <div className="col-md-6">
@@ -24,7 +24,7 @@ class BottomCategory extends Component {
 
                     
                     <Link to={`/${category_name}/${title}`} replace className="nav-link" style={{ color: "#036", borderBottom: '1px solid rgba(0,0,0,0.25)' }} >{blog_title}</Link >
-                    <Link to={`/${category_name}/${title}`} replace className="nav-link" style={{ color: "#036", fontWeight: 'bold' }} >{blog_content}</Link >
+                    <Link to={`/${category_name}/${title}`} replace className="nav-link" style={{ color: "#036", fontWeight: 'bold' }} >{blog_content.substring(0, 300)}</Link >
                 </div>
             </div>
         </div>

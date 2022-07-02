@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 
-class BottomContent extends Component {
+class PostContent extends Component {
   render() {
     const { blog_title, category_name, blog_img_name } = this.props.content;
     const title = blog_title.replace(" ", "-");
@@ -21,7 +21,7 @@ class BottomContent extends Component {
 
         <div className="row" style={{ border: '1px solid rgba(0,0,0,0.25)', marginBottom: '100px', padding: '0px' }}>
           <div className="col-md-6" style={{ padding: '0px' }}>
-            <Link to='/' replace className="nav-link" style={{ padding: '0px', height: '100%' }}><img src={require('../TopBody/image-1.jpg')} style={{ width: "100%", height: '100%', objectPosition: 'center', objectFit: 'center' }} /></Link >
+            <Link to='/' replace className="nav-link" style={{ padding: '0px', height: '100%' }}><img src={require(`../../../img/pages/Home/${blog_img_name}.jpg`)} style={{ width: "100%", height: '100%', objectPosition: 'center', objectFit: 'center' }} /></Link >
           </div>
 
           <div className="col-md-6">
@@ -44,8 +44,8 @@ class BottomContent extends Component {
     );
   }
 }
-BottomContent.propTypes = {
+PostContent.propTypes = {
   content: PropTypes.object.isRequired,
 }
 
-export default BottomContent;
+export default PostContent;

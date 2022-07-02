@@ -18,7 +18,7 @@ class SpotLightCategory extends Component {
         <div>
           <Link to={`/${category_name}/${title}`}>
             <img
-              src={require(`../TopBody/${blog_img_name}.jpg`)}
+              src={require(`../../img/pages/Home/${blog_img_name}.jpg`)}
               style={{
                 width: "100%",
                 height: "auto",
@@ -55,7 +55,7 @@ class SpotLightCategory extends Component {
               color: "#036",
             }}
           >
-            {blog_content}
+            {blog_content.substring(0,300)}
           </Link>
         </div>
       </div>

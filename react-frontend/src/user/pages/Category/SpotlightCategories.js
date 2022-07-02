@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { Consumer } from "../context";
-import TopBodyContent from "./TopBodyContent";
+import SpotLightCategory from "./SpotLightCategory";
+import { Consumer } from "../../layout/context";
 
-class TopBodyContents1 extends Component {
+class SpotLightCategories extends Component {
   render() {
     return (
       <Consumer>
@@ -10,17 +10,15 @@ class TopBodyContents1 extends Component {
           const { spotlights } = value;
           const q = [];
           const ourSpotlights = q.concat(spotlights);
-          ourSpotlights.length = 4;
-          ourSpotlights.reverse();
           ourSpotlights.length = 2;
           return (
             <div className="col-md-12">
               <div className="row">
                 {ourSpotlights.map((spotlight) => (
-                  <TopBodyContent
+                  <SpotLightCategory
                     key={spotlight.blog_id}
                     content={spotlight}
-                  ></TopBodyContent>
+                  ></SpotLightCategory>
                 ))}
               </div>
             </div>
@@ -30,4 +28,4 @@ class TopBodyContents1 extends Component {
     );
   }
 }
-export default TopBodyContents1;
+export default SpotLightCategories;

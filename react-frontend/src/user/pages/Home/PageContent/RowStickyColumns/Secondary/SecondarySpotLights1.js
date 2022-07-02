@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import SpotLight from "./SpotLight";
-import { Consumer } from "../context";
+import SecondarySpotLight from "./SecondarySpotLight";
+import { Consumer } from "../../../../../layout/context";
 
-class SpotLights1 extends Component {
+class SecondarySpotLights1 extends Component {
   render() {
     return (
       <Consumer>
@@ -12,13 +12,13 @@ class SpotLights1 extends Component {
           const ourSpotlights = q.concat(spotlights);
           ourSpotlights.length = 2;
           return (
-            <div className="col-md-12">
-              <div className="row">
+            <div className="col-md-12 secondary-spotlights1">
+              <div className="row secondary-spotlights1-content">
                 {ourSpotlights.map((spotlight) => (
-                  <SpotLight
+                  <SecondarySpotLight
                     key={spotlight.blog_id}
                     content={spotlight}
-                  ></SpotLight>
+                  ></SecondarySpotLight>
                 ))}
               </div>
             </div>
@@ -28,4 +28,4 @@ class SpotLights1 extends Component {
     );
   }
 }
-export default SpotLights1;
+export default SecondarySpotLights1;

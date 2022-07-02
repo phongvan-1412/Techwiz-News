@@ -15,7 +15,7 @@ class LSBar extends Component {
       >
         <div className="col-md-12" style={{ margin: "5px 0" }}>
           <img
-            src={require(`../TopBody/${blog_img_name}.jpg`)}
+            src={require(`../../img/pages/Home/${blog_img_name}.jpg`)}
             style={{
               width: "100%",
               height: "auto",

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Consumer } from "../context";
+import { Consumer } from "./user/layout/context";
 import {
   BrowserRouter as Router,
   Route,
@@ -7,9 +7,9 @@ import {
   Link,
   NavLink,
 } from "react-router-dom";
-import Category from '../Category/Category'
-import Content from "../Content/Content";
-import MainContent from "../MainContent/MainContent";
+import Category from './user/pages/Category/Category'
+import Content from "./user/layout/Content/Content";
+import HomeContent from "./user/pages/Home/HomeContent";
 
 class MainRoute extends Component {
   render() {
@@ -20,7 +20,7 @@ class MainRoute extends Component {
           return (
             <div className="contaier">
               <Routes>
-                <Route path="/" element={<MainContent />}></Route>
+                <Route path="/" element={<HomeContent />}></Route>
                 {spotlights.map((spotlight) => (
                   <Route
                     path={`/${

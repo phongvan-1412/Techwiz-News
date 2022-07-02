@@ -6,7 +6,7 @@ import Footer from "./user/layout/Footer";
 import Advertisement from "./user/layout/Advertisement";
 
 import { Provider } from "../src/user/layout/context";
-import MainRoute from "./user/layout/Router/MainRoute";
+import MainRoute from "./MainRoute";
 
 class App extends Component {
   render() {
@@ -16,7 +16,7 @@ class App extends Component {
           <div className="App">
             <Header />
             <Advertisement />
-            <div className="container">
+            <div className="row">
               <MainRoute />
             </div>
             <Footer />

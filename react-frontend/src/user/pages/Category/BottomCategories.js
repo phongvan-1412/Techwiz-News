@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import BottomContent from "./BottomContent";
-import { Consumer } from "../context";
-import { Link } from "react-router-dom";
+import BottomCategory from "./BottomCategory";
+import { Consumer } from "../../layout/context";
+import { Link } from 'react-router-dom';
 
-class BottomContents extends Component {
+
+class BottomCategories extends Component {
   render() {
     return (
       <Consumer>
@@ -11,20 +12,22 @@ class BottomContents extends Component {
           const { spotlights } = value;
           const q = [];
           const ourSpotlights = q.concat(spotlights);
-          ourSpotlights.length = 12;
+          ourSpotlights.length = 15;
           return (
             <div>
+              
               {ourSpotlights.map((spotlight) => (
-                <BottomContent
+                <BottomCategory
                   key={spotlight.blog_id}
                   content={spotlight}
-                ></BottomContent>
+                ></BottomCategory>
               ))}
             </div>
+            
           );
         }}
       </Consumer>
     );
   }
 }
-export default BottomContents;
+export default BottomCategories;
