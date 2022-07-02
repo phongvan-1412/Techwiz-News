@@ -16,7 +16,7 @@
 <div class="container">
     <h1 class="form-header text-center">ADD POST</h1>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-lg-12 col-sm-10">
             <form method="POST" action="/addpost">
                 {{csrf_field()}}
 
