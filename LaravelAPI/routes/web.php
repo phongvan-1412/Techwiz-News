@@ -31,7 +31,13 @@ Route::get('/adminhome',[Employee::class,'getAdminhome'])->name('adminhome');
 Route::get('/allpost', [Blog::class, 'getAllPost']);
 Route::get('/addpost', [Blog::class, 'getAddPost']);
 Route::post('/addpost', [Blog::class, 'postAddPost']);
-Route::post('/upload', [Blog::class, 'uploadImage'])->name('ckeditor.upload');
+
+Route::any('/ckfinder/connector', '\CKSource\CKFinderBridge\Controller\CKFinderController@requestAction')
+    ->name('ckfinder_connector');
+
+Route::any('/ckfinder/browser', '\CKSource\CKFinderBridge\Controller\CKFinderController@browserAction')
+    ->name('ckfinder_browser');
+
 Route::get('/trash', [Blog::class, 'getTrash']);
 Route::get('/drafts', [Blog::class, 'getDrafts']);
 

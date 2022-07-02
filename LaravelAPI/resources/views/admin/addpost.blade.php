@@ -36,10 +36,10 @@
                     </select>
                 </div>
                 <div class="form-content mt-3">
-                    <textarea class="form-control" name="description" id="editor1"></textarea>
+                    <textarea class="form-control" name="content" id="editor1"></textarea>
                 </div>
                 <div class="form-submit">
-                    <button class="btn btn-secondary mt-4" type="submit">Save Draft</button>
+                    <!-- <button class="btn btn-secondary mt-4" type="submit">Save Draft</button> -->
                     <button class="btn btn-success mt-4" type="submit">Publish</button>
                 </div>
             </form>
@@ -49,10 +49,14 @@
 @endsection
 
 @section('scripts')
-<!-- <script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script> -->
-<script src="https://cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
-
+<script src="{{asset('ckeditor/ckeditor.js')}}"></script>
+<script type="text/javascript" src="{{ asset('js/ckfinder/ckfinder.js')}}"></script>
 <script>
-    CKEDITOR.replace( 'editor1' );
+    CKEDITOR.replace( 'editor1', {
+        filebrowserBrowseUrl:"{{route('ckfinder_browser')}}"
+        // filebrowserUploadMethod:"form"
+    });
 </script>
+@include('ckfinder::setup')
 @endsection
+

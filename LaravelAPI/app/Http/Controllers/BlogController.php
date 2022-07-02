@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\NameSetting as Name;
 use App\Models\Blog;
+use App\Models\Category;
+use Carbon\Carbon;
 use App\Models\BlogRequest;
-
+use DateTime;
 
 class BlogController extends Controller
 {
@@ -182,18 +184,38 @@ class BlogController extends Controller
         return view('/admin.addpost',['select_category'=>$select_category]);
     } 
 
-    public function uploadImage(Request $request){
-        if($request->hasFile('upload')){
-            $originName = $request->file('upload')->getClientOriginalName();
-            $filename = pathinfo($originName, PATHINFO_FILENAME);
-            $extension = $request->file('upload')->getClientOriginalExtension();
-            $filename = $filename . '_' .time(). '.' . $extension;
 
-            $request->file('upload')->move(public_path('media'), $fileName);
+    public function postAddPost(Request $request){
+    //GET BLOG INFO
+       $title = $request->title;
+       $category = $request->select_category;
+       $content = $request->content; 
 
-            $url = asset('media/'.$fileName);
+       $category1 = DB::table('category')->where('category_name', $category)->get();
+       $category_id = self::GetCategoryId($category1,$category);
 
-            return response()-json(['filename'=>$fileName, 'uploaded'=>1, 'url'=>$url]);
+       $current_date = Carbon::now()->toDateTimeString();
+    //INSERT BLOG TO DATABALSE
+       DB::table('blog')->insert([
+        'blog_title' => $title, 
+        'blog_content' => $content,
+        'category_id' => $category_id,
+        'blog_day_open' => $current_date,
+        'blog_status' => 1
+       ]);
+    }
+    
+    function GetCategoryId($categories,$category_name)
+    {
+        $cate_id = 0;
+        foreach($categories as $newCate)
+        {
+             if($newCate->category_name == $category_name)
+             {
+                 $cate_id = $newCate->category_id;
+             }
         }
+        return  $cate_id;
     }
 }
+
