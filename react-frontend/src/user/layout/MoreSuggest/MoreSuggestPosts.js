@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import MoreSuggestLink from "./MoreSuggestLink";
+import MoreSuggestPost from "./MoreSuggestPost";
 import { Consumer } from "../context";
 
-class MoreSuggestLinks extends Component {
+class MoreSuggestPosts extends Component {
   render() {
     return (
       <Consumer>
@@ -15,10 +15,10 @@ class MoreSuggestLinks extends Component {
             <div className="col-md-12 more-suggest">
               <div className="row more-suggest-content">
                 {ourSpotlights.map((spotlight) => (
-                  <MoreSuggestLink
+                  <MoreSuggestPost
                     key={spotlight.blog_id}
                     content={spotlight}
-                  ></MoreSuggestLink>
+                  ></MoreSuggestPost>
                 ))}
               </div>
             </div>
@@ -28,4 +28,4 @@ class MoreSuggestLinks extends Component {
     );
   }
 }
-export default MoreSuggestLinks;
+export default MoreSuggestPosts;

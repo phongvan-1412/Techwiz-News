@@ -9,41 +9,11 @@ class MoreSuggestLink extends Component {
     const title = tmp_title.replace(["!@#$%^&*()_><.|,`"], "");
     
     return (
-      <div className="col-md-3 more-suggest">
-        <div>
-            <span class="more-suggest-header-text">More From BuffDog News</span>
-        </div>
-
-        <div className="more-suggest-content">
-            <Link to={`/${category_name}/${title}`} replace className="nav-link ob-unit ob-rec-text more-suggest-title">{blog_title}
-            <br />
-            <Link to='/' className="more-suggest-branding">BuffDog New</Link>
-            </Link>
-        </div>
-        <div className="more-suggest-content">
-            <Link to={`/${category_name}/${title}`} replace className="nav-link ob-unit ob-rec-text more-suggest-title">{blog_title}
-            <br />
-            <Link to='/' className="more-suggest-branding">BuffDog New</Link>
-            </Link>
-        </div>
-        <div className="more-suggest-content">
-            <Link to={`/${category_name}/${title}`} replace className="nav-link ob-unit ob-rec-text more-suggest-title">{blog_title}
-            <br />
-            <Link to='/' className="more-suggest-branding">BuffDog New</Link>
-            </Link>
-        </div>
-        <div className="more-suggest-content">
-            <Link to={`/${category_name}/${title}`} replace className="nav-link ob-unit ob-rec-text more-suggest-title">{blog_title}
-            <br />
-            <Link to='/' className="more-suggest-branding">BuffDog New</Link>
-            </Link>
-        </div>
-        <div className="more-suggest-content">
-            <Link to={`/${category_name}/${title}`} replace className="nav-link ob-unit ob-rec-text more-suggest-title">{blog_title}
-            <br />
-            <Link to='/' className="more-suggest-branding">BuffDog New</Link>
-            </Link>
-        </div>
+      <div className="col-md-12 more-suggest-content">
+          <Link to={`/${category_name}/${title}`} replace className="nav-link ob-unit ob-rec-text more-suggest-title">{blog_title}
+          <br />
+          <Link to='/' className="more-suggest-branding">BuffDog New</Link>
+          </Link>
       </div>
     );
   }
