@@ -40,7 +40,7 @@ class NameSetting extends Model
     static $ProcCheckExistsCategory = "exec sp_check_exists_category";
     static $ProcCheckCategoryUpdate = "exec sp_check_category_update";
     static $SelectCategoryRoot = "exec sp_select_category_root";
-    static $SelectCategoryByRoot = "exec sp_select_category_by_root_name";
+    static $SelectCategoryByRoot = "exec sp_select_category_by_root";
     static $SelectAllCategory = "exec sp_select_all_category";
     // customer_accountq
     static $FunctionCheckExistscustomer = "dbo.check_exists_customer";

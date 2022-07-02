@@ -9,7 +9,7 @@ use App\Models\Blog;
 use App\Models\BlogRequest;
 
 
-class BlogController extends Controller
+class BlogApi extends Controller
 {
     public function InsertBlog(Request $request)
     {
@@ -48,11 +48,11 @@ class BlogController extends Controller
         return "Update blog Fail !!!";
     }
 
-    public function SelectBlogById(Request $request)
+    public function SelectBlogById($blog_id)
     {
-        $blog_id = $request->blog_id;
+        //$blogs = DB::table('blog')->where('blog_id', $blog_id)->get();
         
-        $blogs = DB::select(Name::$SelectBlogById.$blog_id);
+        $blogs = DB::select(Name::$SelectBlogById."'$blog_id'");
         return $blogs;
     }
 
@@ -98,9 +98,9 @@ class BlogController extends Controller
         return "Update blog comment status Fail !!!";
     }
 
-    public function SelectBlogComment($blog_title)
+    public function SelectBlogComment($blog_id)
     {
-        $blog_comments = DB::slect(Name::$SelectBlogCommentByTitle."'$blog_title'");
+        $blog_comments = DB::slect(Name::$SelectBlogCommentById."'$blog_id'");
         return $blog_comments;
     }
     
@@ -148,52 +148,12 @@ class BlogController extends Controller
         return $collection;
     }
 
-    public function getAllPost(){
-        $blogs = db::select(Name::$SelectActiveBlog."'1'");
-
-        return view('/admin.allpost', ['blogs' => $blogs]);
-    }
-
-    
-    public function getTrash(){
-        $blogs = db::select(Name::$SelectActiveBlog."'2'");
-
-        return view('/admin.trash', ['blogs' => $blogs]);
-    }
-
-    public function getDrafts(){
-        $blogs = db::select(Name::$SelectActiveBlog."'3'");
-
-        return view('/admin.drafts', ['blogs' => $blogs]);
-    }
-
     public function ReturnAllPost()
     {
         $tmp_blogs = DB::select(Name::$SelectActiveBlog."'1'");
         $blogs = self::AddCollection($tmp_blogs);
-        //return response()->json($blog, 201);
-        //self::XmlBlogFile();
-        //file_put_contents("xml/blog.json",$blogs->toJson());
+        file_put_contents("xml/blog.json",$blogs->toJson());
         return $blogs->toJson();
     }
     
-    public function getAddPost(){
-        $select_category = DB::table('category')->select('category_name')->get();
-        return view('/admin.addpost',['select_category'=>$select_category]);
-    } 
-
-    public function uploadImage(Request $request){
-        if($request->hasFile('upload')){
-            $originName = $request->file('upload')->getClientOriginalName();
-            $filename = pathinfo($originName, PATHINFO_FILENAME);
-            $extension = $request->file('upload')->getClientOriginalExtension();
-            $filename = $filename . '_' .time(). '.' . $extension;
-
-            $request->file('upload')->move(public_path('media'), $fileName);
-
-            $url = asset('media/'.$fileName);
-
-            return response()-json(['filename'=>$fileName, 'uploaded'=>1, 'url'=>$url]);
-        }
-    }
 }
