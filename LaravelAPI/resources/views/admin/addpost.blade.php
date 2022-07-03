@@ -19,28 +19,37 @@
         <div class="col-lg-12 col-sm-10">
             <form method="POST" action="/addpost">
                 {{csrf_field()}}
-
-                <div class="form-title mb-3">
-                    <div class="small mb-1" >Title</div>
+                <div class="form-title mb-2">
+                    <div class="small" >Title</div>
                     <input type="text" name="title" class="form-control">
                 </div>
 
-                <div class="form-category mb-4">
-                    <label class="small mb-1" for="select_category">Category</label>
-                    <select name="select_category" id="select_category" class="form-control">
-                        @foreach ($select_category as $category)
-                            <option value="{{$category->category_name}}" >
-                                {{ $category->category_name }}
-                            </option>
-                        @endforeach
-                    </select>
+                <div class="row gx-3 mb-4">
+                    <div class="col-md-6">
+                        <div class="small">Category</div>
+                        <select name="select_category" id="select_category" class="form-control">
+                            @foreach ($select_category as $category)
+                                <option value="{{$category->category_name}}" >
+                                    {{ $category->category_name }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>      
+                    <div class="col-md-6">
+                        <div class="small">Video URL</div>
+                        <input type="text" name="video_url" id="video_url" class="form-control">
+                    </div>
                 </div>
-                <div class="form-content mt-3">
+
+
+
+                <div class="form-content mb-3">
                     <textarea class="form-control" name="content" id="editor1"></textarea>
                 </div>
+
                 <div class="form-submit">
                     <!-- <button class="btn btn-secondary mt-4" type="submit">Save Draft</button> -->
-                    <button class="btn btn-success mt-4" type="submit">Publish</button>
+                    <button class="btn btn-success mb-4" type="submit">Publish</button>
                 </div>
             </form>
         </div>

@@ -10,6 +10,7 @@ use App\Models\Category;
 use Carbon\Carbon;
 use App\Models\BlogRequest;
 use DateTime;
+use Session;
 
 class BlogController extends Controller
 {
@@ -190,17 +191,21 @@ class BlogController extends Controller
        $title = $request->title;
        $category = $request->select_category;
        $content = $request->content; 
-
+       $admin_id = Session::get('emp_id');
+       $video = $request->video_url;
        $category1 = DB::table('category')->where('category_name', $category)->get();
        $category_id = self::GetCategoryId($category1,$category);
 
        $current_date = Carbon::now()->toDateTimeString();
     //INSERT BLOG TO DATABALSE
+
        DB::table('blog')->insert([
-        'blog_title' => $title, 
+        'blog_title' => $title,
+        'admin_id'=> $admin_id, 
         'blog_content' => $content,
         'category_id' => $category_id,
         'blog_day_open' => $current_date,
+        'blog_video_name' => $video,
         'blog_status' => 1
        ]);
     }
