@@ -18,7 +18,7 @@ import MoreSuggestPosts from "../MoreSuggest/MoreSuggestPosts";
 
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { GET_BLOGS } from "../../../actions/types";
+import { getBlogs } from "../../../actions/blogsActions";
 
 class Content extends Component {
   componentDidMount() {
@@ -231,7 +231,4 @@ const mapStateToProps = (state) => ({
   spotlights: state.spotlight.spotlights,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  getBlogs: () => dispatch({ type: GET_BLOGS }),
-});
-export default connect(mapStateToProps, mapDispatchToProps)(Content);
+export default connect(mapStateToProps, {getBlogs})(Content);

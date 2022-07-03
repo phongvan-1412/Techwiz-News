@@ -3,7 +3,7 @@ import SecondaryContent from "./SecondaryContent";
 
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { GET_BLOGS } from "../../../../../../actions/types";
+import { getBlogs } from "../../../../../../actions/blogsActions";
 
 class SecondaryContents1 extends Component {
   componentDidMount() {
@@ -34,7 +34,4 @@ const mapStateToProps = (state) => ({
   spotlights: state.spotlight.spotlights,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  getBlogs: () => dispatch({ type: GET_BLOGS }),
-});
-export default connect(mapStateToProps,mapDispatchToProps)(SecondaryContents1);
+export default connect(mapStateToProps,{ getBlogs })(SecondaryContents1);
