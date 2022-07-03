@@ -111,25 +111,39 @@ class Content extends Component {
                       </div>
                     </div>
 
-                    <div className="row conversation">
-                      <div className="container">
-                        <div className="col-md-9 conversation-header">
-                          <div className="conversation-header-left-component">
-                            <h2 className="conversation-header-head-text">Conversation</h2>
-                            <span>Comments</span>
-                          </div>
-
-                          <div className="conversation-header-right-component">
-                            <span><FaUserFriends className="meta-userfriends"/></span>
-                            <span >Viewing</span>
-                          </div>
+                    <div className="row col-md-9 conversation">
+                      <div className="conversation-header">
+                        <div className="col-md-6 conversation-header-left-component">
+                          <span className="conversation-header-head-text">Conversation</span>
+                          <span>Comments</span>
                         </div>
 
-                        <div className="col-md-3"></div>
+                        <div className="col-md-6 conversation-header-right-component">
+                          <span><FaUserFriends className="meta-userfriends"/></span>
+                          <span >Viewing</span>
+                        </div>
                       </div>
 
-                      <div className="container">
-                        <input type="text" />
+                      <div className="row input-text">
+                        <input type="text" placeholder="What do you think?" />
+                      </div>
+
+                      <div className="row sortby">
+                        <span>Sort by 
+                            <select>
+                                <option value="best" selected>Best</option>
+                                <option value="newest">Newest</option>
+                                <option value="oldest">Oldest</option>
+                            </select>
+                        </span>
+                      </div>
+
+                      <div className="row button-field">
+                        <div className="col-md-3"></div>
+                        <div className="col-md-6 button-showmore">
+                            <button className="btn-showmore">Show More Comments</button>
+                        </div>
+                        <div className="col-md-3"></div>
                       </div>
                     </div>
                         

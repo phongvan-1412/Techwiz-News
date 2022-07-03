@@ -18,9 +18,11 @@
     --twitterColor: #1DA1F2;
     --instagramColor: #1DA1F2;
     --facebookColor: #3b5998;
+    --userFriendsColor: #35b940;
     --headerTextColor: #222;
     --smallTextColor: #666;
     --copyRightColor: #a7c6e5;
+    --buttonShowMore: #003365;
 
 }
 
@@ -525,6 +527,7 @@ body{
     font-size: 16px;
     margin-bottom: 28px;
 }
+/* ----more-suggest-link---- */
 .more-suggest-header-text{
     font-size: 18px;
     color: var(--headerTextColor);
@@ -551,6 +554,73 @@ body{
     height: auto;
     object-fit: center;
     object-position: center;
+}
+/* ----conversation---- */
+.conversation-header{
+    display: flex;
+    align-self: center;
+    width: 100%;
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    padding: 0px;
+    margin: 0px;
+}
+.conversation-header-left-component{
+    padding: 0px;
+    margin: 0px;
+    align-self: center;
+    text-align: left;
+}
+.conversation-header-head-text{
+    margin-right: 80px;
+    font-size: 30px;
+}
+.conversation-header-right-component{
+    padding: 0px;
+    margin: 0px;
+    align-self: center;
+    text-align: right;
+}
+.meta-userfriends{
+    color: var(--userFriendsColor);
+    margin-right: 80px;
+}
+/* ----comment---- */
+.input-text{
+    width: 100%;
+    padding: 0px;
+    margin-top: 20px;
+    margin-left: 0px;
+}
+.input-text input{
+    padding: 10px;
+    border-radius: 5px;
+}
+.sortby span{
+    width: 100%;
+    padding: 0px;
+    margin-top: 10px;
+    margin-left: 0px;
+}
+.sortby select{
+    margin-left: 10px;
+    padding: 0 5px;
+}
+.button-field{
+}
+.button-showmore{
+    margin-top: 50px;
+    text-align: center;
+    align-self: center;
+}
+.btn-showmore{
+    width: 200px;
+    padding: 10px;
+    align-self: center;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--buttonShowMore);
+    color: var(--textColor);
+    border-radius: 5px;
 }
 
 /* ---------RESPONSIVE--------- */
