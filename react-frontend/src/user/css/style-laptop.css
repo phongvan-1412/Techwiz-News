@@ -25,7 +25,7 @@
     --buttonShowMore: #003365;
     --buttonLogin: #1b4e81;
     --butttonCreateAccount: #edf6ff;
-
+    --footerTextColor: #5787b8;
 }
 
 body{
@@ -623,46 +623,35 @@ body{
     border-radius: 5px;
 }
 /* ----------LOG IN---------- */
-.login-header h1{
+.login-header-text{
     font-size: 48px;
     color: var(--headerTextColor);
     font-weight: 700;
     margin: 0px;
     padding: 0px;
-    border: none;
-    text-align: center;
 }
-.login-form form{
-    text-align: center;
+.form-group .form-control{
+    border: var(--borderColor);
     align-self: center;
 }
-.login-form input {
-    border: var(--borderColor);
-    font-size: 16px;
-    padding: 0 14px;
-    height: 41px;
-    width: 200px;
-    align-self: center;
-    text-align: left;
-}
-.login-form button{
-    border: var(--borderColor);
-    font-size: 16px;
-    padding: 0 14px;
-    height: 41px;
-    width: 200px;
-}
-.login-form .btn-login{
+.btn-login{
     background-color: var(--buttonLogin);
     color: var(--textColor);
-    align-self: center;
-    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
 }
-.login-form .btn-create-account{
+.btn-create-account{
     background-color: var(--butttonCreateAccount);
     color: var(--tertiaryColor);
-    align-self: center;
-    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+}
+.login-note-text{
+    color: var(--buttonShowMore);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: underline;
+    background-color: var(--butttonCreateAccount)
 }
 /* ---------RESPONSIVE--------- */
 @media screen and (max-width: 2560px){
