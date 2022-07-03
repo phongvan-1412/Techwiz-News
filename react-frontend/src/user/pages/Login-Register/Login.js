@@ -23,12 +23,12 @@ class Login extends Component{
                             <button className="form-control btn btn-secondary btn-login" type="submit">Log In</button>
                         </div>
                         <div className='form-submit mt-4 text-center'>
-                            <button className="form-control btn btn-secondary btn-create-account" type="submit">Create Account</button>
+                            <Link to='/register'><button className="form-control btn btn-secondary btn-create-account" type="submit">Create Account</button></Link>
                         </div>
                     </div>
 
                     <div className="form-footer text-center mt-4 mb-4">
-                        <Link to='/register'><span className="login-note-text">Forgot your password?</span></Link> 
+                        <span className="login-note-text">Forgot your password?</span> 
                     </div>
                 </div>
                 <div className="col-md-5"></div>
