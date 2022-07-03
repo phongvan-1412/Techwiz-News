@@ -32,6 +32,7 @@ Route::post('/updateblog',[BlogApi::class, 'UpdateBlogRequest']);
 Route::post('/insertblogcomment',[BlogApi::class, 'InsertBlogComment']);
 Route::post('/updateblogcomment',[BlogApi::class, 'UpdateBlogComment']);
 Route::get('/selectblogbyid/{blog_id}',[BlogApi::class, 'SelectBlogById']);
+Route::get('/selectblogbycategory/{category_id}',[BlogApi::class, 'SelectBlogByCategory']);
 Route::get('/selectblogcommentbyid/{blog_id}',[BlogApi::class, 'SelectBlogComment']);
 
 Route::post('/customerlogin',[CustomerApi::class, 'CustomerLogin']);

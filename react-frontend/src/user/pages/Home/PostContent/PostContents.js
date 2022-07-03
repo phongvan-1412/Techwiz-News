@@ -1,30 +1,38 @@
 import React, { Component } from "react";
 import PostContent from "./PostContent";
-import { Consumer } from "../../../layout/context";
-import { Link } from "react-router-dom";
+
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { GET_BLOGS } from "../../../../actions/types";
 
 class PostContents extends Component {
+  componentDidMount() {
+    this.props.getBlogs();
+  }
   render() {
+    const { spotlights } = this.props;
+
     return (
-      <Consumer>
-        {(value) => {
-          const { spotlights } = value;
-          const q = [];
-          const ourSpotlights = q.concat(spotlights);
-          ourSpotlights.length = 12;
-          return (
-            <div>
-              {ourSpotlights.map((spotlight) => (
-                <PostContent
-                  key={spotlight.blog_id}
-                  content={spotlight}
-                ></PostContent>
-              ))}
-            </div>
-          );
-        }}
-      </Consumer>
+      <div>
+        {spotlights.map((spotlight) => (
+          <PostContent
+            key={spotlight.blog_id}
+            content={spotlight}
+          ></PostContent>
+        ))}
+      </div>
     );
   }
 }
-export default PostContents;
+PostContents.propTypes = {
+  getBlogs: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  spotlights: state.spotlight.spotlights,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  getBlogs: () => dispatch({ type: GET_BLOGS }),
+});
+export default connect(mapStateToProps,mapDispatchToProps)(PostContents);

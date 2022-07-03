@@ -15,16 +15,6 @@ class BlogApi extends Controller
     {
         $blog = new Blog();
         $blog = $request;
-
-        // $blog = [
-        //     "admin_id" => $request->admin_id,
-        //     "category_id" => $request->category_id,
-        //     "blog_content" => $request->blog_title,
-        //     "blog_content" => $request->blog_content,
-        //     "blog_img_name" => $request->blog_img_name,
-        //     "blog_video_name" => $request->blog_video_name,
-        //     "blog_day_open" => $request->blog_day_open,
-        // ];
         
         DB::table('blog')->insert($blog->toArray());
         $check = DB::table('blog')->where('blog_title', $blog->blog_title)->get();
@@ -155,5 +145,13 @@ class BlogApi extends Controller
     file_put_contents("xml/blog.json",$blogs->toJson());
     return $blogs->toJson();
     }
+
+    public function SelectBlogByCategory($category_id)
+    {
+        $tmp_blogs = DB::select("exec sp_select_blog_by_category '$category_id'");
+        $blogs = self::AddCollection($tmp_blogs);
+        return $blogs;
+    }
+    
 
     }
