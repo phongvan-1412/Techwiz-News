@@ -58,7 +58,7 @@ const Header = props => {
                             <FaSearch />
                         </button>
 
-                        <Link to="#" className="login" id="account">Login</Link>
+                        <Link to="/login" className="login" id="account">Login</Link>
                         <Link to="#" className="watch">WatchTV</Link>
 
                         <button className="nav-btn nav-close-btn" onClick={showNavbar}>

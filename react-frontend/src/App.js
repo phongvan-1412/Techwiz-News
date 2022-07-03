@@ -4,6 +4,8 @@ import {BrowserRouter as Router, Routes} from "react-router-dom";
 import Header from "./user/layout/Header";
 import Footer from "./user/layout/Footer";
 import Advertisement from "./user/layout/Advertisement";
+import Login from "./user/pages/Login-Register/Login";
+import Register from "./user/layout/Advertisement";
 
 import { Provider } from "../src/user/layout/context";
 import MainRoute from "./MainRoute";

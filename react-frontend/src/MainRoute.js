@@ -4,6 +4,9 @@ import { BrowserRouter as Router, Route, Routes, Link, NavLink } from "react-rou
 import Category from './user/pages/Category/Category'
 import Content from "./user/layout/Content/Content";
 import HomeContent from "./user/pages/Home/HomeContent";
+import Login from "../src/user/pages/Login-Register/Login";
+import Register from "../src/user/pages/Login-Register/Register";
+
 
 class MainRoute extends Component {
   render() {
@@ -31,6 +34,9 @@ class MainRoute extends Component {
                     element={<Category />}
                   ></Route>
                 ))}
+                <Route path="/login" element={<Login />}></Route>
+                <Route path="/register" element={<Register />}></Route>
+                
               </Routes>
             </div>
           );
