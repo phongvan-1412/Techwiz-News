@@ -19,6 +19,7 @@ class NameSetting extends Model
     static $ChangeStatusBlog = "exec sp_change_status_blog";
     static $SelectActiveBlog = "exec sp_select_active_blog";
     static $SelectBlogById = "exec sp_select_blog_by_id";
+    static $SelectBlogWithAuthorAndCategory = "exec sp_get_all_post";
     // blog_comment
     static $InsertBlogComment = "exec sp_insert_blog_comment";
     static $UpdateBlogComment = "exec sp_update_blog_comment";

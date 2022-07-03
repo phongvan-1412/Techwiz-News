@@ -41,13 +41,16 @@
                     </div>
                 </div>
 
-
-
                 <div class="form-content mb-3">
                     <textarea class="form-control" name="content" id="editor1"></textarea>
                 </div>
 
-                <div class="form-submit">
+                <div class="form-thumbnail mb-2">
+                    <div class="small" >Thumbnail Image</div>
+                    <input type="file" name="thumbnail" class="form-control">
+                </div>
+
+                <div class="form-submit mt-2">
                     <!-- <button class="btn btn-secondary mt-4" type="submit">Save Draft</button> -->
                     <button class="btn btn-success mb-4" type="submit">Publish</button>
                 </div>

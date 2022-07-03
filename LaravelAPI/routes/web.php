@@ -48,6 +48,10 @@ Route::middleware([LoginMiddleware::class])->group(function(){
     Route::post('/adminprofile/changeprofile', [Profile::class, 'postProfile']);
     Route::post('/adminprofile/changepwd', [Profile::class, 'changePassword']);
 
+    // CATEGORY
+    Route::get('admin/category', [Category::class, 'getCategoryform']);
+    Route::post('admin/addcategory', [Category::class, 'postCategoryform']);
+
 });
 
 

@@ -152,7 +152,7 @@ class BlogController extends Controller
     }
 
     public function getAllPost(){
-        $blogs = db::select(Name::$SelectActiveBlog."'1'");
+        $blogs = DB::select(Name::$SelectBlogWithAuthorAndCategory);
 
         return view('/admin.allpost', ['blogs' => $blogs]);
     }
@@ -188,15 +188,19 @@ class BlogController extends Controller
 
     public function postAddPost(Request $request){
     //GET BLOG INFO
-       $title = $request->title;
-       $category = $request->select_category;
-       $content = $request->content; 
-       $admin_id = Session::get('emp_id');
-       $video = $request->video_url;
-       $category1 = DB::table('category')->where('category_name', $category)->get();
-       $category_id = self::GetCategoryId($category1,$category);
+        $title = $request->title;
+        $category = $request->select_category;
+        $content = $request->content; 
+        $admin_id = Session::get('emp_id');
+        $video = $request->video_url;
+        $category1 = DB::table('category')->where('category_name', $category)->get();
+        $category_id = self::GetCategoryId($category1,$category);
+        $current_date = Carbon::now()->toDateTimeString();
 
-       $current_date = Carbon::now()->toDateTimeString();
+        $thumbnail  = $request->file('thumbnail');
+        $extension  = $request->file('thumbnail')->extension();
+        $thumbnail_name   = time().'-'.'thumbnail.'.$extension;
+        $thumbnail->move(public_path('upload.product'), $thumbnail_name);
     //INSERT BLOG TO DATABALSE
 
        DB::table('blog')->insert([
@@ -204,6 +208,7 @@ class BlogController extends Controller
         'admin_id'=> $admin_id, 
         'blog_content' => $content,
         'category_id' => $category_id,
+        'blog_thumbnail_name'=> $thumbnail_name,
         'blog_day_open' => $current_date,
         'blog_video_name' => $video,
         'blog_status' => 1
