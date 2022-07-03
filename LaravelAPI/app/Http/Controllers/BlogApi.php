@@ -148,9 +148,9 @@ class BlogApi extends Controller
     return $collection;
     }
 
-    public function ReturnAllPost()
+    public function SelectActiveBlog()
     {
-    $tmp_blogs = DB::select(Name::$SelectActiveBlog."'1'");
+    $tmp_blogs = DB::select("exec sp_select_active_blogs");
     $blogs = self::AddCollection($tmp_blogs);
     file_put_contents("xml/blog.json",$blogs->toJson());
     return $blogs->toJson();

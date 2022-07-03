@@ -8,7 +8,7 @@ class SpotLightCategory extends Component {
       blog_title,
       blog_content,
       blog_day_open,
-      blog_img_name,
+      blog_thumbnail_name,
       category_name,
     } = this.props.content;
     const tmp_title = blog_title.replace(" ", "");
@@ -18,7 +18,7 @@ class SpotLightCategory extends Component {
         <div>
           <Link to={`/${category_name}/${title}`}>
             <img
-              src={require(`../../img/pages/Home/${blog_img_name}.jpg`)}
+              src={require(`../../img/pages/Home/${blog_thumbnail_name}`)}
               style={{
                 width: "100%",
                 height: "auto",

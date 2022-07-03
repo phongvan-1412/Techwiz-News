@@ -95,10 +95,12 @@ class EmployeeApi extends Controller
         return $employee_info;
     }
 
-    public function SelectAllEmployee()
+    public function SelectStaffs()
     {
-        $employees = DB::select(Name::$SelectAllEmployee);
-        return $employees;
+        $tmp_staffs = DB::table('employee_account')->get();
+        $staffs = self::AddCollection($tmp_staffs);
+
+        return $staffs;
     }
     
     public function SelectManager()
@@ -106,5 +108,18 @@ class EmployeeApi extends Controller
         $managers = DB::select(Name::$Selectmanager);
         return $manager;
     }
-    
+
+    public function AddCollection($arr)
+    {
+    $collection = collect();
+
+    foreach($arr as $category)
+    {
+    $newCategory = new Employee();
+    $newCategory = $category;
+    $collection->add($newCategory);
+    }
+
+    return $collection;
+    }
 }

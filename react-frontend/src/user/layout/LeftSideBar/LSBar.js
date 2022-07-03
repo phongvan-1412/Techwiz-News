@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 class LSBar extends Component {
   render() {
-    const { blog_id, blog_title, blog_content, category_name, blog_img_name } =
+    const { blog_id, blog_title, blog_content, category_name, blog_thumbnail_name } =
       this.props.content;
       const tmp_title = blog_title.replace(" ", "-");
       const title = tmp_title.replace(["!@#$%^&*()_><.|,`"], "");
@@ -15,7 +15,7 @@ class LSBar extends Component {
       >
         <div className="col-md-12" style={{ margin: "5px 0" }}>
           <img
-            src={require(`../../img/pages/Home/${blog_img_name}.jpg`)}
+            src={require(`../../img/pages/Home/${blog_thumbnail_name}`)}
             style={{
               width: "100%",
               height: "auto",
