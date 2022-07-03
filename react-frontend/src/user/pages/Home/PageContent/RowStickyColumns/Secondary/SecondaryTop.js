@@ -10,10 +10,12 @@ class SecondaryTop extends Component {
   }
   render() {
     const { spotlights } = this.props;
-
+    const tmpSpotlights = [];
+    const localSpotlights =  tmpSpotlights.concat(spotlights);
+    localSpotlights.length = 1;
     return (
       <div className="secondary-top">
-        {spotlights.map((spotlight) => (
+        {localSpotlights.map((spotlight) => (
           <div>
             <img
               className="secondary-top-img"
