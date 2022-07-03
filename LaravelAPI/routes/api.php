@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogApi;
 use App\Http\Controllers\CategoryApi;
 use App\Http\Controllers\CustomerApi;
+use App\Http\Controllers\EmployeeApi;
 use App\Http\Controllers\GenderApi;
 
 /*
@@ -21,7 +22,7 @@ use App\Http\Controllers\GenderApi;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/returnallpost',[BlogApi::class, 'ReturnAllPost']);
+Route::get('/selectactiveblog',[BlogApi::class, 'SelectActiveBlog']);
 
 Route::get('/gender',[GenderApi::class, 'SelectAllGender']);
 
@@ -43,5 +44,9 @@ Route::get('/getcustomerinfo',[CustomerApi::class, 'GetCustomerInfo']);
 
 Route::get('/selectcategorybyroot/{category_root_id?}',[CategoryApi::class, 'SelectCategoryByRoot']);
 Route::get('/selectcategoryroot',[CategoryApi::class, 'SelectCategoryRoot']);
+Route::get('/selectcategories',[CategoryApi::class, 'SelectCategories']);
+
+Route::get('/selectstaffs',[EmployeeApi::class, 'SelectStaffs']);
+
 
 

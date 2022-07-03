@@ -49,15 +49,33 @@ class CategoryApi extends Controller
         return $categories;
     }
     
-    public function SelectAllCategory()
+    public function SelectCategories()
     {
-        $categories = DB::select(Name::$SelectAllCategory);
+        $tmp_categories = DB::table('category')->get();
+        $categories = self::AddCollection($tmp_categories);
+
         return $categories;
     }
 
     public function SelectCategoryByRoot($category_root_id)
     {
-        $categories = DB::select(Name::$SelectCategoryByRoot."'$category_root_id'");
+        $tmp_categories= DB::select(Name::$SelectCategoryByRoot."'$category_root_id'");
+        $categories = self::AddCollection($tmp_categories);
         return $categories;;
+    }
+
+
+    public function AddCollection($arr)
+    {
+    $collection = collect();
+
+    foreach($arr as $category)
+    {
+    $newCategory = new Category();
+    $newCategory = $category;
+    $collection->add($newCategory);
+    }
+
+    return $collection;
     }
 }
