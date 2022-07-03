@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { FaFacebook, FaTwitter, FaInstagramSquare, FaFlipboard, FaComments, FaPrint } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaInstagramSquare, FaFlipboard, FaComments, FaPrint, FaUserFriends } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md'
 import { Consumer } from '../context'
 
@@ -111,7 +111,29 @@ class Content extends Component {
                       </div>
                     </div>
 
-                  </div>
+                    <div className="row conversation">
+                      <div className="container">
+                        <div className="col-md-9 conversation-header">
+                          <div className="conversation-header-left-component">
+                            <h2 className="conversation-header-head-text">Conversation</h2>
+                            <span>Comments</span>
+                          </div>
+
+                          <div className="conversation-header-right-component">
+                            <span><FaUserFriends className="meta-userfriends"/></span>
+                            <span >Viewing</span>
+                          </div>
+                        </div>
+
+                        <div className="col-md-3"></div>
+                      </div>
+
+                      <div className="container">
+                        <input type="text" />
+                      </div>
+                    </div>
+                        
+                    </div>
                 </div>
               ))}
             </div>

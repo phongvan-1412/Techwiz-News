@@ -18,6 +18,7 @@
     --twitterColor: #1DA1F2;
     --instagramColor: #1DA1F2;
     --facebookColor: #3b5998;
+    --userFriendsColor: #35b940;
     --headerTextColor: #222;
     --smallTextColor: #666;
     --copyRightColor: #a7c6e5;
@@ -525,6 +526,7 @@ body{
     font-size: 16px;
     margin-bottom: 28px;
 }
+/* ----more-suggest-link---- */
 .more-suggest-header-text{
     font-size: 18px;
     color: var(--headerTextColor);
@@ -551,6 +553,33 @@ body{
     height: auto;
     object-fit: center;
     object-position: center;
+}
+/* ----conversation---- */
+.conversation-header{
+    display: flex;
+    float: left;
+    align-items: center;
+    border-bottom: var(--borderColor);
+}
+.conversation-header-left-component{
+    display: flex;
+    float: left;
+    align-items: center;
+    text-align: left;
+    margin-right: 400px;
+}
+.conversation-header-head-text{
+    margin-right: 80px;
+}
+.conversation-header-right-component{
+    display: flex;
+    float: left;
+    align-items: center;
+    text-align: right;
+}
+.meta-userfriends{
+    color: var(--userFriendsColor);
+    margin-right: 80px;
 }
 /* ---------RESPONSIVE--------- */
 @media screen and (max-width: 2560px){
