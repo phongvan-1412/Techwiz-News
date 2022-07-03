@@ -1,1 +1,3 @@
 export const GET_BLOGS = 'GET_BLOGS';
+export const GET_BLOGS_BY_CATEGORY = 'GET_BLOGS_BY_CATEGORY';
+export const GET_BLOGS_BY_ID = 'GET_BLOGS_BY_ID';
