@@ -1,30 +1,37 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
 class Login extends Component{
     render(){
         return(
             <div className="row">
-                <div className="col-md-1"></div>
-                <div className="col-md-10 login-page">
-                    <div className="row login-header">
-                        <h1 className="col-md-12">Sign In</h1>
+                <div className="col-md-5"></div>
+                <div className="col-md-2">
+                    <div className="form-header text-center">
+                        <h1 className="login-header-text">Sign In</h1>
                     </div>
 
-                    <div className="row login-form ">
-                        <form className="container ">
-                            <input className="row login-email" type="email" placeholder="Enter your email"/>
-                            <input className="row login-password" type="password" placeholder="Enter your password"/>
-                            <button className="row btn-login" type="submit">Log In</button>
-                            <button className="row btn-create-account" type="submit">Create Account</button>
-                        </form>
+                    <div className="form-group">
+                        <div className='mt-4'>
+                            <input className="form-control login-email" type="email" placeholder="Enter your email"/>
+                        </div>
+                        <div className='mt-4'>
+                            <input className="form-control login-password" type="password" placeholder="Enter your password"/>                     
+                        </div>
+                        <div className='form-submit mt-4 text-center'>
+                            <button className="form-control btn btn-secondary btn-login" type="submit">Log In</button>
+                        </div>
+                        <div className='form-submit mt-4 text-center'>
+                            <button className="form-control btn btn-secondary btn-create-account" type="submit">Create Account</button>
+                        </div>
                     </div>
 
-                    <div className="row login-note">
-                        <span className="col-md-12">Forgot your password?</span>
+                    <div className="form-footer text-center mt-4 mb-4">
+                        <Link to='/register'><span className="login-note-text">Forgot your password?</span></Link> 
                     </div>
                 </div>
-                <div className="col-md-1"></div>
+                <div className="col-md-5"></div>
             </div>
         )
     }
