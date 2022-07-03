@@ -653,6 +653,19 @@ body{
     text-decoration: underline;
     background-color: var(--butttonCreateAccount)
 }
+/* ----------REGISTER---------- */
+.register-head-text{
+    font-weight: 700;
+}
+.register-footer-note-text{
+    font-size: 15px;
+    color: var(--smallTextColor);
+    font-weight: 300;
+}
+.term-of-use, .privacy-policy{
+    color: var(--tertiaryColor);
+    text-decoration: underline;
+}
 /* ---------RESPONSIVE--------- */
 @media screen and (max-width: 2560px){
     /* -----HEADER---- */
