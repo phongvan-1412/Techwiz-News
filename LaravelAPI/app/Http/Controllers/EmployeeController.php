@@ -36,7 +36,7 @@ class EmployeeController extends Controller
     {
         $check = DB::select(Name::$CheckExistsEmployee."'$employee_email'");
         if($check > 0) return "Account already exists !!!";
-        return "Account aviable !!!";;
+        return "Account available !!!";;
     }
 
     public function UpdateEmployee(Request $request)

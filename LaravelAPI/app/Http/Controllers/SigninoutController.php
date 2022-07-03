@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\NameSetting as Name;
+use App\Http\Controllers\EmployeeController as Employee;
+use Session;
+
 
 class SigninoutController extends Controller
 {
@@ -13,8 +16,30 @@ class SigninoutController extends Controller
         return view('loginform');    
     }
 
-    public function Login(){
-        
+    public function Login(Request $request){
+        $username = $request->username;
+        $pwd = md5($request->pwd);
+         
+        $admin = DB::table('employee_account')->where('emp_email', $username)->where('emp_pwd', $pwd)->first();
+        if($admin){
+            Session::put('emp_id', $admin->emp_id);
+            Session::put('emp_name', $admin->emp_name);
+            Session::put('emp_email', $admin->emp_email);//
+            Session::put('emp_pwd', $admin->emp_pwd);
+            Session::put('emp_contact', $admin->emp_contact);//
+            Session::put('emp_dob', $admin->emp_dob);//
+            Session::put('emp_img_name', $admin->emp_img_name);//
+            Session::put('emp_address', $admin->emp_address);  
+            return redirect()->action([Employee::class, 'getAdminhome']);
+        }else{
+            Session::put('msg','Incorrect email or password !');
+            return redirect()->back()->withInput();
+        }
+    }
+
+    public function Logout(Request $request){
+        $request->session()->flush();
+        return redirect()->action([SigninoutController::class, 'getLoginForm']);
     }
 
     public function getRegisterForm(){
@@ -60,7 +85,5 @@ class SigninoutController extends Controller
 
     }
 
-    public function LogOut(){
-        // code here
-    }
+
 }

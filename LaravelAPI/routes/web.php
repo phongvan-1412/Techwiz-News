@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryController as Category;
 use App\Http\Controllers\BlogController as Blog;
 use App\Http\Controllers\SigninoutController as Signinout;
 use App\Http\Controllers\ProfileController as Profile;
+use App\Http\Middleware\LoginMiddleware;
 
 
 
@@ -26,11 +27,7 @@ Route::get('/xmlblogfile',[Blog::class, 'XmlBlogFile']);
 // Route::post('/register',[RegisterController::class, 'postRegisterform']);
 
 // ----------------------------ADMIN--------------------------------------//
-Route::get('/adminhome',[Employee::class,'getAdminhome'])->name('adminhome');
-// NEWS
-Route::get('/allpost', [Blog::class, 'getAllPost']);
-Route::get('/addpost', [Blog::class, 'getAddPost']);
-Route::post('/addpost', [Blog::class, 'postAddPost']);
+
 
 Route::any('/ckfinder/connector', '\CKSource\CKFinderBridge\Controller\CKFinderController@requestAction')
     ->name('ckfinder_connector');
@@ -38,8 +35,22 @@ Route::any('/ckfinder/connector', '\CKSource\CKFinderBridge\Controller\CKFinderC
 Route::any('/ckfinder/browser', '\CKSource\CKFinderBridge\Controller\CKFinderController@browserAction')
     ->name('ckfinder_browser');
 
-Route::get('/trash', [Blog::class, 'getTrash']);
-Route::get('/drafts', [Blog::class, 'getDrafts']);
+Route::middleware([LoginMiddleware::class])->group(function(){
+    Route::get('/adminhome',[Employee::class,'getAdminhome'])->name('adminhome');
+    // NEWS
+    Route::get('/allpost', [Blog::class, 'getAllPost']);
+    Route::get('/addpost', [Blog::class, 'getAddPost']);
+    Route::post('/addpost', [Blog::class, 'postAddPost']);
+    Route::get('/trash', [Blog::class, 'getTrash']);
+    Route::get('/drafts', [Blog::class, 'getDrafts']);
+    // PROFILE
+    Route::get('/adminprofile', [Profile::class, 'getProfile']);
+    Route::post('/adminprofile/changeprofile', [Profile::class, 'postProfile']);
+    Route::post('/adminprofile/changepwd', [Profile::class, 'changePassword']);
+
+});
+
+
 
 // LOGIN
 Route::get('/login', [Signinout::class, 'getLoginForm']);
@@ -47,7 +58,5 @@ Route::post('/login', [Signinout::class, 'Login']);
 // REGISTER
 Route::get('register', [Signinout::class, 'getRegisterForm']);
 Route::post('register', [Signinout::class, 'Register']);
+Route::get('/logout', [Signinout::class, 'Logout']);
 
-// PROFILE
-Route::get('/profile', [Profile::class, 'getProfile']);
-Route::post('/profile', [Profile::class, 'postProfile']);

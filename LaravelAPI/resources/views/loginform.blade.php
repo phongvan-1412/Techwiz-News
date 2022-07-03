@@ -19,7 +19,8 @@
         <div class="row">
             <div class="col-md-4 login-sec">
                 <h2 class="text-center">Login</h2>
-                <form class="login-form">
+                <form method="POST" action="login" class="login-form">
+                    {{csrf_field()}}
                     <div class="form-group">
                         <label for="exampleInputEmail1" class="text-uppercase">Username</label>
                         <input type="text" class="form-control" name="username">

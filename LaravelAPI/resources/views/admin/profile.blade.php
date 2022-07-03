@@ -11,7 +11,7 @@
     <hr class="mt-0 mb-4">
     <div class="row">
         <div class="col-xl-4">
-            <form action="profile" method="POST" enctype="multipart/form-data">
+            <form action="/adminprofile/changeprofile" method="POST" enctype="multipart/form-data">
                 {{csrf_field()}}
                 <!-- Profile picture card-->
                 <div class="card mb-2 mb-xl-0">
@@ -19,7 +19,7 @@
                     <div class="card-body text-center">
                         <!-- Profile picture image-->
                         <img class="img-account-profile rounded-circle mb-2"
-                            src="{{asset('upload/default-profile.jpg')}}" alt="">
+                            src="{{asset('upload')}}/{{Session::get('emp_img_name') }}" alt="">
                         <!-- Profile picture help block-->
                         <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
                         <!-- Profile picture upload button-->
@@ -38,65 +38,52 @@
             <div class="card mb-4">
                 <div class="card-header">Account Details</div>
                 <div class="card-body">
-
                     <!-- Form Group (username)-->
                     <div class="mb-3">
-                        <label class="small mb-1" for="inputUsername">Rank</label>
-                        <input class="form-control" id="inputUsername" type="text" value="Platinum" disabled>
+                        <label class="small mb-1" for="position">Position</label>
+                        <input class="form-control" name="position" id="position" type="text" value="Editor" disabled>
+                    </div>
+
+                    <div class="mb-3" hidden>
+                            <label class="small mb-1" for="email">Hidden Email</label>
+                            <input class="form-control" id="email" name="email" type="email"
+                                value="{{Session::get('emp_email')}}">
                     </div>
                     <!-- Form Row-->
-                    <div class="row gx-3 mb-3">
-                        <!-- Form Group (first name)-->
-                        <div class="col-md-6">
-                            <label class="small mb-1" for="inputFirstName">First name</label>
-                            <input class="form-control" id="inputFirstName" type="text"
-                                placeholder="Enter your first name" value="Valerie" disabled>
-                        </div>
-                        <!-- Form Group (last name)-->
-                        <div class="col-md-6">
-                            <label class="small mb-1" for="inputLastName">Last name</label>
-                            <input class="form-control" id="inputLastName" type="text"
-                                placeholder="Enter your last name" value="Luna" disabled>
-                        </div>
+                    <div class="mb-3">
+                        <label class="small mb-1" for="fullname">Full name</label>
+                        <input class="form-control" id="fullname" name="fullname" type="text"
+                            placeholder="Enter your fullname" value="{{Session::get('emp_name')}}">
                     </div>
-                    <!-- Form Row-->
-                    <div class="row gx-3 mb-3">
-                        <!-- Form Group (organization name)-->
-                        <div class="col-md-6">
-                            <label class="small mb-1" for="inputOrgName">Organization name</label>
-                            <input class="form-control" id="inputOrgName" type="text"
-                                placeholder="Enter your organization name" value="Start Bootstrap">
-                        </div>
-                        <!-- Form Group (location)-->
-                        <div class="col-md-6">
-                            <label class="small mb-1" for="inputLocation">Location</label>
-                            <input class="form-control" id="inputLocation" type="text" placeholder="Enter your location"
-                                value="San Francisco, CA">
-                        </div>
+
+                    <!-- Form Group (organization name)-->
+                    <div class="mb-3">
+                        <label class="small mb-1" for="address">Address</label>
+                        <input class="form-control" id="address" name="address" type="text"
+                            placeholder="Enter your address" value="{{Session::get('emp_address')}}">
                     </div>
                     <!-- Form Group (email address)-->
                     <div class="mb-3">
-                        <label class="small mb-1" for="Email">Email address</label>
-                        <input class="form-control" id="Email" name="Email" type="email"
-                            placeholder="Enter your email address" value="xuanphuong@gmail.com" disabled>
+                        <label class="small mb-1" for="email">Email address</label>
+                        <input class="form-control" id="email" value="{{Session::get('emp_email')}}" disabled>
                     </div>
                     <!-- Form Row-->
                     <div class="row gx-3 mb-3">
                         <!-- Form Group (phone number)-->
                         <div class="col-md-6">
-                            <label class="small mb-1" for="inputPhone">Phone number</label>
-                            <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number"
-                                value="555-123-4567">
+                            <label class="small mb-1" for="phonenumber">Phone number</label>
+                            <input class="form-control" id="phonenumber" name="phonenumber" type="tel" placeholder="Enter your phone number"
+                                value="{{Session::get('emp_contact')}}">
                         </div>
                         <!-- Form Group (birthday)-->
                         <div class="col-md-6">
-                            <label class="small mb-1" for="inputBirthday">Birthday</label>
-                            <input class="form-control" id="inputBirthday" type="date" name="birthday"
-                                placeholder="Enter your birthday" value="06/10/1988">
+                            <label class="small mb-1" for="dateofbirth">Birthday</label>
+                            <input class="form-control" id="dateofbirth" type="date" name="dateofbirth"
+                                placeholder="Enter your birthday" value="{{Session::get('emp_dob')}}">
                         </div>
                     </div>
-                    <!-- Save changes button-->
-                    <button class="btn btn-primary" type="submit">Save changes</button>
+                        <!-- Save changes button-->
+                        <button class="btn btn-primary" type="submit">Save changes</button>
                     </form>
                 </div>
             </div>
@@ -111,13 +98,14 @@
                         {{session('thongbao')}}
                     </div>
                     @endif
-                    <form action="/changepwd" method="POST">
+                    <form action="/adminprofile/changepwd" method="POST">
                         {{csrf_field()}}
                         <div class="mb-3" hidden>
                             <label class="small mb-1" for="hiddenemail">Email</label>
                             <input class="form-control" id="hiddenemail" name="hiddenemail" type="email"
-                                value="xuanphuong@gmail.com">
+                                value="{{Session::get('emp_email')}}">
                         </div>
+
                         <div class="mb-3">
                             <label class="small mb-1" for="currentpwd">Current Password</label>
                             <input class="form-control" id="currentpwd" name="currentpwd" type="password">
