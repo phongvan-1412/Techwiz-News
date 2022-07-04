@@ -82,7 +82,6 @@ class SigninoutController extends Controller
             return redirect()->back()->withInput()->with('msg'); 
 
         }
-
     }
 
 

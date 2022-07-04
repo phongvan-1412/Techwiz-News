@@ -24,7 +24,7 @@ class LoginMiddleware
         function checkrequest($requesturl){
             $adminUrl = new Collection();
             $adminUrl = collect(["/adminhome","/allpost","/addpost","/addpost","/trash","/drafts","/adminprofile",
-            "/adminprofile/changeprofile", "/adminprofile/changepwd"]);
+            "/adminprofile/changeprofile", "/adminprofile/changepwd","/admin/category","/admin/addcategory"]);
             $check = false;
             foreach ($adminUrl as $isUrl){
                 if($requesturl == $isUrl){

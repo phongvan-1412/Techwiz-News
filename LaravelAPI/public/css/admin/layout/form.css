@@ -82,10 +82,12 @@
 .TriSea-technologies-Switch > input[type="checkbox"]:checked + label::before {
     background: inherit;
     opacity: 0.5;
+    background-color: rgb(16, 120, 255);
 }
 .TriSea-technologies-Switch > input[type="checkbox"]:checked + label::after {
     background: inherit;
     left: 20px;
+    background-color: #fff;
 }
 
 

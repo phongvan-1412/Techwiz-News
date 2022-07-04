@@ -28,11 +28,11 @@
 
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#category" aria-expanded="true" aria-controls="category">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#post" aria-expanded="true" aria-controls="post">
         <i class="fas fa-pencil-alt"></i>
         <span>POST</span>
     </a>
-    <div id="category" class="collapse" data-parent="#accordionSidebar">
+    <div id="post" class="collapse" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Custom Utilities:</h6>
             <a class="collapse-item admin_menu" href="/allpost" data-link="#">All Post</a>
@@ -43,15 +43,28 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#media" aria-expanded="true" aria-controls="media">
             <i class="fas fa-images"></i>
             <span>MEDIA</span>
         </a>
-        <div id="collapseTwo" class="collapse" data-parent="#accordionSidebar">
+        <div id="media" class="collapse" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Custom Components:</h6>
-                <a class="collapse-item" href="#">Library</a>
                 <a class="collapse-item" href="#">Add New</a>
+            </div>
+        </div>
+    </li>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#category" aria-expanded="true" aria-controls="category">
+            <i class="fas fa-boxes"></i>
+            <span>CATEGORY</span>
+        </a>
+        <div id="category" class="collapse" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Custom Components:</h6>
+                <a class="collapse-item" href="/admin/category">Add New</a>
             </div>
         </div>
     </li>
@@ -60,13 +73,13 @@
 
     <li class="nav-item">
         <a class="nav-link" href="/trash">
-            <i class="fas fa-comment-dots"></i>
+            <i class="fas fa-trash-alt"></i>
             <span>TRASH</span></a>
     </li>
 
     <li class="nav-item">
         <a class="nav-link" href="/drafts">
-            <i class="fas fa-comment-dots"></i>
+            <i class="far fa-edit"></i>
             <span>DRAFTS</span></a>
     </li>
 
