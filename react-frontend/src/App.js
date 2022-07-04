@@ -19,7 +19,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <div className="App">
+          <div>
             <Header />
             <Advertisement />
             <div className="row">
