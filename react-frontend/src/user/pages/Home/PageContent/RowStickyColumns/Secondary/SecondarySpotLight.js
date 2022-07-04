@@ -12,7 +12,7 @@ class SecondarySpotLight extends Component {
     return (
       <div className="col-md-6 secondary-spotlight">
         <div>
-          <Link to={`/${category_name}/${title}`}><img className="secondary-spotlight-img" src={require(`../../../../../img/pages/Home/${blog_thumbnail_name}`)}/></Link>
+          <Link to={`/${category_name}/${title}`}><img className="secondary-spotlight-img" src={require(`../../../../../../../../LaravelAPI/public/upload.product/${blog_thumbnail_name}`)}/></Link>
         </div>
 
         <div>

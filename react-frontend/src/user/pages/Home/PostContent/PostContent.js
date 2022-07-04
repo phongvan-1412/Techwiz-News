@@ -48,7 +48,7 @@ class PostContent extends Component {
               style={{ padding: "0px", height: "100%" }}
             >
               <img
-                src={require(`../../../img/pages/Home/${blog_thumbnail_name}`)}
+                src={require(`../../../../../../LaravelAPI/public/upload.product/${blog_thumbnail_name}`)}
                 style={{
                   width: "100%",
                   height: "100%",

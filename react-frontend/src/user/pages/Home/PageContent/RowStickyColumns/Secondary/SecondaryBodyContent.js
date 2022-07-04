@@ -12,7 +12,7 @@ class SecondaryBodyContent extends Component {
         <div className="row secondary-bodycontent">
           <div className="col-md-3">
             <Link to={`/${category_name}/${title}`}>
-              <img className="secondary-bodycontent-img" src={require(`../../../../../img/pages/Home/${blog_thumbnail_name}`)} alt=""/>
+              <img className="secondary-bodycontent-img" src={require(`../../../../../../../../LaravelAPI/public/upload.product/${blog_thumbnail_name}`)} alt=""/>
             </Link>
           </div>
           <div className="col-md-9 secondary-bodycontent-content">

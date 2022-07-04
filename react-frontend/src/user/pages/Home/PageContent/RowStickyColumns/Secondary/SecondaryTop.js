@@ -19,12 +19,12 @@ class SecondaryTop extends Component {
           <div>
             <img
               className="secondary-top-img"
-              src={require(`../../../../../img/pages/Home/${spotlight.blog_thumbnail_name}`)}
+              src={require(`../../../../../../../../LaravelAPI/public/upload.product/${spotlight.blog_thumbnail_name}`)}
             />
             {/* `../SecondaryTop/${spotlight.blog_img_name}.jpg` */}
 
             <div className="secondary-title">
-              <h2>{spotlight.blog_content.substring(0, 100)}</h2>{" "}
+              <h2>{spotlight.blog_title}</h2>{" "}
               {/* later: replace by blog_title */}
             </div>
           </div>

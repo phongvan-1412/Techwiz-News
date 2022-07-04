@@ -9,7 +9,7 @@ class SecondaryPanelContent extends Component {
     
     return (
       <div className="mb-3 secondary-panel">
-            <img className="page-content row-panel-img" src={require(`../../../../img/pages/Home/${blog_thumbnail_name}`)} />
+            <img className="page-content row-panel-img" src={require(`../../../../../../../LaravelAPI/public/upload.product/${blog_thumbnail_name}`)} />
       </div>
     );
   }

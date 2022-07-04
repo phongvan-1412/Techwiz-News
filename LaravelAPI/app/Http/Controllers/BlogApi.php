@@ -142,8 +142,8 @@ class BlogApi extends Controller
     {
     $tmp_blogs = DB::select("exec sp_select_active_blogs");
     $blogs = self::AddCollection($tmp_blogs);
-    file_put_contents("xml/blog.json",$blogs->toJson());
-    return $blogs->toJson();
+    //file_put_contents("xml/blog.json",$blogs->toJson());
+    return $blogs;
     }
 
     public function SelectBlogByCategory($category_id)

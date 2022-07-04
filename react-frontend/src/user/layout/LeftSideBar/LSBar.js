@@ -21,7 +21,7 @@ class LSBar extends Component {
       >
         <div className="col-md-12" style={{ margin: "5px 0" }}>
           <img
-            src={require(`../../img/pages/Home/${blog_thumbnail_name}`)}
+            src={require(`../../../../../LaravelAPI/public/upload.product/${blog_thumbnail_name}`)}
             style={{
               width: "100%",
               height: "auto",
