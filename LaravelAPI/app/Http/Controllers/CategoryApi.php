@@ -48,6 +48,12 @@ class CategoryApi extends Controller
         $categories = DB::select(Name::$SelectCategoryRoot);
         return $categories;
     }
+
+    public function SelectAllCategory()
+    {
+        $categories = DB::select(Name::$SelectAllCategory);
+        return $categories; 
+    }
     
     public function SelectCategories()
     {
