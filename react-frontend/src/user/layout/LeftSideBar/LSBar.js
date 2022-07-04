@@ -1,8 +1,14 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import {connect} from 'react-redux';
+import { getBlogsById } from "../../../actions/blogsActions";
 
 class LSBar extends Component {
+  onSelectBlog = blog_id =>{
+    this.props.getBlogsById(blog_id);
+  }
+
   render() {
     const { blog_id, blog_title, blog_content, category_name, blog_thumbnail_name } =
       this.props.content;
@@ -32,16 +38,18 @@ class LSBar extends Component {
                 replace
                 className="nav-link"
                 style={{ fontWeight: "bold", color: "#C20017" }}
+                onClick={this.onSelectBlog.bind(this,blog_id)}
               >
                 {blog_title}
               </Link>
             </li>
             <li style={{ fontSize: "13px" }}>
               <Link
-                to={`/${category_name}/${title}`}
+                to={`/${category_name}/${title}/${blog_id}`}
                 replace
                 className="nav-link"
                 style={{ fontWeight: "bold", color: "#036" }}
+                onClick={this.onSelectBlog.bind(this,blog_id)}
               >
                 {blog_content.substring(0, 15)}
               </Link>
@@ -54,6 +62,7 @@ class LSBar extends Component {
 }
 LSBar.propTypes = {
   content: PropTypes.object.isRequired,
+  getBlogsById: PropTypes.func.isRequired
 };
 
-export default LSBar;
+export default connect(null,{getBlogsById})(LSBar);

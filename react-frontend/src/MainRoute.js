@@ -14,7 +14,7 @@ import Register from "../src/user/pages/Login-Register/Register";
 
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { GET_BLOGS } from "./actions/types";
+import { getBlogs } from "./actions/blogsActions";
 
 class MainRoute extends Component {
   componentDidMount() {
@@ -24,20 +24,18 @@ class MainRoute extends Component {
     const { spotlights } = this.props;
 
     return (
-      <div className="container">
+      <div className="contaier">
         <Routes>
           <Route path="/" element={<HomeContent />}></Route>
           {spotlights.map((spotlight) => (
             <Route
-              path={`/${spotlight.category_name}/${spotlight.blog_title
-                .replace(" ", "")
-                .replace(["!@#$%^&*()_><.|,`"], "")}`}
+              path={`/${spotlight.category_name}/${spotlight.blog_title}/${spotlight.blog_id}}`}
               element={<Content />}
             ></Route>
           ))}
           {spotlights.map((spotlight) => (
             <Route
-              path={`/${spotlight.category_name}`}
+              path={`/${spotlight.category_name}/${spotlight.blog_title}/:spotlight.blog_id`}
               element={<Category />}
             ></Route>
           ))}
@@ -56,7 +54,4 @@ const mapStateToProps = (state) => ({
   spotlights: state.spotlight.spotlights,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  getBlogs: () => dispatch({ type: GET_BLOGS }),
-});
-export default connect(mapStateToProps,mapDispatchToProps)(MainRoute);
+export default connect(mapStateToProps,{getBlogs})(MainRoute);
