@@ -24,7 +24,7 @@ class MainRoute extends Component {
     const { spotlights } = this.props;
 
     return (
-      <div className="contaier">
+      <div className="container">
         <Routes>
           <Route path="/" element={<HomeContent />}></Route>
           {spotlights.map((spotlight) => (
