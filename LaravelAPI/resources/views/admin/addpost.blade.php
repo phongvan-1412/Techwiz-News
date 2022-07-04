@@ -17,7 +17,7 @@
     <h1 class="form-header text-center">ADD POST</h1>
     <div class="row">
         <div class="col-lg-12 col-sm-10">
-            <form method="POST" action="/addpost">
+            <form method="POST" action="/addpost" enctype="multipart/form-data">
                 {{csrf_field()}}
                 <div class="form-title mb-2">
                     <div class="small" >Title</div>
@@ -46,7 +46,7 @@
                 </div>
 
                 <div class="form-thumbnail mb-2">
-                    <div class="small" >Thumbnail Image</div>
+                    <div class="small">Thumbnail Image</div>
                     <input type="file" name="thumbnail" class="form-control">
                 </div>
 
