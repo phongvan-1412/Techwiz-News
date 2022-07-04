@@ -29,12 +29,14 @@ class MainRoute extends Component {
           <Route path="/" element={<HomeContent />}></Route>
           {spotlights.map((spotlight) => (
             <Route
+              key={spotlight.blog_id}
               path={`/${spotlight.category_name}/${spotlight.blog_title}/${spotlight.blog_id}}`}
               element={<Content />}
             ></Route>
           ))}
           {spotlights.map((spotlight) => (
             <Route
+              key={spotlight.blog_id}
               path={`/${spotlight.category_name}/${spotlight.blog_title}/:spotlight.blog_id`}
               element={<Category />}
             ></Route>
