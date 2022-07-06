@@ -13,27 +13,34 @@ import SecondaryPanelContents from "./PageContent/RowPanel/SecondaryPanelContent
 
 import PostContents from "./PostContent/PostContents";
 
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { getBlogs } from "../../../actions/blogsActions";
 
 class HomeContent extends Component {
+  componentDidMount() {
+    this.props.getBlogs();
+  }
   render() {
+    const { spotlights } = this.props;
     return (
       <div className="container home-content">
         <div className="row page-content row-sticky-columns">
           <div className=" col-lg-2 col-md-2 col-xs-0 left-sidebar">
-            <LSBars />
+            <LSBars spotlights={spotlights} > </LSBars>
           </div>
 
           <div className="col-lg-8 col-md-6 secondary-col">
-            <SecondaryTop />
-            <SecondaryContents1 />
-            <SecondaryContents2 />
-            <SecondarySpotLights1 />
-            <SecondarySpotLights2 />
-            <SecondaryBodyContents />
+            <SecondaryTop spotlights={spotlights} />
+            <SecondaryContents1 spotlights={spotlights} />
+            <SecondaryContents2 spotlights={spotlights} />
+            <SecondarySpotLights1 spotlights={spotlights} />
+            <SecondarySpotLights2 spotlights={spotlights} />
+            <SecondaryBodyContents spotlights={spotlights} />
           </div>
 
           <div className="col-lg-2 col-md-2 col-xs-0 right-sidebar">
-            <RSBars />
+            <RSBars spotlights={spotlights}/>
           </div>
         </div>
 
@@ -45,17 +52,26 @@ class HomeContent extends Component {
               </div>
 
               <div className="container page-content row-panel panel">
-                <SecondaryPanelContents />
+                <SecondaryPanelContents spotlights={spotlights} />
               </div>
             </div>
           </div>
         </div>
 
         <div className="col-md-12 post-content">
-          <PostContents />
+          <PostContents spotlights={spotlights} />
         </div>
       </div>
     );
   }
 }
-export default HomeContent;
+
+HomeContent.propTypes = {
+  getBlogs: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  spotlights: state.spotlight.spotlights,
+});
+
+export default connect(mapStateToProps, { getBlogs })(HomeContent);
