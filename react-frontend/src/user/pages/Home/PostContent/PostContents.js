@@ -1,35 +1,27 @@
 import React, { Component } from "react";
 import PostContent from "./PostContent";
-
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { getBlogs } from "../../../../actions/blogsActions";
+import BlogContext from "../../../../BlogContext";
 
 class PostContents extends Component {
-  componentDidMount() {
-    this.props.getBlogs();
-  }
   render() {
-    const { spotlights } = this.props;
-
     return (
-      <div>
-        {spotlights.map((spotlight) => (
-          <PostContent
-            key={spotlight.blog_id}
-            content={spotlight}
-          ></PostContent>
-        ))}
-      </div>
+      <BlogContext>
+        {(value) => {
+          const { spotlights } = value;
+          return (
+            <div>
+              {spotlights.map((spotlight) => (
+                <PostContent
+                  key={spotlight.blog_id}
+                  content={spotlight}
+                ></PostContent>
+              ))}
+            </div>
+          );
+        }}
+      </BlogContext>
     );
   }
 }
-PostContents.propTypes = {
-  getBlogs: PropTypes.func.isRequired,
-};
 
-const mapStateToProps = (state) => ({
-  spotlights: state.spotlight.spotlights,
-});
-
-export default connect(mapStateToProps,{ getBlogs })(PostContents);
+export default PostContents;

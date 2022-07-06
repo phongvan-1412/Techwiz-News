@@ -1,39 +1,33 @@
 import React, { Component } from "react";
 import SecondaryContent from "./SecondaryContent";
 
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { getBlogs } from "../../../../../../actions/blogsActions";
+import BlogContext from "../../../../../../BlogContext";
 
 class SecondaryContents1 extends Component {
-  componentDidMount() {
-    this.props.getBlogs();
-  }
   render() {
-    const { spotlights } = this.props;
-    const tmpSpotlights = [];
-    const localSpotlights = tmpSpotlights.concat(spotlights);
-    localSpotlights.length = 2;
     return (
-      <div className="col-md-12 secondary-contents1">
-        <div className="row">
-          {localSpotlights.map((spotlight) => (
-            <SecondaryContent
-              key={spotlight.blog_id}
-              content={spotlight}
-            ></SecondaryContent>
-          ))}
-        </div>
-      </div>
+      <BlogContext>
+        {(value) => {
+          const { spotlights } = value;
+          const tmpSpotlights = [];
+          const localSpotlights = tmpSpotlights.concat(spotlights);
+          localSpotlights.length = 2;
+          return (
+            <div className="col-md-12 secondary-contents1">
+              <div className="row">
+                {localSpotlights.map((spotlight) => (
+                  <SecondaryContent
+                    key={spotlight.blog_id}
+                    content={spotlight}
+                  ></SecondaryContent>
+                ))}
+              </div>
+            </div>
+          );
+        }}
+      </BlogContext>
     );
   }
 }
-SecondaryContents1.propTypes = {
-  getBlogs: PropTypes.func.isRequired,
-};
 
-const mapStateToProps = (state) => ({
-  spotlights: state.spotlight.spotlights,
-});
-
-export default connect(mapStateToProps, { getBlogs })(SecondaryContents1);
+export default SecondaryContents1;

@@ -75,7 +75,7 @@ export default function (state = initialState, action) {
     case GET_BLOGS:
       return {
         ...state,
-        //spotlights: action.payload
+        spotlights: action.payload
       };
 
     case GET_BLOGS_BY_CATEGORY:

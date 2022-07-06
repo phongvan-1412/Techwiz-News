@@ -16,219 +16,221 @@ import RSBars from "../RightSideBar/RSBars";
 import MoreSuggestLinks from "../MoreSuggest/MoreSuggestLinks";
 import MoreSuggestPosts from "../MoreSuggest/MoreSuggestPosts";
 
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { getBlogs } from "../../../actions/blogsActions";
+import BlogContext from "../../../BlogContext";
 
 class Content extends Component {
-  componentDidMount() {
-    this.props.getBlogs();
-  }
   render() {
-    const { spotlights } = this.props;
-
     return (
-      <div className="App">
-        {spotlights.map((spotlight) => (
-          <div className="container">
-            <div className="row">
-              <div className="header-article">
-                <div className="article-date col-md-12">
-                  <Link to="#">RECIPES</Link>
-                  <strong>Published</strong>
-                  <span>{spotlight.blog_day_open}</span>
-                </div>
+      <BlogContext>
+        {(value) => {
+          const { spotlights } = value;
+          return (
+            <div className="App">
+              {spotlights.map((spotlight) => (
+                <div className="container">
+                  <div className="row">
+                    <div className="header-article">
+                      <div className="article-date col-md-12">
+                        <Link to="#">RECIPES</Link>
+                        <strong>Published</strong>
+                        <span>{spotlight.blog_day_open}</span>
+                      </div>
 
-                <div className="col-md-12 article-title">
-                  <h1>{spotlight.blog_title}</h1>
-                </div>
+                      <div className="col-md-12 article-title">
+                        <h1>{spotlight.blog_title}</h1>
+                      </div>
 
-                <div className="col-md-12 sub-headline">
-                  <span>
-                    This simple salsa recipe from Gastronotherapy takes only 10
-                    minutes to make
-                  </span>
-                </div>
+                      <div className="col-md-12 sub-headline">
+                        <span>
+                          This simple salsa recipe from Gastronotherapy takes
+                          only 10 minutes to make
+                        </span>
+                      </div>
 
-                <div className="col-md-12">
-                  <div className="col-md-9 article-lower">
+                      <div className="col-md-12">
+                        <div className="col-md-9 article-lower">
+                          <div className="row">
+                            <div className="col-md-6 article-admin-name">
+                              <Link to="/">
+                                <span>
+                                  {spotlight.admin_name} | BuffDog News
+                                </span>
+                              </Link>
+                            </div>
+
+                            <div className="article-meta-social-icon col-md-6">
+                              <ul>
+                                <Link to="/">
+                                  <li>
+                                    <FaFacebook className="meta-facebook" />
+                                  </li>
+                                </Link>
+                                <Link to="/">
+                                  <li>
+                                    <FaInstagramSquare className="meta-instagram" />
+                                  </li>
+                                </Link>
+                                <Link to="/">
+                                  <li>
+                                    <FaTwitter className="meta-twitter" />
+                                  </li>
+                                </Link>
+                                <Link to="/">
+                                  <li>
+                                    <FaFlipboard className="meta-flipboard" />
+                                  </li>
+                                </Link>
+                                <Link to="/">
+                                  <li>
+                                    <FaComments className="meta-comment" />
+                                  </li>
+                                </Link>
+                                <Link to="/">
+                                  <li>
+                                    <FaPrint className="meta-print" />
+                                  </li>
+                                </Link>
+                                <Link to="/">
+                                  <li>
+                                    <MdEmail className="meta-email" />
+                                  </li>
+                                </Link>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="row main-content">
+                      <div className="col-md-9">
+                        <div className="row main-content-wrapper">
+                          <div className="col-md-12 main-content-content">
+                            <br />
+                            <br />
+                            <span>
+                              {spotlight.blog_content.substring(0, 450)}
+                            </span>
+                            <br />
+                            <br />
+
+                            <div className="main-content-video">
+                              <iframe
+                                width="560"
+                                height="315"
+                                src={spotlight.blog_video_name}
+                                title="YouTube video player"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                              ></iframe>
+                            </div>
+
+                            <br />
+                            <br />
+                            <span>
+                              {spotlight.blog_content.substring(451, 1000)}
+                            </span>
+                            <br />
+                            <br />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="col-md-3">
+                        <RSBars />
+                      </div>
+                    </div>
+
                     <div className="row">
-                      <div className="col-md-6 article-admin-name">
-                        <Link to="/">
-                          <span>{spotlight.admin_name} | BuffDog News</span>
-                        </Link>
+                      <span className="admin-name-tips">
+                        {spotlight.admin_name} is an associate editor for
+                        BuffDog News Digital. Story tips can be sent to{" "}
+                        {spotlight.admin_name}
+                        @buffdog.com.
+                      </span>
+                    </div>
+
+                    <div className="row more-link-from-buffdog">
+                      <div className="col-md-3">
+                        <span class="more-suggest-header-text">
+                          More From BuffDog News
+                        </span>
+                        <MoreSuggestLinks />
+                      </div>
+                    </div>
+
+                    <div className="row more-post-from-buffdog">
+                      <span class="more-suggest-header-text">
+                        More From BuffDog News
+                      </span>
+
+                      <div className="col-md-3">
+                        <MoreSuggestPosts />
                       </div>
 
-                      <div className="article-meta-social-icon col-md-6">
-                        <ul>
-                          <Link to="/">
-                            <li>
-                              <FaFacebook className="meta-facebook" />
-                            </li>
-                          </Link>
-                          <Link to="/">
-                            <li>
-                              <FaInstagramSquare className="meta-instagram" />
-                            </li>
-                          </Link>
-                          <Link to="/">
-                            <li>
-                              <FaTwitter className="meta-twitter" />
-                            </li>
-                          </Link>
-                          <Link to="/">
-                            <li>
-                              <FaFlipboard className="meta-flipboard" />
-                            </li>
-                          </Link>
-                          <Link to="/">
-                            <li>
-                              <FaComments className="meta-comment" />
-                            </li>
-                          </Link>
-                          <Link to="/">
-                            <li>
-                              <FaPrint className="meta-print" />
-                            </li>
-                          </Link>
-                          <Link to="/">
-                            <li>
-                              <MdEmail className="meta-email" />
-                            </li>
-                          </Link>
-                        </ul>
+                      <div className="col-md-3">
+                        <MoreSuggestPosts />
+                      </div>
+
+                      <div className="col-md-3">
+                        <MoreSuggestPosts />
+                      </div>
+                    </div>
+
+                    <div className="row col-md-9 conversation">
+                      <div className="conversation-header">
+                        <div className="col-md-6 conversation-header-left-component">
+                          <span className="conversation-header-head-text">
+                            Conversation
+                          </span>
+                          <span>Comments</span>
+                        </div>
+
+                        <div className="col-md-6 conversation-header-right-component">
+                          <span>
+                            <FaUserFriends className="meta-userfriends" />
+                          </span>
+                          <span>Viewing</span>
+                        </div>
+                      </div>
+
+                      <div className="row input-text">
+                        <input type="text" placeholder="What do you think?" />
+                      </div>
+
+                      <div className="row sortby">
+                        <span>
+                          Sort by
+                          <select>
+                            <option value="best" selected>
+                              Best
+                            </option>
+                            <option value="newest">Newest</option>
+                            <option value="oldest">Oldest</option>
+                          </select>
+                        </span>
+                      </div>
+
+                      <div className="row button-field">
+                        <div className="col-md-3"></div>
+                        <div className="col-md-6 button-showmore">
+                          <button className="btn-showmore">
+                            Show More Comments
+                          </button>
+                        </div>
+                        <div className="col-md-3"></div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-
-              <div className="row main-content">
-                <div className="col-md-9">
-                  <div className="row main-content-wrapper">
-                    <div className="col-md-12 main-content-content">
-                      <br />
-                      <br />
-                      <span>{spotlight.blog_content.substring(0, 450)}</span>
-                      <br />
-                      <br />
-
-                      <div className="main-content-video">
-                        <iframe
-                          width="560"
-                          height="315"
-                          src={spotlight.blog_video_name}
-                          title="YouTube video player"
-                          frameBorder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                        ></iframe>
-                      </div>
-
-                      <br />
-                      <br />
-                      <span>{spotlight.blog_content.substring(451, 1000)}</span>
-                      <br />
-                      <br />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-md-3">
-                  <RSBars />
-                </div>
-              </div>
-
-              <div className="row">
-                <span className="admin-name-tips">
-                  {spotlight.admin_name} is an associate editor for BuffDog News
-                  Digital. Story tips can be sent to {spotlight.admin_name}
-                  @buffdog.com.
-                </span>
-              </div>
-
-              <div className="row more-link-from-buffdog">
-                <div className="col-md-3">
-                  <span class="more-suggest-header-text">
-                    More From BuffDog News
-                  </span>
-                  <MoreSuggestLinks />
-                </div>
-              </div>
-
-              <div className="row more-post-from-buffdog">
-                <span class="more-suggest-header-text">
-                  More From BuffDog News
-                </span>
-
-                <div className="col-md-3">
-                  <MoreSuggestPosts />
-                </div>
-
-                <div className="col-md-3">
-                  <MoreSuggestPosts />
-                </div>
-
-                <div className="col-md-3">
-                  <MoreSuggestPosts />
-                </div>
-              </div>
-
-              <div className="row col-md-9 conversation">
-                <div className="conversation-header">
-                  <div className="col-md-6 conversation-header-left-component">
-                    <span className="conversation-header-head-text">
-                      Conversation
-                    </span>
-                    <span>Comments</span>
-                  </div>
-
-                  <div className="col-md-6 conversation-header-right-component">
-                    <span>
-                      <FaUserFriends className="meta-userfriends" />
-                    </span>
-                    <span>Viewing</span>
-                  </div>
-                </div>
-
-                <div className="row input-text">
-                  <input type="text" placeholder="What do you think?" />
-                </div>
-
-                <div className="row sortby">
-                  <span>
-                    Sort by
-                    <select>
-                      <option value="best" selected>
-                        Best
-                      </option>
-                      <option value="newest">Newest</option>
-                      <option value="oldest">Oldest</option>
-                    </select>
-                  </span>
-                </div>
-
-                <div className="row button-field">
-                  <div className="col-md-3"></div>
-                  <div className="col-md-6 button-showmore">
-                    <button className="btn-showmore">Show More Comments</button>
-                  </div>
-                  <div className="col-md-3"></div>
-                </div>
-              </div>
+              ))}
             </div>
-          </div>
-        ))}
-      </div>
+          );
+        }}
+      </BlogContext>
     );
   }
 }
-Content.propTypes = {
-  getBlogs: PropTypes.func.isRequired,
-};
 
-const mapStateToProps = (state) => ({
-  spotlights: state.spotlight.spotlights,
-});
-
-export default connect(mapStateToProps, {getBlogs})(Content);
+export default Content;
