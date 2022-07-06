@@ -200,7 +200,7 @@ class BlogController extends Controller
         $thumbnail  = $request->file('thumbnail');
         $extension  = $request->file('thumbnail')->extension();
         $thumbnail_name   = time().'-'.'thumbnail.'.$extension;
-        $thumbnail->move(public_path('upload/thumbnail'), $thumbnail_name);
+        $thumbnail->move(public_path('upload.product'), $thumbnail_name);
     //INSERT BLOG TO DATABALSE
 
        DB::table('blog')->insert([

@@ -40,7 +40,7 @@
                             @foreach ($blogs as $blog)
                                 <tr>
                                     <th>{{ $i++ }}</th>
-                                    <td><img src="{{asset('userfiles/files')}}/{{$blog->blog_thumbnail_name}}" id="img_product" alt=""></td> -->
+                                    <td><img style="width: 100px" src="{{asset('upload.product')}}/{{$blog->blog_thumbnail_name}}" id="img_product" alt=""></td> 
                                     <td>{{ $blog->blog_title }}</td>
                                     <td>{{ $blog->emp_name }}</td>
                                     <td>{{ $blog->category_name}}</td>

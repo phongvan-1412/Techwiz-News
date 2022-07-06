@@ -21,7 +21,7 @@
                 {{csrf_field()}}
                 <div class="form-title mb-2">
                     <div class="small" >Title</div>
-                    <input type="text" name="title" class="form-control">
+                    <input type="text" name="title" class="form-control" require>
                 </div>
 
                 <div class="row gx-3 mb-4">
@@ -37,7 +37,7 @@
                     </div>      
                     <div class="col-md-6">
                         <div class="small">Video URL</div>
-                        <input type="text" name="video_url" id="video_url" class="form-control">
+                        <input type="text" name="video_url" id="video_url" class="form-control" require>
                     </div>
                 </div>
 
@@ -47,7 +47,7 @@
 
                 <div class="form-thumbnail mb-2">
                     <div class="small">Thumbnail Image</div>
-                    <input type="file" name="thumbnail" class="form-control">
+                    <input type="file" name="thumbnail" class="form-control" required>
                 </div>
 
                 <div class="form-submit mt-2">
