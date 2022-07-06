@@ -12,16 +12,20 @@ import HomeContent from "./user/pages/Home/HomeContent";
 import Login from "../src/user/pages/Login-Register/Login";
 import Register from "../src/user/pages/Login-Register/Register";
 
-// import { connect } from "react-redux";
-// import PropTypes from "prop-types";
-// import { getBlogs } from "./actions/blogsActions";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { getBlogs } from "./actions/blogsActions";
 
 class MainRoute extends Component {
+  componentDidMount() {
+    this.props.getBlogs();
+  }
   render() {
+    const { spotlights } = this.props;
     return (
       <div className="contaier">
         <Routes>
-          <Route path="/" element={<HomeContent />}></Route>
+          <Route path="/" element={<HomeContent spotlights={spotlights}/>}></Route>
           {/* {spotlights.map((spotlight) => (
             <Route
               key={spotlight.blog_id}
@@ -43,5 +47,11 @@ class MainRoute extends Component {
     );
   }
 }
+MainRoute.propTypes = {
+  getBlogs: PropTypes.func.isRequired,
+};
 
-export default MainRoute;
+const mapStateToProps = (state) => ({
+  spotlights: state.spotlight.spotlights,
+});
+export default connect(mapStateToProps, { getBlogs })(MainRoute);

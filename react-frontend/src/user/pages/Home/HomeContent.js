@@ -13,14 +13,7 @@ import SecondaryPanelContents from "./PageContent/RowPanel/SecondaryPanelContent
 
 import PostContents from "./PostContent/PostContents";
 
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { getBlogs } from "../../../actions/blogsActions";
-
 class HomeContent extends Component {
-  componentDidMount() {
-    this.props.getBlogs();
-  }
   render() {
     const { spotlights } = this.props;
     return (
@@ -66,12 +59,4 @@ class HomeContent extends Component {
   }
 }
 
-HomeContent.propTypes = {
-  getBlogs: PropTypes.func.isRequired,
-};
-
-const mapStateToProps = (state) => ({
-  spotlights: state.spotlight.spotlights,
-});
-
-export default connect(mapStateToProps, { getBlogs })(HomeContent);
+export default HomeContent;
