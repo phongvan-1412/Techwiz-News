@@ -51,7 +51,8 @@ class Header extends Component {
                                 <FaSearch />
                             </button>
     
-                            <Link to="/login" className="login" id="account">Login</Link>
+                            {/* <Link to="http://127.0.0.1:8000/login" className="login" id="account">Login</Link> */}
+                            <a href="http://127.0.0.1:8000/login"><button className="login" id="account">Visit google</button></a>
                             <Link to="#" className="watch">WatchTV</Link>
     
                             <button className="nav-btn nav-close-btn">
